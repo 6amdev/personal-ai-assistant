@@ -76,24 +76,46 @@ streamlit run app.py
 ## 🏗️ Architecture
 
 ```
-User Interface (Streamlit)
-    ↓
-Application Layer (LangChain)
-    ↓
-┌───────────────┬──────────────┐
-│               │              │
- Memory      LLM (Llama 3.1)   │
- (ChromaDB)   (via Ollama)     │
+┌─────────────────────────────────────────┐
+│        User Interface (Streamlit)       │
+│  - Chat input/output                    │
+│  - File uploader                        │
+│  - Document management UI               │
+└──────────────────┬──────────────────────┘
+                   │
+┌──────────────────▼──────────────────────┐
+│   Application Layer (LangChain)         │
+│  - Prompt engineering                   │
+│  - Context retrieval                    │
+│  - Response generation                  │
+│  - Document processing                  │
+└──────┬────────────────────┬─────────────┘
+       │                    │
+┌──────▼──────────┐  ┌──────▼──────────┐
+│ 💾 Memory      │  │  🤖 LLM         │
+│  - ChromaDB     │  │  - Llama 3.1 8B │
+│  - Embeddings   │  │  - via Ollama   │
+│  - Vector store │  │  - GPU/CPU      │
+│  - Persistence  │  │  - Local runtime│
+└─────────────────┘  └─────────────────┘
 ```
+
+**Data Flow:**
+1. User uploads document → Document Processor
+2. Split into chunks → Generate embeddings
+3. Store in ChromaDB (Vector Database)
+4. User asks question → Search similar chunks
+5. Retrieve relevant context → Send to LLM
+6. LLM generates answer → Display to user
 
 ## 📊 Performance
 
 | Task | Time |
 |------|------|
-| Chat Response    | 3-8s   |
-| Upload (1 file)  | 5-10s  |
+| Chat Response | 3-8s |
+| Upload (1 file) | 5-10s |
 | Upload (5 files) | 15-30s |
-| Semantic Search  | <1s    |
+| Semantic Search | <1s |
 
 *Tested: RTX 4070 Ti 12GB*
 
