@@ -1,32 +1,28 @@
-# 💬 Personal AI Assistant
+💬 Personal AI Assistant
 
-> AI Chatbot ส่วนตัวที่เรียนรู้จากเอกสารของคุณ - ฟรี 100% รันบนเครื่องเอง!
+AI Chatbot ส่วนตัวที่เรียนรู้จากเอกสารของคุณ - ฟรี 100% รันบนเครื่องเอง!
 
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Ollama](https://img.shields.io/badge/ollama-required-orange.svg)](https://ollama.com)
-[![Made by](https://img.shields.io/badge/made%20by-6amdev-red.svg)](https://github.com/6amdev)
+Show Image
+Show Image
+Show Image
+Show Image
+✨ Features
 
-## ✨ Features
+🤖 Local LLM - Llama 3.1 8B (via Ollama)
+💾 Persistent Memory - จำบทสนทนาและเอกสารถาวร
+📚 RAG Support - ตอบคำถามจากเอกสาร
+🇹🇭 Thai Language - รองรับภาษาไทย
+🔒 100% Private - ข้อมูลไม่ออกจากเครื่อง
+🆓 Free - Open source ไม่มีค่าใช้จ่าย
+📄 Multi-format - TXT, PDF, DOCX, MD
 
-- 🤖 **Local LLM** - Llama 3.1 8B (via Ollama)
-- 💾 **Persistent Memory** - จำบทสนทนาและเอกสารถาวร
-- 📚 **RAG Support** - ตอบคำถามจากเอกสาร
-- 🇹🇭 **Thai Language** - รองรับภาษาไทย
-- 🔒 **100% Private** - ข้อมูลไม่ออกจากเครื่อง
-- 🆓 **Free** - Open source ไม่มีค่าใช้จ่าย
-- 📄 **Multi-format** - TXT, PDF, DOCX, MD
-
-## 🚀 Quick Start
-
-### Installation
-```bash
-git clone https://github.com/6amdev/personal-ai-assistant.git
+🚀 Quick Start
+Installation
+bashgit clone https://github.com/6amdev/personal-ai-assistant.git
 cd personal-ai-assistant
 pip install -r requirements.txt
 ollama pull llama3.1:8b
 streamlit run app.py
-
 เปิด browser ที่ http://localhost:8501
 📖 Usage
 Chat: พิมพ์คำถาม → AI ตอบ
@@ -61,8 +57,9 @@ Application Layer (LangChain)
     ↓
 ┌───────────────┬──────────────┐
 │               │              │
-Memory      LLM (Llama 3.1)   │
-(ChromaDB)   (via Ollama)     │
+Memory      LLM (Llama 3.1)    │
+(ChromaDB)   (via Ollama)      │
+
 📊 Performance
 TaskTimeChat Response3-8sUpload (1 file)5-10sUpload (5 files)15-30sSemantic Search<1s
 Tested: RTX 4070 Ti 12GB
