@@ -82,18 +82,18 @@ Application Layer (LangChain)
     ↓
 ┌───────────────┬──────────────┐
 │               │              │
-Memory      LLM (Llama 3.1)   │
-(ChromaDB)   (via Ollama)     │
+ Memory      LLM (Llama 3.1)   │
+ (ChromaDB)   (via Ollama)     │
 ```
 
 ## 📊 Performance
 
 | Task | Time |
 |------|------|
-| Chat Response | 3-8s |
-| Upload (1 file) | 5-10s |
+| Chat Response    | 3-8s   |
+| Upload (1 file)  | 5-10s  |
 | Upload (5 files) | 15-30s |
-| Semantic Search | <1s |
+| Semantic Search  | <1s    |
 
 *Tested: RTX 4070 Ti 12GB*
 
