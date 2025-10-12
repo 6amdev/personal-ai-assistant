@@ -1,0 +1,39 @@
+ชื่อ-สกุล: นายสมชาย ใจดี
+ชื่อเล่น: ชาย
+อายุ: 28 ปี
+วันเกิด: 15 มิถุนายน 2540
+สถานะ: โสด
+ที่อยู่: 123/45 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพฯ 10110
+การศึกษา:
+- ปริญญาตรี: วิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย (2558-2562) เกรดเฉลี่ย 3.65
+- ปริญญาโท: Computer Science, Stanford University (2563-2565) GPA 3.85
+ทักษะด้านเทคนิค:
+- ภาษาโปรแกรม: Python (Expert), JavaScript (Advanced), Java (Intermediate), Go (Beginner)
+- Framework: React, Vue.js, Django, FastAPI, TensorFlow, PyTorch
+- Database: PostgreSQL, MongoDB, Redis
+- Cloud: AWS, Google Cloud Platform, Azure
+- Tools: Docker, Kubernetes, Git, Jenkins
+ภาษา:
+- ไทย: Native
+- อังกฤษ: Fluent (TOEFL 110/120)
+- ญี่ปุ่น: Intermediate (JLPT N3)
+ประสบการณ์การทำงาน:
+1. Senior Software Engineer - Tech Unicorn Co., Ltd. (2565-ปัจจุบัน)
+   - พัฒนา AI-powered recommendation system
+   - นำทีม 5 คน
+   - เพิ่มประสิทธิภาพระบบ 40%
+2. Software Engineer - Startup Innovation (2562-2565)
+   - สร้าง web application ด้วย React และ Node.js
+   - ดูแล database optimization
+   - ทำงานร่วมกับทีม 10 คน
+งานอดิเรก:
+- อ่านหนังสือเกี่ยวกับ AI และ Machine Learning
+- เขียน blog เกี่ยวกับเทคโนโลジี
+- ถ่ายรูป (มีกล้อง Sony A7III)
+- เดินป่า ปีนเขา
+- เล่นกีตาร์
+ความสามารถพิเศษ:
+- ได้รับรางวัล Hackathon ชนะเลิศ 3 ครั้ง
+- Speaker ในงาน Tech Conference 5 ครั้ง
+- มี GitHub Stars มากกว่า 2,000 stars
+- เขียน technical blog ที่มีผู้อ่าน 50,000+ คนต่อเดือน

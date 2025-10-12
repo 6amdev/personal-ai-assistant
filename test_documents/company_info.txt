@@ -1,0 +1,59 @@
+ชื่อบริษัท: Tech Unicorn Co., Ltd.
+ประเภทธุรกิจ: Software Development & AI Solutions
+
+ข้อมูลทั่วไป:
+- ก่อตั้ง: พ.ศ. 2560
+- CEO: คุณสมหญิง เทคโนโลยี
+- จำนวนพนักงาน: 250 คน
+- สำนักงานใหญ่: อาคาร Empire Tower ชั้น 42 สาทร กรุงเทพฯ
+- สาขา: เชียงใหม่, ขอนแก่น, ภูเก็ต
+
+ผลิตภัณฑ์และบริการ:
+1. AI Chatbot Platform
+   - รองรับภาษาไทย อังกฤษ จีน ญี่ปุ่น
+   - ใช้งานโดย 500+ บริษัท
+   - ประมวลผล 10 ล้านข้อความต่อวัน
+
+2. Data Analytics Dashboard
+   - Real-time analytics
+   - Custom reports
+   - Predictive insights
+
+3. Cloud Infrastructure Services
+   - Managed Kubernetes
+   - Auto-scaling
+   - 99.99% uptime SLA
+
+ลูกค้าสำคัญ:
+- ธนาคารกรุงเทพ
+- บริษัทการบินไทย
+- เซ็นทรัล รีเทล
+- CP Group
+- SCB
+
+รางวัลและความสำเร็จ:
+- Best Tech Startup 2562 - Thailand Tech Awards
+- Top 10 AI Companies in Southeast Asia 2563
+- ISO 27001 Certified
+- SOC 2 Type II Compliant
+
+วัฒนธรรมองค์กร:
+- Work-Life Balance: ทำงาน 5 วัน ลา 20 วัน/ปี
+- Remote Work: ทำงานที่บ้านได้ 3 วัน/สัปดาห์
+- Learning: งบพัฒนาตัวเอง 50,000 บาท/ปี
+- Health: ประกันสุขภาพครอบคลุม + gym membership
+
+สวัสดิการ:
+- เงินเดือนเริ่มต้น: 40,000-120,000 บาท
+- โบนัสประจำปี: 3-6 เดือน
+- ประกันสุขภาพ: 500,000 บาท
+- ประกันชีวิต: 1,000,000 บาท
+- กองทุนสำรองเลี้ยงชีพ: 10%
+- ค่าน้ำมัน: 3,000 บาท/เดือน
+- ค่าโทรศัพท์: 1,500 บาท/เดือน
+
+ติดต่อ:
+- เว็บไซต์: www.techunicorn.co.th
+- อีเมล: info@techunicorn.co.th
+- โทร: 02-123-4567
+- LINE: @techunicorn
