@@ -1,0 +1,6 @@
+langchain==0.1.0
+langchain-community==0.0.13
+ollama==0.1.6
+chromadb==0.4.22
+streamlit==1.29.0
+python-dotenv==1.0.0
