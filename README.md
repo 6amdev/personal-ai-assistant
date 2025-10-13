@@ -15,7 +15,8 @@
 - 🇹🇭 **Thai Language** - รองรับภาษาไทย
 - 🔒 **100% Private** - ข้อมูลไม่ออกจากเครื่อง
 - 🆓 **Free** - Open source ไม่มีค่าใช้จ่าย
-- 📄 **Multi-format** - TXT, PDF, DOCX, MD
+- 📄 **Multi-format** - TXT, PDF, DOCX, MD, JSON
+- ⚡ **Fast Performance** - Sentence Transformers (5-10x faster)
 
 ## 🚀 Quick Start
 

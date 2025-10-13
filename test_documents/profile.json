@@ -1,0 +1,81 @@
+{
+  "name": "นาย สมชาย ใจดี",
+  "age": 30,
+  "position": "Senior AI Developer",
+  "company": "Tech Innovation Co., Ltd.",
+  "email": "somchai@example.com",
+  "phone": "081-234-5678",
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "LangChain",
+    "RAG Systems",
+    "Streamlit",
+    "FastAPI"
+  ],
+  "experience": {
+    "years": 5,
+    "companies": [
+      {
+        "name": "Tech Innovation Co., Ltd.",
+        "position": "Senior AI Developer",
+        "duration": "2022-Present",
+        "responsibilities": [
+          "พัฒนา AI chatbot ด้วย RAG",
+          "สร้างระบบ recommendation",
+          "ออกแบบ ML pipeline"
+        ]
+      },
+      {
+        "name": "Digital Solutions Ltd.",
+        "position": "AI Engineer",
+        "duration": "2020-2022",
+        "responsibilities": [
+          "พัฒนา NLP models",
+          "ทำ data analysis",
+          "Deploy ML models"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Personal AI Assistant",
+        "description": "สร้าง chatbot ด้วย RAG สำหรับเรียนรู้จากเอกสาร",
+        "tech": ["Llama 3.1", "ChromaDB", "Streamlit"],
+        "status": "In Progress"
+      },
+      {
+        "name": "E-commerce Recommendation",
+        "description": "ระบบแนะนำสินค้าด้วย collaborative filtering",
+        "tech": ["TensorFlow", "FastAPI", "Redis"],
+        "status": "Completed"
+      }
+    ]
+  },
+  "education": {
+    "degree": "วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์)",
+    "university": "จุฬาลงกรณ์มหาวิทยาลัย",
+    "graduation_year": 2019,
+    "gpa": 3.65
+  },
+  "languages": [
+    {
+      "language": "ไทย",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "level": "Professional"
+    },
+    {
+      "language": "Japanese",
+      "level": "Basic"
+    }
+  ],
+  "interests": [
+    "AI และ Machine Learning",
+    "Open Source Projects",
+    "เทคโนโลยีใหม่ๆ",
+    "การอ่านหนังสือ"
+  ]
+}

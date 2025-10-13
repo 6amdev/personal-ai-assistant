@@ -74,20 +74,36 @@ def main():
 
 
 def process_uploaded_files(uploaded_files, memory):
-    """Process and store uploaded files"""
+    """Process and store uploaded files with detailed progress"""
     
-    # สร้าง progress bar
+    # ป้องกันการประมวลผลซ้ำ 🔥
+    file_ids = [f.file_id for f in uploaded_files]
+    processed_key = "processed_files"
+    
+    if processed_key not in st.session_state:
+        st.session_state[processed_key] = set()
+    
+    # เช็คว่าไฟล์เหล่านี้ประมวลผลแล้วหรือยัง
+    new_files = []
+    for f in uploaded_files:
+        if f.file_id not in st.session_state[processed_key]:
+            new_files.append(f)
+            st.session_state[processed_key].add(f.file_id)
+    
+    if not new_files:
+        return  # ไฟล์ประมวลผลแล้ว
+    
     progress_bar = st.progress(0)
     status_text = st.empty()
+    detail_text = st.empty()
     
     processor = DocumentProcessor()
-    total_files = len(uploaded_files)
-    total_chunks = 0
+    total_files = len(new_files)
     all_chunks = []
     all_metadatas = []
     
     # Phase 1: อ่านไฟล์ทั้งหมด
-    for idx, uploaded_file in enumerate(uploaded_files):
+    for idx, uploaded_file in enumerate(new_files):
         try:
             status_text.text(f"📄 กำลังอ่าน {uploaded_file.name}... ({idx+1}/{total_files})")
             
@@ -104,39 +120,49 @@ def process_uploaded_files(uploaded_files, memory):
             all_chunks.extend(chunks)
             all_metadatas.extend([{'source': uploaded_file.name} for _ in chunks])
             
-            total_chunks += len(chunks)
+            detail_text.info(f"✅ {uploaded_file.name}: {len(chunks)} chunks")
             
             # Cleanup
             os.unlink(tmp_path)
             
             # Update progress
-            progress_bar.progress((idx + 1) / total_files * 0.5)
+            progress_bar.progress((idx + 1) / total_files * 0.4)
             
         except Exception as e:
-            st.error(f"❌ Error: {uploaded_file.name}: {e}")
+            st.error(f"❌ {uploaded_file.name}: {e}")
     
-    # Phase 2: บันทึกทีเดียว (สำคัญ!) 🔥
+    # Phase 2: บันทึกทีเดียว
     if all_chunks:
+        total_chunks = len(all_chunks)
         status_text.text(f"🧠 กำลังบันทึก {total_chunks} chunks...")
-        progress_bar.progress(0.6)
         
         try:
-            # เรียกครั้งเดียว! ไม่ใช่ loop!
+            import time
+            start_time = time.time()
+            
+            progress_bar.progress(0.5)
+            
+            # เรียกครั้งเดียว!
             memory.add_documents(all_chunks, all_metadatas)
             
-            # เสร็จ
+            elapsed = time.time() - start_time
+            
             progress_bar.progress(1.0)
             status_text.empty()
+            detail_text.empty()
             
             st.success(f"✅ เรียนรู้เอกสารสำเร็จ! ({total_chunks} chunks จาก {total_files} ไฟล์)")
+            st.info(f"⏱️ ใช้เวลา: {elapsed:.1f} วินาที (~{elapsed/total_chunks:.2f}s/chunk)")
             st.balloons()
+            
+            # ไม่ rerun! แค่รีเฟรช sidebar 🔥
             st.rerun()
             
         except Exception as e:
             progress_bar.empty()
             status_text.empty()
+            detail_text.empty()
             st.error(f"❌ Error: {e}")
-
 
 if __name__ == "__main__":
     main()

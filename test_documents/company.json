@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "AI Innovation Lab",
+    "founded": 2020,
+    "industry": "Artificial Intelligence",
+    "headquarters": "กรุงเทพมหานคร ประเทศไทย",
+    "employees": 85,
+    "website": "https://ai-innovation-lab.com"
+  },
+  "mission": "พัฒนาเทคโนโลยี AI เพื่อการเปลี่ยนแปลงที่ยั่งยืน",
+  "vision": "เป็นผู้นำด้าน AI ในเอเชียตะวันออกเฉียงใต้",
+  "services": [
+    {
+      "name": "AI Consulting",
+      "description": "ให้คำปรึกษาด้าน AI และ ML",
+      "pricing": "เริ่มต้นที่ 50,000 บาท/โครงการ"
+    },
+    {
+      "name": "Custom AI Development",
+      "description": "พัฒนา AI solutions ตามความต้องการ",
+      "pricing": "ตามโครงการ"
+    },
+    {
+      "name": "AI Training",
+      "description": "อบรม AI และ Machine Learning",
+      "pricing": "15,000 บาท/คน"
+    }
+  ],
+  "clients": [
+    "Thai Airways",
+    "SCB Bank",
+    "CP Group",
+    "PTT",
+    "True Corporation"
+  ],
+  "awards": [
+    {
+      "year": 2023,
+      "award": "Best AI Startup Thailand"
+    },
+    {
+      "year": 2024,
+      "award": "Innovation Award ASEAN"
+    }
+  ],
+  "contact": {
+    "email": "info@ai-innovation-lab.com",
+    "phone": "+66-2-123-4567",
+    "address": "123 ถนนสุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพฯ 10110"
+  }
+}

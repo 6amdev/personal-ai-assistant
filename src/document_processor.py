@@ -1,5 +1,6 @@
 """Document Processor - แยกข้อความจากเอกสาร"""
 import os
+import json
 from typing import List
 from pathlib import Path
 
@@ -19,7 +20,7 @@ except ImportError:
 class DocumentProcessor:
     """ประมวลผลเอกสารหลายประเภท"""
     
-    SUPPORTED_EXTENSIONS = ['.txt', '.pdf', '.docx', '.md']
+    SUPPORTED_EXTENSIONS = ['.txt', '.pdf', '.docx', '.md', '.json']  # เพิ่ม .json
     
     @staticmethod
     def process_file(file_path: str) -> List[str]:
@@ -44,6 +45,8 @@ class DocumentProcessor:
             return DocumentProcessor._process_pdf(file_path)
         elif extension == '.docx':
             return DocumentProcessor._process_docx(file_path)
+        elif extension == '.json':  # เพิ่ม JSON
+            return DocumentProcessor._process_json(file_path)
     
     @staticmethod
     def _process_txt(file_path: Path) -> List[str]:
@@ -51,7 +54,6 @@ class DocumentProcessor:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # แบ่งเป็น chunks (แต่ละ chunk ~500 ตัวอักษร)
         chunks = DocumentProcessor._split_text(content, chunk_size=500)
         return chunks
     
@@ -81,6 +83,68 @@ class DocumentProcessor:
         
         chunks = DocumentProcessor._split_text(text, chunk_size=500)
         return chunks
+    
+    @staticmethod
+    def _process_json(file_path: Path) -> List[str]:
+        """
+        อ่านไฟล์ JSON และแปลงเป็น text ที่อ่านง่าย
+        
+        Args:
+            file_path: Path to JSON file
+            
+        Returns:
+            List of text chunks
+        """
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # แปลง JSON เป็น text ที่อ่านง่าย
+            text = DocumentProcessor._json_to_text(data)
+            
+            # แบ่งเป็น chunks
+            chunks = DocumentProcessor._split_text(text, chunk_size=500)
+            return chunks
+            
+        except Exception as e:
+            print(f"Error reading JSON: {e}")
+            return []
+    
+    @staticmethod
+    def _json_to_text(data, indent=0) -> str:
+        """
+        แปลง JSON เป็น human-readable text
+        
+        Args:
+            data: JSON data (dict/list/primitive)
+            indent: ระดับการเยื้อง
+            
+        Returns:
+            Formatted text
+        """
+        text = []
+        prefix = "  " * indent
+        
+        if isinstance(data, dict):
+            for key, value in data.items():
+                if isinstance(value, (dict, list)):
+                    text.append(f"{prefix}{key}:")
+                    text.append(DocumentProcessor._json_to_text(value, indent + 1))
+                else:
+                    text.append(f"{prefix}{key}: {value}")
+        
+        elif isinstance(data, list):
+            for i, item in enumerate(data):
+                if isinstance(item, (dict, list)):
+                    text.append(f"{prefix}[{i}]:")
+                    text.append(DocumentProcessor._json_to_text(item, indent + 1))
+                else:
+                    text.append(f"{prefix}- {item}")
+        
+        else:
+            text.append(f"{prefix}{data}")
+        
+        return "\n".join(text)
     
     @staticmethod
     def _split_text(text: str, chunk_size: int = 500) -> List[str]:
@@ -128,24 +192,32 @@ class DocumentProcessor:
 
 # ทดสอบ
 if __name__ == "__main__":
-    # สร้างไฟล์ทดสอบ
-    test_file = "test.txt"
-    with open(test_file, 'w', encoding='utf-8') as f:
-        f.write("""
-        สวัสดีครับ! ผมชื่อ John Doe 
-        ผมเป็นนักพัฒนาซอฟต์แวร์
-        มีประสบการณ์ 5 ปี
-        เชี่ยวชาญ Python, JavaScript, และ AI
-        สนใจการพัฒนา AI applications
-        """)
+    # ทดสอบ TXT
+    test_txt = "test.txt"
+    with open(test_txt, 'w', encoding='utf-8') as f:
+        f.write("สวัสดีครับ! ผมชื่อ John Doe มีประสบการณ์ 5 ปี")
+    
+    # ทดสอบ JSON
+    test_json = "test.json"
+    with open(test_json, 'w', encoding='utf-8') as f:
+        json.dump({
+            "name": "John Doe",
+            "skills": ["Python", "AI"],
+            "experience": {"years": 5}
+        }, f, ensure_ascii=False, indent=2)
     
     processor = DocumentProcessor()
-    chunks = processor.process_file(test_file)
     
-    print(f"✅ พบ {len(chunks)} chunks:")
-    for i, chunk in enumerate(chunks, 1):
-        print(f"\nChunk {i}:")
-        print(chunk)
+    print("=== TXT ===")
+    txt_chunks = processor.process_file(test_txt)
+    print(f"Chunks: {len(txt_chunks)}")
+    print(txt_chunks[0])
     
-    # ลบไฟล์ทดสอบ
-    os.remove(test_file)
+    print("\n=== JSON ===")
+    json_chunks = processor.process_file(test_json)
+    print(f"Chunks: {len(json_chunks)}")
+    print(json_chunks[0])
+    
+    # ลบไฟล์
+    os.remove(test_txt)
+    os.remove(test_json)

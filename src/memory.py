@@ -6,21 +6,21 @@ import os
 
 # ปิด ChromaDB telemetry
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY"] = "False"  # เพิ่มบรรทัดนี้
 
 # เพิ่ม root folder เข้า path
 root_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(root_dir))
 
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 
 try:
-    from config import CHROMA_DB_DIR, COLLECTION_NAME, LLM_MODEL
+    from config import CHROMA_DB_DIR, COLLECTION_NAME
 except ImportError:
     CHROMA_DB_DIR = "./data/chroma_db"
     COLLECTION_NAME = "personal_assistant"
-    LLM_MODEL = "llama3.1:8b"
 
 
 class MemoryHandler:
@@ -28,9 +28,14 @@ class MemoryHandler:
         """Initialize memory systems"""
         print("💾 Initializing memory...")
         
-        # Embeddings - ใช้ nomic-embed-text (เร็วกว่า!)
-        ##self.embeddings = OllamaEmbeddings(model="nomic-embed-text")
-        self.embeddings = OllamaEmbeddings(model="llama3.1:8b")
+        # Embeddings - ใช้ Sentence Transformers (เร็วมาก!) ⚡
+        print("📦 Loading embedding model...")
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            model_kwargs={'device': 'cuda'},  # ใช้ GPU
+            encode_kwargs={'normalize_embeddings': True}
+        )
+        print("✅ Embedding model ready!")
         
         # Long-term memory (ChromaDB)
         self.vectorstore = Chroma(
@@ -48,15 +53,9 @@ class MemoryHandler:
         print("✅ Memory ready!")
     
     def add_documents(self, texts: List[str], metadatas: List[dict] = None):
-        """
-        Add documents to long-term memory (with batch processing)
-        
-        Args:
-            texts: List of text chunks
-            metadatas: Optional metadata for each chunk
-        """
+        """Add documents to long-term memory (with batch processing)"""
         total = len(texts)
-        batch_size = 20  # ประมวลผล 20 chunks ต่อครั้ง
+        batch_size = 20
         
         print(f"📚 Adding {total} chunks to memory...")
         
@@ -64,29 +63,17 @@ class MemoryHandler:
             batch_texts = texts[i:i+batch_size]
             batch_metas = metadatas[i:i+batch_size] if metadatas else None
             
-            # บันทึก batch นี้
             self.vectorstore.add_texts(texts=batch_texts, metadatas=batch_metas)
             
-            # แสดงความคืบหน้า
             processed = min(i+batch_size, total)
             print(f"   ✅ {processed}/{total} chunks")
         
         print(f"✅ Successfully added all {total} chunks!")
     
     def search(self, query: str, k: int = 3) -> List[Dict]:
-        """
-        Search similar documents
-        
-        Args:
-            query: Search query
-            k: Number of results
-            
-        Returns:
-            List of documents with metadata
-        """
+        """Search similar documents"""
         results = self.vectorstore.similarity_search_with_score(query, k=k)
         
-        # Format results
         formatted_results = []
         for doc, score in results:
             formatted_results.append({
@@ -98,16 +85,7 @@ class MemoryHandler:
         return formatted_results
     
     def get_context(self, query: str, k: int = 3) -> str:
-        """
-        Get context for query (formatted for LLM)
-        
-        Args:
-            query: User query
-            k: Number of documents to retrieve
-            
-        Returns:
-            Formatted context string
-        """
+        """Get context for query (formatted for LLM)"""
         results = self.search(query, k=k)
         
         if not results:
@@ -136,12 +114,7 @@ class MemoryHandler:
             return 0
     
     def get_all_sources(self) -> List[str]:
-        """
-        Get list of all unique document sources
-        
-        Returns:
-            List of source filenames
-        """
+        """Get list of all unique document sources"""
         try:
             collection = self.vectorstore._collection
             results = collection.get()
@@ -149,7 +122,6 @@ class MemoryHandler:
             if not results or 'metadatas' not in results:
                 return []
             
-            # Extract unique sources
             sources = set()
             for metadata in results['metadatas']:
                 if metadata and 'source' in metadata:
@@ -161,31 +133,19 @@ class MemoryHandler:
             return []
     
     def delete_by_source(self, source: str) -> int:
-        """
-        Delete all documents from a specific source
-        
-        Args:
-            source: Source filename to delete
-            
-        Returns:
-            Number of documents deleted
-        """
+        """Delete all documents from a specific source"""
         try:
             collection = self.vectorstore._collection
-            
-            # Get all documents
             results = collection.get()
             
             if not results or 'ids' not in results:
                 return 0
             
-            # Find IDs with matching source
             ids_to_delete = []
             for i, metadata in enumerate(results['metadatas']):
                 if metadata and metadata.get('source') == source:
                     ids_to_delete.append(results['ids'][i])
             
-            # Delete
             if ids_to_delete:
                 collection.delete(ids=ids_to_delete)
                 print(f"🗑️ Deleted {len(ids_to_delete)} chunks from {source}")
@@ -196,21 +156,12 @@ class MemoryHandler:
             return 0
     
     def clear_all_documents(self) -> bool:
-        """
-        Clear all documents from vector store
-        ใช้ API แทนการลบไฟล์
-        
-        Returns:
-            True if successful
-        """
+        """Clear all documents from vector store"""
         try:
             collection = self.vectorstore._collection
-            
-            # Get all IDs
             results = collection.get()
             
             if results and 'ids' in results and results['ids']:
-                # Delete all by IDs
                 collection.delete(ids=results['ids'])
                 print(f"🗑️ Deleted {len(results['ids'])} documents")
                 return True
@@ -221,35 +172,3 @@ class MemoryHandler:
         except Exception as e:
             print(f"Error clearing documents: {e}")
             return False
-
-
-# ทดสอบ
-if __name__ == "__main__":
-    print("Testing Memory Handler...")
-    memory = MemoryHandler()
-    
-    print("\n📝 Adding test documents...")
-    memory.add_documents([
-        "ผมชื่อ John Doe",
-        "ผมเป็นนักพัฒนาซอฟต์แวร์",
-        "มีประสบการณ์ 5 ปี",
-        "เชี่ยวชาญ Python และ AI"
-    ], metadatas=[
-        {'source': 'profile.txt'},
-        {'source': 'profile.txt'},
-        {'source': 'profile.txt'},
-        {'source': 'profile.txt'}
-    ])
-    
-    print(f"\n📊 Total documents: {memory.count_documents()}")
-    
-    print("\n🔍 Searching...")
-    query = "ประสบการณ์ทำงาน"
-    context = memory.get_context(query, k=2)
-    print(f"Query: {query}")
-    print(f"\nContext:\n{context}")
-    
-    print("\n📄 All sources:")
-    sources = memory.get_all_sources()
-    for source in sources:
-        print(f"  - {source}")

@@ -51,9 +51,9 @@ def show_sidebar(memory_handler):
         st.subheader("📤 Upload Documents")
         uploaded_files = st.file_uploader(
             "เลือกไฟล์",
-            type=['txt', 'pdf', 'docx', 'md'],
+            type=['txt', 'pdf', 'docx', 'md', 'json'],
             accept_multiple_files=True,
-            help="รองรับ: TXT, PDF, DOCX, MD"
+            help="รองรับ: TXT, PDF, DOCX, MD, JSON"
         )
         
         # Options

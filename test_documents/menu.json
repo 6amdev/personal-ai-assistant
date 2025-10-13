@@ -1,0 +1,69 @@
+{
+  "restaurant": "ร้านอาหารไทยแท้",
+  "menu": {
+    "appetizers": [
+      {
+        "name": "ปอเปี๊ยะทอด",
+        "price": 80,
+        "description": "ปอเปี๊ยะกรอบ ไส้ผัก เสิร์ฟพร้อมซอสหวาน",
+        "spicy": false,
+        "vegetarian": true
+      },
+      {
+        "name": "ทอดมันปลา",
+        "price": 120,
+        "description": "ปลากรายทอดกรอบ เสิร์ฟพร้อมน้ำจิ้ม",
+        "spicy": true,
+        "vegetarian": false
+      }
+    ],
+    "main_dishes": [
+      {
+        "name": "ผัดไทย",
+        "price": 150,
+        "description": "เส้นจันทร์ผัดกุ้งสด ถั่วงอก ไข่",
+        "spicy": false,
+        "vegetarian": false,
+        "popular": true
+      },
+      {
+        "name": "แกงเขียวหวานไก่",
+        "price": 180,
+        "description": "แกงเขียวหวานรสเข้มข้น พร้อมไก่และผัก",
+        "spicy": true,
+        "vegetarian": false,
+        "popular": true
+      },
+      {
+        "name": "ผัดผักรวมมิตร",
+        "price": 100,
+        "description": "ผักสด 8 ชนิด ผัดน้ำมันหอย",
+        "spicy": false,
+        "vegetarian": true
+      }
+    ],
+    "desserts": [
+      {
+        "name": "มะม่วงข้าวเหนียว",
+        "price": 120,
+        "description": "มะม่วงน้ำดอกไม้ กะทิข้าวเหนียว",
+        "seasonal": true
+      },
+      {
+        "name": "ทับทิมกรอบ",
+        "price": 80,
+        "description": "ขนมไทยโบราณ เสิร์ฟพร้อมน้ำแข็งใส",
+        "seasonal": false
+      }
+    ]
+  },
+  "opening_hours": {
+    "monday_friday": "11:00-22:00",
+    "weekend": "10:00-23:00"
+  },
+  "delivery": {
+    "available": true,
+    "min_order": 200,
+    "delivery_fee": 50
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "products": [
+    {
+      "id": "P001",
+      "name": "MacBook Pro M3",
+      "category": "Laptop",
+      "price": 89900,
+      "currency": "THB",
+      "specs": {
+        "cpu": "Apple M3 Pro",
+        "ram": "18 GB",
+        "storage": "512 GB SSD",
+        "display": "14.2 inch Liquid Retina XDR"
+      },
+      "stock": 15,
+      "rating": 4.8,
+      "reviews": 245
+    },
+    {
+      "id": "P002",
+      "name": "iPhone 15 Pro",
+      "category": "Smartphone",
+      "price": 42900,
+      "currency": "THB",
+      "specs": {
+        "chip": "A17 Pro",
+        "storage": "256 GB",
+        "camera": "48MP Main + 12MP Ultra Wide",
+        "display": "6.1 inch Super Retina XDR"
+      },
+      "stock": 42,
+      "rating": 4.7,
+      "reviews": 892
+    },
+    {
+      "id": "P003",
+      "name": "AirPods Pro (2nd Gen)",
+      "category": "Audio",
+      "price": 8990,
+      "currency": "THB",
+      "specs": {
+        "anc": true,
+        "battery": "6 hours (ANC on)",
+        "chip": "H2",
+        "case": "MagSafe Charging"
+      },
+      "stock": 128,
+      "rating": 4.9,
+      "reviews": 1523
+    }
+  ],
+  "store_info": {
+    "name": "Tech Store Thailand",
+    "location": "Bangkok",
+    "open_hours": "10:00-20:00",
+    "shipping": {
+      "free_shipping_over": 1000,
+      "delivery_time": "1-3 วันทำการ"
+    }
+  }
+}
