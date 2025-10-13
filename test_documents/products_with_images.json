@@ -1,0 +1,94 @@
+{
+  "store": "Tech Store Thailand",
+  "products": [
+    {
+      "id": "MB001",
+      "name": "MacBook Air M3 13-inch",
+      "category": "Laptop",
+      "price": 49900,
+      "currency": "THB",
+      "image_url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=904&hei=840&fmt=jpeg&qlt=90",
+      "image": "data/images/macbook-air-m3.jpg",
+      "specs": {
+        "chip": "Apple M3 (8-core CPU, 8-core GPU)",
+        "memory": "8 GB Unified Memory",
+        "storage": "256 GB SSD",
+        "display": "13.6-inch Liquid Retina",
+        "weight": "1.24 kg"
+      },
+      "colors": ["Midnight", "Starlight", "Silver", "Space Gray"],
+      "stock": 25,
+      "rating": 4.8,
+      "description": "MacBook Air รุ่นใหม่ล่าสุดที่มาพร้อม Apple M3 chip ทรงพลัง บางเบา และแบตเตอรี่ที่ใช้งานได้ยาวนาน"
+    },
+    {
+      "id": "MB002",
+      "name": "MacBook Pro M3 Pro 14-inch",
+      "category": "Laptop",
+      "price": 89900,
+      "currency": "THB",
+      "image_url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90",
+      "image": "data/images/macbook-pro-m3.jpg",
+      "specs": {
+        "chip": "Apple M3 Pro (11-core CPU, 14-core GPU)",
+        "memory": "18 GB Unified Memory",
+        "storage": "512 GB SSD",
+        "display": "14.2-inch Liquid Retina XDR",
+        "weight": "1.55 kg"
+      },
+      "colors": ["Space Black", "Silver"],
+      "stock": 15,
+      "rating": 4.9,
+      "description": "MacBook Pro สำหรับมืออาชีพ ประสิทธิภาพสูงสุดด้วย M3 Pro chip จอ XDR ที่สวยงามและสดใส"
+    },
+    {
+      "id": "IP001",
+      "name": "iPhone 15 Pro Max",
+      "category": "Smartphone",
+      "price": 48900,
+      "currency": "THB",
+      "image_url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+      "specs": {
+        "chip": "A17 Pro",
+        "display": "6.7-inch Super Retina XDR",
+        "camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
+        "storage": ["256GB", "512GB", "1TB"],
+        "material": "Titanium"
+      },
+      "colors": ["Natural Titanium", "Blue Titanium", "White Titanium", "Black Titanium"],
+      "stock": 42,
+      "rating": 4.8,
+      "description": "iPhone รุ่นท็อปพร้อมโครง Titanium กล้อง 48MP และ A17 Pro chip ที่ทรงพลังที่สุด"
+    },
+    {
+      "id": "AP001",
+      "name": "AirPods Pro (2nd generation)",
+      "category": "Audio",
+      "price": 8990,
+      "currency": "THB",
+      "image_url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MQD83?wid=1144&hei=1144&fmt=jpeg&qlt=90",
+      "specs": {
+        "chip": "Apple H2",
+        "anc": "Active Noise Cancellation",
+        "battery": "6 hours (ANC on), 30 hours with case",
+        "charging": "MagSafe, Lightning, Qi wireless"
+      },
+      "stock": 128,
+      "rating": 4.9,
+      "description": "หูฟังไร้สายระดับพรีเมียม พร้อม Active Noise Cancellation ที่ดีที่สุด"
+    }
+  ],
+  "promotions": [
+    {
+      "title": "Back to School",
+      "description": "ซื้อ Mac หรือ iPad รับฟรี AirPods",
+      "valid_until": "2025-03-31",
+      "image_url": "https://www.apple.com/v/back-to-school/home/images/overview.jpg"
+    }
+  ],
+  "shipping": {
+    "free_shipping_over": 1000,
+    "delivery_time": "1-3 วันทำการ",
+    "available_areas": ["กรุงเทพและปริมณฑล", "ทั่วประเทศไทย"]
+  }
+}

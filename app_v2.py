@@ -1,4 +1,4 @@
-"""Personal AI Assistant - Main App with RAG (Quick Fix)"""
+"""Personal AI Assistant - Main App with RAG"""
 import streamlit as st
 import tempfile
 import os
@@ -30,17 +30,8 @@ def main():
     
     show_header()
     
-    # Sidebar - รองรับทั้ง 4 และ 5 return values
-    sidebar_returns = show_sidebar(memory)
-    
-    if len(sidebar_returns) == 5:
-        # แบบใหม่ (มี debug_mode)
-        clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode = sidebar_returns
-        st.session_state.debug_mode = debug_mode
-    else:
-        # แบบเก่า (backward compatible)
-        clear_chat, clear_memory, uploaded_files, docs_to_delete = sidebar_returns
-        st.session_state.debug_mode = False
+    # Sidebar
+    clear_chat, clear_memory, uploaded_files, docs_to_delete = show_sidebar(memory)
     
     # Handle clear chat
     if clear_chat:
@@ -172,7 +163,6 @@ def process_uploaded_files(uploaded_files, memory):
             status_text.empty()
             detail_text.empty()
             st.error(f"❌ Error: {e}")
-
 
 if __name__ == "__main__":
     main()
