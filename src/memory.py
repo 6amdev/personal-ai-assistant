@@ -1,4 +1,4 @@
-"""Memory Handler - Alternative (No HuggingFace Hub Issues)"""
+"""Memory Handler - Fix Meta Tensor (Final)"""
 import sys
 from pathlib import Path
 from typing import List, Dict
@@ -6,8 +6,6 @@ import os
 import warnings
 
 warnings.filterwarnings('ignore')
-
-# ปิด ChromaDB telemetry
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
 os.environ["CHROMA_TELEMETRY"] = "False"
 
@@ -26,13 +24,7 @@ except ImportError:
 
 class MemoryHandler:
     def __init__(self, device: str = "cuda"):
-        """
-        Initialize memory systems
-        
-        Args:
-            device: "cuda", "cpu", "GPU", หรือ "CPU"
-        """
-        # แปลง GPU/CPU → cuda/cpu
+        """Initialize memory systems"""
         if device.upper() == "GPU":
             device = "cuda"
         elif device.upper() == "CPU":
@@ -43,45 +35,97 @@ class MemoryHandler:
         print(f"💾 Initializing memory with device: {device.upper()}")
         print("📦 Loading embedding model...")
         
-        # 🔥 วิธีใหม่: ใช้ sentence-transformers โดยตรง (ไม่ผ่าน LangChain)
+        # 🔥 FIX: โหลด sentence-transformers ด้วยวิธีที่แก้ meta tensor
         try:
             from sentence_transformers import SentenceTransformer
+            import torch
             
-            # โหลด model โดยตรง
+            # 🔥 วิธีที่ 1: โหลดก่อน แล้วค่อย move
+            print("   Method 1: Load on CPU first...")
             self.model = SentenceTransformer(
                 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2',
-                device=device
+                device='cpu'  # โหลดบน CPU ก่อน
             )
             
-            # สร้าง custom embeddings class
+            # ถ้าต้องการใช้ CUDA ค่อย move
+            if device == 'cuda' and torch.cuda.is_available():
+                print("   Moving model to CUDA...")
+                self.model = self.model.to(device)
+            
+            # เช็ค dimension
+            test_emb = self.model.encode("test")
+            actual_dim = len(test_emb)
+            print(f"✅ Embedding model loaded! Dimension: {actual_dim}")
+            
+            if actual_dim != 384:
+                raise Exception(f"Wrong dimension: {actual_dim}, expected 384")
+            
             self.embeddings = self._create_embeddings()
             
-            print(f"✅ Embedding model ready on {device.upper()}!")
-            
         except Exception as e:
-            print(f"❌ Error loading embedding model: {e}")
-            print("🔄 Trying fallback to Ollama embeddings...")
+            print(f"⚠️ Method 1 failed: {e}")
+            print("🔄 Trying Method 2...")
             
-            # Fallback: ใช้ Ollama embeddings
             try:
-                from langchain_community.embeddings import OllamaEmbeddings
-                from config import LLM_MODEL
+                # 🔥 วิธีที่ 2: ใช้ trust_remote_code และ local_files_only
+                from sentence_transformers import SentenceTransformer
                 
-                self.embeddings = OllamaEmbeddings(model=LLM_MODEL)
-                print(f"✅ Using Ollama embeddings: {LLM_MODEL}")
+                self.model = SentenceTransformer(
+                    'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2',
+                    device='cpu',
+                    trust_remote_code=True
+                )
+                
+                if device == 'cuda':
+                    import torch
+                    if torch.cuda.is_available():
+                        self.model = self.model.to(device)
+                
+                test_emb = self.model.encode("test")
+                actual_dim = len(test_emb)
+                print(f"✅ Embedding model loaded (Method 2)! Dimension: {actual_dim}")
+                
+                self.embeddings = self._create_embeddings()
                 
             except Exception as e2:
-                print(f"❌ Fallback also failed: {e2}")
-                raise Exception("Cannot initialize embeddings. Please check your setup.")
+                print(f"❌ Method 2 also failed: {e2}")
+                print("🔄 Trying Method 3 (Lightweight model)...")
+                
+                try:
+                    # 🔥 วิธีที่ 3: ใช้ model เบากว่า
+                    from sentence_transformers import SentenceTransformer
+                    
+                    print("   Using alternative model: all-MiniLM-L6-v2")
+                    self.model = SentenceTransformer(
+                        'all-MiniLM-L6-v2',  # เบากว่า แต่ไม่รองรับไทยเท่าไหร่
+                        device=device
+                    )
+                    
+                    test_emb = self.model.encode("test")
+                    actual_dim = len(test_emb)
+                    print(f"✅ Alternative model loaded! Dimension: {actual_dim}")
+                    
+                    self.embeddings = self._create_embeddings()
+                    
+                except Exception as e3:
+                    print(f"❌ All methods failed!")
+                    print(f"   Error: {e3}")
+                    raise Exception("Cannot load any embedding model. Check your PyTorch/Transformers versions.")
         
-        # Long-term memory (ChromaDB)
-        self.vectorstore = Chroma(
-            collection_name=COLLECTION_NAME,
-            embedding_function=self.embeddings,
-            persist_directory=CHROMA_DB_DIR
-        )
+        # ChromaDB
+        try:
+            self.vectorstore = Chroma(
+                collection_name=COLLECTION_NAME,
+                embedding_function=self.embeddings,
+                persist_directory=CHROMA_DB_DIR
+            )
+            print(f"✅ ChromaDB ready! Collection: {COLLECTION_NAME}")
+        except Exception as e:
+            print(f"⚠️ ChromaDB error: {e}")
+            print(f"💡 Try deleting: {CHROMA_DB_DIR}")
+            raise
         
-        # Short-term memory (Conversation)
+        # Conversation memory
         self.conversation_memory = ConversationBufferMemory(
             memory_key="chat_history",
             return_messages=True
@@ -98,7 +142,6 @@ class MemoryHandler:
                 self.model = model
             
             def embed_documents(self, texts: List[str]) -> List[List[float]]:
-                """Embed multiple documents"""
                 embeddings = self.model.encode(
                     texts,
                     normalize_embeddings=True,
@@ -108,7 +151,6 @@ class MemoryHandler:
                 return embeddings.tolist()
             
             def embed_query(self, text: str) -> List[float]:
-                """Embed single query"""
                 embedding = self.model.encode(
                     text,
                     normalize_embeddings=True,
@@ -119,7 +161,7 @@ class MemoryHandler:
         return CustomEmbeddings(model)
     
     def add_documents(self, texts: List[str], metadatas: List[dict] = None):
-        """Add documents to long-term memory (with batch processing)"""
+        """Add documents to long-term memory"""
         total = len(texts)
         batch_size = 20
         
@@ -151,7 +193,7 @@ class MemoryHandler:
         return formatted_results
     
     def get_context(self, query: str, k: int = 3) -> str:
-        """Get context for query (formatted for LLM)"""
+        """Get context for query"""
         results = self.search(query, k=k)
         
         if not results:
@@ -172,7 +214,7 @@ class MemoryHandler:
         print("🗑️ Cleared conversation")
     
     def count_documents(self) -> int:
-        """Count total documents in vector store"""
+        """Count total documents"""
         try:
             collection = self.vectorstore._collection
             return collection.count()
@@ -180,7 +222,7 @@ class MemoryHandler:
             return 0
     
     def get_all_sources(self) -> List[str]:
-        """Get list of all unique document sources"""
+        """Get all document sources"""
         try:
             collection = self.vectorstore._collection
             results = collection.get()
@@ -199,7 +241,7 @@ class MemoryHandler:
             return []
     
     def delete_by_source(self, source: str) -> int:
-        """Delete all documents from a specific source"""
+        """Delete documents by source"""
         try:
             collection = self.vectorstore._collection
             results = collection.get()
@@ -222,7 +264,7 @@ class MemoryHandler:
             return 0
     
     def clear_all_documents(self) -> bool:
-        """Clear all documents from vector store"""
+        """Clear all documents"""
         try:
             collection = self.vectorstore._collection
             results = collection.get()
@@ -234,7 +276,6 @@ class MemoryHandler:
             else:
                 print("ℹ️ No documents to delete")
                 return True
-                
         except Exception as e:
             print(f"Error clearing documents: {e}")
             return False
