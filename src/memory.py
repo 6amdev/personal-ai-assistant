@@ -1,19 +1,20 @@
-"""Memory Handler - จัดการความจำ"""
+"""Memory Handler - Alternative (No HuggingFace Hub Issues)"""
 import sys
 from pathlib import Path
 from typing import List, Dict
 import os
+import warnings
+
+warnings.filterwarnings('ignore')
 
 # ปิด ChromaDB telemetry
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
-os.environ["CHROMA_TELEMETRY"] = "False"  # เพิ่มบรรทัดนี้
+os.environ["CHROMA_TELEMETRY"] = "False"
 
-# เพิ่ม root folder เข้า path
 root_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(root_dir))
 
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 
 try:
@@ -24,18 +25,54 @@ except ImportError:
 
 
 class MemoryHandler:
-    def __init__(self):
-        """Initialize memory systems"""
-        print("💾 Initializing memory...")
+    def __init__(self, device: str = "cuda"):
+        """
+        Initialize memory systems
         
-        # Embeddings - ใช้ Sentence Transformers (เร็วมาก!) ⚡
+        Args:
+            device: "cuda", "cpu", "GPU", หรือ "CPU"
+        """
+        # แปลง GPU/CPU → cuda/cpu
+        if device.upper() == "GPU":
+            device = "cuda"
+        elif device.upper() == "CPU":
+            device = "cpu"
+        
+        device = device.lower()
+        
+        print(f"💾 Initializing memory with device: {device.upper()}")
         print("📦 Loading embedding model...")
-        self.embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-            model_kwargs={'device': 'cuda'},  # ใช้ GPU
-            encode_kwargs={'normalize_embeddings': True}
-        )
-        print("✅ Embedding model ready!")
+        
+        # 🔥 วิธีใหม่: ใช้ sentence-transformers โดยตรง (ไม่ผ่าน LangChain)
+        try:
+            from sentence_transformers import SentenceTransformer
+            
+            # โหลด model โดยตรง
+            self.model = SentenceTransformer(
+                'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2',
+                device=device
+            )
+            
+            # สร้าง custom embeddings class
+            self.embeddings = self._create_embeddings()
+            
+            print(f"✅ Embedding model ready on {device.upper()}!")
+            
+        except Exception as e:
+            print(f"❌ Error loading embedding model: {e}")
+            print("🔄 Trying fallback to Ollama embeddings...")
+            
+            # Fallback: ใช้ Ollama embeddings
+            try:
+                from langchain_community.embeddings import OllamaEmbeddings
+                from config import LLM_MODEL
+                
+                self.embeddings = OllamaEmbeddings(model=LLM_MODEL)
+                print(f"✅ Using Ollama embeddings: {LLM_MODEL}")
+                
+            except Exception as e2:
+                print(f"❌ Fallback also failed: {e2}")
+                raise Exception("Cannot initialize embeddings. Please check your setup.")
         
         # Long-term memory (ChromaDB)
         self.vectorstore = Chroma(
@@ -51,6 +88,35 @@ class MemoryHandler:
         )
         
         print("✅ Memory ready!")
+    
+    def _create_embeddings(self):
+        """สร้าง custom embeddings class"""
+        model = self.model
+        
+        class CustomEmbeddings:
+            def __init__(self, model):
+                self.model = model
+            
+            def embed_documents(self, texts: List[str]) -> List[List[float]]:
+                """Embed multiple documents"""
+                embeddings = self.model.encode(
+                    texts,
+                    normalize_embeddings=True,
+                    show_progress_bar=False,
+                    convert_to_numpy=True
+                )
+                return embeddings.tolist()
+            
+            def embed_query(self, text: str) -> List[float]:
+                """Embed single query"""
+                embedding = self.model.encode(
+                    text,
+                    normalize_embeddings=True,
+                    convert_to_numpy=True
+                )
+                return embedding.tolist()
+        
+        return CustomEmbeddings(model)
     
     def add_documents(self, texts: List[str], metadatas: List[dict] = None):
         """Add documents to long-term memory (with batch processing)"""
@@ -172,3 +238,23 @@ class MemoryHandler:
         except Exception as e:
             print(f"Error clearing documents: {e}")
             return False
+
+
+if __name__ == "__main__":
+    print("Testing Memory Handler...")
+    
+    # Test CUDA
+    print("\n=== Test CUDA ===")
+    try:
+        mem_cuda = MemoryHandler(device="cuda")
+        print("✅ CUDA works!")
+    except Exception as e:
+        print(f"❌ CUDA failed: {e}")
+    
+    # Test CPU
+    print("\n=== Test CPU ===")
+    try:
+        mem_cpu = MemoryHandler(device="cpu")
+        print("✅ CPU works!")
+    except Exception as e:
+        print(f"❌ CPU failed: {e}")

@@ -1,8 +1,8 @@
-"""LLM Handler"""
+"""LLM Handler - With Device Support"""
 import sys
+import os
 from pathlib import Path
 
-# เพิ่ม root folder เข้า path
 root_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(root_dir))
 
@@ -23,16 +23,30 @@ except ImportError:
 
 
 class LLMHandler:
-    def __init__(self, model_name: str = None):
+    def __init__(self, model_name: str = None, device: str = "GPU"):
         """
         Initialize LLM Handler
         
         Args:
             model_name: ชื่อ model (ถ้าไม่ระบุจะใช้จาก config)
+            device: "GPU" หรือ "CPU"
         """
         self.model_name = model_name or LLM_MODEL
+        self.device = device.upper()
         
         print(f"🤖 Initializing LLM: {self.model_name}")
+        print(f"   Device: {self.device}")
+        
+        # 🔥 Ollama ใช้ GPU โดย default
+        # ถ้าต้องการบังคับใช้ CPU ให้ตั้ง env var
+        if self.device == "CPU":
+            os.environ['OLLAMA_NUM_GPU'] = '0'
+            print("   ⚠️ LLM will use CPU only")
+        else:
+            # ใช้ GPU (ลบ env var ถ้ามี)
+            if 'OLLAMA_NUM_GPU' in os.environ:
+                del os.environ['OLLAMA_NUM_GPU']
+            print("   ✅ LLM will use GPU")
         
         try:
             self.llm = Ollama(
@@ -40,7 +54,7 @@ class LLMHandler:
                 temperature=LLM_TEMPERATURE,
                 system=SYSTEM_PROMPT
             )
-            print(f"✅ LLM ready: {self.model_name}")
+            print(f"✅ LLM ready: {self.model_name} on {self.device}")
         except Exception as e:
             print(f"❌ Error initializing LLM: {e}")
             raise
@@ -59,16 +73,17 @@ class LLMHandler:
 
 if __name__ == "__main__":
     print("Testing LLM Handler...")
-    llm = LLMHandler()
-    print(f"✅ Model: {llm.get_model_name()}")
     
-    # ทดสอบภาษาไทย
-    print("\n📝 ทดสอบ 1:")
-    response = llm.generate("1+1=?")
-    print(f"Q: 1+1=?")
-    print(f"A: {response}")
+    # Test GPU
+    print("\n=== Test GPU ===")
+    llm_gpu = LLMHandler(device="GPU")
+    print(f"✅ Model: {llm_gpu.get_model_name()}")
+    response = llm_gpu.generate("1+1=?")
+    print(f"Response: {response[:100]}")
     
-    print("\n📝 ทดสอบ 2:")
-    response2 = llm.generate("AI คืออะไร")
-    print(f"Q: AI คืออะไร")
-    print(f"A: {response2}")
+    # Test CPU
+    print("\n=== Test CPU ===")
+    llm_cpu = LLMHandler(device="CPU")
+    print(f"✅ Model: {llm_cpu.get_model_name()}")
+    response2 = llm_cpu.generate("สวัสดี")
+    print(f"Response: {response2[:100]}")

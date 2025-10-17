@@ -158,6 +158,109 @@ def show_sidebar(memory_handler):
                 st.info("ไม่สามารถดึงข้อมูล model ได้")
 
         st.markdown("---")
+        
+        # 🆕 Processing Device Selector (ง่ายๆ)
+        st.subheader("⚡ Processing Device")
+        
+        # เช็คว่ามี CUDA หรือไม่
+        try:
+            import torch
+            has_cuda = torch.cuda.is_available()
+            
+            if has_cuda:
+                cuda_name = torch.cuda.get_device_name(0)
+                st.success(f"✅ GPU: {cuda_name}")
+            else:
+                st.warning("⚠️ GPU ไม่พร้อมใช้งาน")
+        except ImportError:
+            has_cuda = False
+            st.warning("⚠️ PyTorch ไม่พร้อมใช้งาน")
+        
+        # เก็บ current device ใน session state
+        if 'processing_device' not in st.session_state:
+            st.session_state.processing_device = "GPU" if has_cuda else "CPU"
+        
+        # Radio button แบบง่าย
+        device_options = ["GPU (เร็ว)", "CPU (ประหยัด)"] if has_cuda else ["CPU (ประหยัด)"]
+        device_labels = {
+            "GPU (เร็ว)": "GPU",
+            "CPU (ประหยัด)": "CPU"
+        }
+        
+        # หา index ปัจจุบัน
+        current_label = f"{st.session_state.processing_device} ({'เร็ว' if st.session_state.processing_device == 'GPU' else 'ประหยัด'})"
+        current_index = 0
+        for i, opt in enumerate(device_options):
+            if device_labels[opt] == st.session_state.processing_device:
+                current_index = i
+                break
+        
+        selected_device_label = st.radio(
+            "เลือก Device",
+            device_options,
+            index=current_index,
+            help="""
+            GPU (เร็ว) = ใช้ GPU ทั้ง LLM และ Embedding - เร็วสุด! ⚡
+            CPU (ประหยัด) = ใช้ CPU ทั้งหมด - ช้ากว่า แต่ประหยัด VRAM
+            """
+        )
+        
+        selected_device = device_labels[selected_device_label]
+        
+        # แสดงข้อมูลเพิ่มเติม
+        if selected_device == "GPU":
+            st.info("💡 ใช้ GPU ทั้ง LLM และ Embedding")
+        else:
+            st.info("💡 ใช้ CPU ทั้ง LLM และ Embedding")
+        
+        # เช็คว่ามีการเปลี่ยน device หรือไม่
+        if selected_device != st.session_state.processing_device:
+            st.session_state.processing_device = selected_device
+            st.session_state.device_changed = True
+            st.success(f"✅ เปลี่ยนเป็น {selected_device}")
+            st.info("🔄 กำลังโหลดใหม่...")
+
+        st.markdown("---")
+        
+        # 🆕 Embedding Device Selector
+        st.subheader("⚙️ Embedding Device")
+        
+        # เช็คว่ามี CUDA หรือไม่
+        import torch
+        has_cuda = torch.cuda.is_available()
+        
+        if has_cuda:
+            cuda_name = torch.cuda.get_device_name(0)
+            st.success(f"✅ GPU Available: {cuda_name}")
+            
+            device_options = ["cuda", "cpu"]
+            device_help = """
+            cuda = ใช้ GPU (เร็วกว่า 5-10x) ⚡
+            cpu = ใช้ CPU (ช้ากว่า แต่ทำงานได้ทุกเครื่อง)
+            """
+        else:
+            st.warning("⚠️ No GPU detected")
+            device_options = ["cpu"]
+            device_help = "GPU ไม่พร้อมใช้งาน จะใช้ CPU เท่านั้น"
+        
+        # เก็บ current device ใน session state
+        if 'embedding_device' not in st.session_state:
+            st.session_state.embedding_device = "cuda" if has_cuda else "cpu"
+        
+        selected_device = st.radio(
+            "เลือก Device สำหรับ Embeddings",
+            device_options,
+            index=device_options.index(st.session_state.embedding_device),
+            help=device_help
+        )
+        
+        # เช็คว่ามีการเปลี่ยน device หรือไม่
+        if selected_device != st.session_state.embedding_device:
+            st.session_state.embedding_device = selected_device
+            st.session_state.device_changed = True
+            st.info(f"🔄 เปลี่ยนเป็น {selected_device.upper()}")
+
+        st.markdown("---")
 
         # 🆕 RAG Type Selector
         st.subheader("🔍 RAG Type")
@@ -242,7 +345,7 @@ def show_sidebar(memory_handler):
         [GitHub](https://github.com/6amdev/personal-ai-assistant)
         """)
         
-        return clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type, selected_model
+        return clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type, selected_model, selected_device, selected_device
 
 
 def chat_interface(llm_handler, memory_handler, rag_system=None):

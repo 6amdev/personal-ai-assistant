@@ -6,9 +6,13 @@ ollama==0.1.6
 # Vector Database
 chromadb==0.4.22
 
-# Embeddings
-sentence-transformers>=2.2.2
+# 🔥 Embeddings - Compatible Versions
+sentence-transformers>=2.3.0  # ใช้เวอร์ชันใหม่
+transformers>=4.36.0
 torch>=2.0.0
+huggingface-hub>=0.20.0  # 🔥 ต้องเป็นเวอร์ชันใหม่
+tokenizers>=0.15.0
+safetensors>=0.4.0
 
 # UI
 streamlit==1.29.0
@@ -25,5 +29,10 @@ unstructured==0.11.2
 Pillow>=10.0.0
 requests>=2.31.0
 
-# RAG (optional)
-rank-bm25>=0.2.2  # สำหรับ Hybrid RAG
+# BM25 (optional - สำหรับ Hybrid RAG)
+rank-bm25>=0.2.2
+
+# Additional dependencies
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.3.0

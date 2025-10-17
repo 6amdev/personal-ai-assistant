@@ -1,4 +1,4 @@
-"""Personal AI Assistant - Main App with Multi-Model Support"""
+"""Personal AI Assistant - Main App (Final Fix)"""
 import streamlit as st
 import tempfile
 import os
@@ -17,80 +17,122 @@ from src.rag import (
     MultiStepRAG
 )
 
-def main():
-    setup_page()
-    
-    # Initialize session state
-    if 'selected_model' not in st.session_state:
+def init_session_state():
+    """Initialize all session state variables ONCE"""
+    if 'app_initialized' not in st.session_state:
         from config import LLM_MODEL
+        import torch
+        
         st.session_state.selected_model = LLM_MODEL
+        st.session_state.processing_device = "GPU" if torch.cuda.is_available() else "CPU"
+        st.session_state.embedding_device = "cuda" if torch.cuda.is_available() else "cpu"
+        st.session_state.app_initialized = True
+        st.session_state.components_loaded = False
+        
+        print("🔧 Session state initialized")
+
+
+def load_components():
+    """Load LLM and Memory components"""
+    if st.session_state.components_loaded:
+        return st.session_state.llm, st.session_state.memory
     
-    if 'model_changed' not in st.session_state:
-        st.session_state.model_changed = False
-    
-    # เช็คว่ามีการเปลี่ยน model หรือไม่
-    if st.session_state.get('model_changed', False):
-        st.cache_resource.clear()
-        st.session_state.model_changed = False
-        # ล้าง RAG system ด้วย
-        if 'rag_system' in st.session_state:
-            del st.session_state.rag_system
-        if 'current_rag_type' in st.session_state:
-            del st.session_state.current_rag_type
-    
-    @st.cache_resource
-    def init_components(selected_model):
-        """Initialize LLM and Memory"""
-        print(f"🔄 Initializing with model: {selected_model}")
-        llm = LLMHandler(model_name=selected_model)
-        memory = MemoryHandler()
-        return llm, memory
-    
-    # Get selected model from session state
     selected_model = st.session_state.selected_model
+    llm_device = st.session_state.processing_device
+    embedding_device = st.session_state.embedding_device
+    
+    print(f"🔄 Initializing...")
+    print(f"   Model: {selected_model}")
+    print(f"   LLM Device: {llm_device}")
+    print(f"   Embedding Device: {embedding_device}")
     
     try:
-        llm, memory = init_components(selected_model)
+        llm = LLMHandler(model_name=selected_model, device=llm_device)
+        memory = MemoryHandler(device=embedding_device)
+        
+        st.session_state.llm = llm
+        st.session_state.memory = memory
+        st.session_state.components_loaded = True
+        
+        print("✅ Components initialized!")
+        return llm, memory
+        
     except Exception as e:
         st.error(f"❌ เกิดข้อผิดพลาด: {str(e)}")
         st.info("💡 ตรวจสอบว่า Ollama กำลังทำงานอยู่!")
         st.code("ollama list", language="bash")
         st.stop()
+
+
+def main():
+    setup_page()
+    
+    # Initialize session state
+    init_session_state()
+    
+    # Load components
+    with st.spinner("🔄 Loading AI components..."):
+        llm, memory = load_components()
     
     show_header()
     
-    # Sidebar - รับทุก parameter
+    # 🔥 Sidebar - รับค่ากลับมา แต่ไม่ทำอะไร
     sidebar_returns = show_sidebar(memory)
     
-    # Unpack returns (รองรับ 6 และ 7 return values)
-    if len(sidebar_returns) == 7:  # 🆕 มี selected_model
-        clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type, new_selected_model = sidebar_returns
-    elif len(sidebar_returns) == 6:
-        clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type = sidebar_returns
-        from config import LLM_MODEL
-        new_selected_model = LLM_MODEL
-    elif len(sidebar_returns) == 5:
-        clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode = sidebar_returns
-        rag_type = "Naive RAG"
-        from config import LLM_MODEL
-        new_selected_model = LLM_MODEL
+    # Unpack returns
+    if len(sidebar_returns) >= 6:
+        if len(sidebar_returns) == 9:
+            clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type, new_model, new_llm_dev, new_emb_dev = sidebar_returns
+        elif len(sidebar_returns) == 6:
+            clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type = sidebar_returns
+            new_model = st.session_state.selected_model
+            new_llm_dev = st.session_state.processing_device
+            new_emb_dev = st.session_state.embedding_device
+        else:
+            st.error(f"⚠️ Unexpected sidebar returns: {len(sidebar_returns)}")
+            st.stop()
     else:
-        clear_chat, clear_memory, uploaded_files, docs_to_delete = sidebar_returns
-        debug_mode = False
-        rag_type = "Naive RAG"
-        from config import LLM_MODEL
-        new_selected_model = LLM_MODEL
-    
-    # Update selected model if changed
-    if new_selected_model != st.session_state.selected_model:
-        st.session_state.selected_model = new_selected_model
-        st.session_state.model_changed = True
-        st.rerun()
+        st.error(f"⚠️ Sidebar return {len(sidebar_returns)} values")
+        st.stop()
     
     st.session_state.debug_mode = debug_mode
     
-    # 🆕 สร้าง RAG system ตาม type ที่เลือก
-    # ถ้า model เปลี่ยน หรือ RAG type เปลี่ยน ให้สร้างใหม่
+    # 🔥 เช็คการเปลี่ยนแปลง settings (แต่ไม่ rerun ทันที)
+    settings_changed = False
+    change_message = []
+    
+    if new_model != st.session_state.selected_model:
+        st.session_state.selected_model = new_model
+        st.session_state.components_loaded = False
+        settings_changed = True
+        change_message.append(f"Model: {new_model}")
+    
+    if new_llm_dev != st.session_state.processing_device:
+        st.session_state.processing_device = new_llm_dev
+        st.session_state.components_loaded = False
+        settings_changed = True
+        change_message.append(f"LLM Device: {new_llm_dev}")
+    
+    if new_emb_dev != st.session_state.embedding_device:
+        st.session_state.embedding_device = new_emb_dev
+        st.session_state.components_loaded = False
+        settings_changed = True
+        change_message.append(f"Embedding Device: {new_emb_dev}")
+    
+    # ถ้ามีการเปลี่ยนแปลง แสดงข้อความและรอ user action
+    if settings_changed:
+        st.sidebar.warning("⚠️ Settings changed:")
+        for msg in change_message:
+            st.sidebar.info(f"• {msg}")
+        
+        if st.sidebar.button("🔄 Apply Changes", type="primary"):
+            st.rerun()
+        else:
+            st.sidebar.info("👆 Click to apply")
+            # ใช้ค่าเดิมต่อไป
+            llm, memory = load_components()
+    
+    # สร้าง RAG system
     if "current_rag_type" not in st.session_state or st.session_state.current_rag_type != rag_type:
         st.session_state.current_rag_type = rag_type
         
@@ -106,8 +148,6 @@ def main():
             st.session_state.rag_system = QueryRewriteRAG(llm, memory)
         elif rag_type == "Multi-step RAG":
             st.session_state.rag_system = MultiStepRAG(llm, memory)
-        
-        st.sidebar.success(f"✅ ใช้ {rag_type}")
     
     rag = st.session_state.rag_system
     
@@ -131,7 +171,6 @@ def main():
             
             if success:
                 st.success("✅ ลบเอกสารทั้งหมดแล้ว!")
-                st.cache_resource.clear()
                 st.rerun()
             else:
                 st.error("❌ เกิดข้อผิดพลาดในการลบเอกสาร")
@@ -140,14 +179,14 @@ def main():
     if uploaded_files:
         process_uploaded_files(uploaded_files, memory)
     
-    # 🔥 Main chat - ส่ง rag ไปด้วย!
+    # Main chat
     chat_interface(llm, memory, rag_system=rag)
     
-    # Footer with model name
+    # Footer
     st.markdown("---")
     st.markdown(f"""
     <div style='text-align: center; color: #666;'>
-        Made with ❤️ using <strong>{selected_model}</strong> • Ollama • LangChain • Streamlit
+        Made with ❤️ using <strong>{st.session_state.selected_model}</strong> ({st.session_state.processing_device}) • Embeddings ({st.session_state.embedding_device.upper()})
     </div>
     """, unsafe_allow_html=True)
 
@@ -155,7 +194,7 @@ def main():
 def process_uploaded_files(uploaded_files, memory):
     """Process and store uploaded files with detailed progress"""
     
-    # ป้องกันการประมวลผลซ้ำ 🔥
+    # ป้องกันการประมวลผลซ้ำ
     file_ids = [f.file_id for f in uploaded_files]
     processed_key = "processed_files"
     
@@ -234,7 +273,6 @@ def process_uploaded_files(uploaded_files, memory):
             st.info(f"⏱️ ใช้เวลา: {elapsed:.1f} วินาที (~{elapsed/total_chunks:.2f}s/chunk)")
             st.balloons()
             
-            # ไม่ rerun! แค่รีเฟรช sidebar 🔥
             st.rerun()
             
         except Exception as e:
