@@ -1,4 +1,4 @@
-"""Personal AI Assistant - Main App with Multi-Model Support"""
+"""Personal AI Assistant - Main App with RAG (Quick Fix)"""
 import streamlit as st
 import tempfile
 import os
@@ -20,37 +20,15 @@ from src.rag import (
 def main():
     setup_page()
     
-    # Initialize session state
-    if 'selected_model' not in st.session_state:
-        from config import LLM_MODEL
-        st.session_state.selected_model = LLM_MODEL
-    
-    if 'model_changed' not in st.session_state:
-        st.session_state.model_changed = False
-    
-    # เช็คว่ามีการเปลี่ยน model หรือไม่
-    if st.session_state.get('model_changed', False):
-        st.cache_resource.clear()
-        st.session_state.model_changed = False
-        # ล้าง RAG system ด้วย
-        if 'rag_system' in st.session_state:
-            del st.session_state.rag_system
-        if 'current_rag_type' in st.session_state:
-            del st.session_state.current_rag_type
-    
     @st.cache_resource
-    def init_components(selected_model):
+    def init_components():
         """Initialize LLM and Memory"""
-        print(f"🔄 Initializing with model: {selected_model}")
-        llm = LLMHandler(model_name=selected_model)
+        llm = LLMHandler()
         memory = MemoryHandler()
         return llm, memory
     
-    # Get selected model from session state
-    selected_model = st.session_state.selected_model
-    
     try:
-        llm, memory = init_components(selected_model)
+        llm, memory = init_components()
     except Exception as e:
         st.error(f"❌ เกิดข้อผิดพลาด: {str(e)}")
         st.info("💡 ตรวจสอบว่า Ollama กำลังทำงานอยู่!")
@@ -59,38 +37,23 @@ def main():
     
     show_header()
     
-    # Sidebar - รับทุก parameter
+    # ⚠️ ต้องเรียก sidebar ก่อน เพื่อรับ rag_type
+    # Sidebar - รองรับ 5 และ 6 return values
     sidebar_returns = show_sidebar(memory)
     
-    # Unpack returns (รองรับ 6 และ 7 return values)
-    if len(sidebar_returns) == 7:  # 🆕 มี selected_model
-        clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type, new_selected_model = sidebar_returns
-    elif len(sidebar_returns) == 6:
+    if len(sidebar_returns) == 6:  # 🆕 มี rag_type
         clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type = sidebar_returns
-        from config import LLM_MODEL
-        new_selected_model = LLM_MODEL
     elif len(sidebar_returns) == 5:
         clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode = sidebar_returns
-        rag_type = "Naive RAG"
-        from config import LLM_MODEL
-        new_selected_model = LLM_MODEL
+        rag_type = "Naive RAG"  # default
     else:
         clear_chat, clear_memory, uploaded_files, docs_to_delete = sidebar_returns
-        debug_mode = False
+        st.session_state.debug_mode = False
         rag_type = "Naive RAG"
-        from config import LLM_MODEL
-        new_selected_model = LLM_MODEL
-    
-    # Update selected model if changed
-    if new_selected_model != st.session_state.selected_model:
-        st.session_state.selected_model = new_selected_model
-        st.session_state.model_changed = True
-        st.rerun()
     
     st.session_state.debug_mode = debug_mode
     
     # 🆕 สร้าง RAG system ตาม type ที่เลือก
-    # ถ้า model เปลี่ยน หรือ RAG type เปลี่ยน ให้สร้างใหม่
     if "current_rag_type" not in st.session_state or st.session_state.current_rag_type != rag_type:
         st.session_state.current_rag_type = rag_type
         
@@ -143,11 +106,10 @@ def main():
     # 🔥 Main chat - ส่ง rag ไปด้วย!
     chat_interface(llm, memory, rag_system=rag)
     
-    # Footer with model name
     st.markdown("---")
-    st.markdown(f"""
+    st.markdown("""
     <div style='text-align: center; color: #666;'>
-        Made with ❤️ using <strong>{selected_model}</strong> • Ollama • LangChain • Streamlit
+        Made with ❤️ using Ollama, LangChain & Streamlit
     </div>
     """, unsafe_allow_html=True)
 

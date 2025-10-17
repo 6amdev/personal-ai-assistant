@@ -1,6 +1,5 @@
-"""UI Components - With Model Selector & Multi-RAG Support"""
+"""UI Components - Final Version with Inline Images"""
 import streamlit as st
-import subprocess
 import json
 import base64
 from pathlib import Path
@@ -22,145 +21,13 @@ def show_header():
     st.markdown("---")
 
 
-def get_available_models() -> list:
-    """
-    ดึงรายการ LLM models (กรอง Embedding models ออก)
-    
-    Returns:
-        List ของชื่อ LLM model
-    """
-    try:
-        result = subprocess.run(
-            ['ollama', 'list'],
-            capture_output=True,
-            text=True,
-            timeout=5
-        )
-        
-        if result.returncode == 0:
-            lines = result.stdout.strip().split('\n')[1:]  # ข้าม header
-            models = []
-            
-            # Blacklist embedding models
-            embedding_keywords = [
-                'embed',
-                'embedding',
-                'nomic-embed',
-                'bge-',
-                'e5-',
-                'gte-'
-            ]
-            
-            for line in lines:
-                if line.strip():
-                    parts = line.split()
-                    if parts:
-                        model_name = parts[0]
-                        
-                        # กรอง embedding models ออก
-                        is_embedding = any(keyword in model_name.lower() for keyword in embedding_keywords)
-                        
-                        if not is_embedding:
-                            models.append(model_name)
-            
-            return models if models else [LLM_MODEL]
-        else:
-            return [LLM_MODEL]
-            
-    except Exception as e:
-        print(f"⚠️ Error getting models: {e}")
-        return [LLM_MODEL]
-
-
-def get_model_info(model_name: str) -> dict:
-    """
-    ดึงข้อมูล model จาก Ollama
-    
-    Args:
-        model_name: ชื่อ model
-        
-    Returns:
-        Dict ข้อมูล model
-    """
-    try:
-        result = subprocess.run(
-            ['ollama', 'show', model_name],
-            capture_output=True,
-            text=True,
-            timeout=5
-        )
-        
-        if result.returncode == 0:
-            info = {}
-            lines = result.stdout.split('\n')
-            
-            for line in lines:
-                if ':' in line and not line.strip().startswith('#'):
-                    parts = line.split(':', 1)
-                    if len(parts) == 2:
-                        key = parts[0].strip()
-                        value = parts[1].strip()
-                        if key and value:
-                            info[key] = value
-            
-            return info if info else {"status": "Model info available"}
-        else:
-            return {"error": "Cannot get model info"}
-            
-    except Exception as e:
-        return {"error": str(e)}
-
-
 def show_sidebar(memory_handler):
     """Show sidebar with document management"""
     with st.sidebar:
         st.header("⚙️ Settings")
 
-        # 🆕 Model Selector
-        st.subheader("🤖 LLM Model")
-        
-        # ดึงรายการ models
-        available_models = get_available_models()
-        
-        # เก็บ current model ใน session state
-        if 'selected_model' not in st.session_state:
-            st.session_state.selected_model = LLM_MODEL
-        
-        current_model = st.session_state.selected_model
-        
-        # หา index ของ current model
-        try:
-            current_index = available_models.index(current_model)
-        except ValueError:
-            current_index = 0
-            st.session_state.selected_model = available_models[0] if available_models else LLM_MODEL
-        
-        selected_model = st.selectbox(
-            "เลือก Model",
-            available_models,
-            index=current_index,
-            help="Model ที่จะใช้ในการตอบคำถาม"
-        )
-        
-        # เช็คว่ามีการเปลี่ยน model หรือไม่
-        if selected_model != st.session_state.selected_model:
-            st.session_state.selected_model = selected_model
-            st.session_state.model_changed = True
-            st.success(f"✅ เปลี่ยนเป็น {selected_model}")
-            st.info("🔄 กำลังโหลด model ใหม่...")
-        
-        # แสดงข้อมูล model
-        with st.expander("ℹ️ Model Info"):
-            model_info = get_model_info(selected_model)
-            if model_info:
-                st.json(model_info)
-            else:
-                st.info("ไม่สามารถดึงข้อมูล model ได้")
-
-        st.markdown("---")
-
         # 🆕 RAG Type Selector
-        st.subheader("🔍 RAG Type")
+        st.subheader("🤖 RAG Type")
         rag_type = st.selectbox(
             "เลือกแบบ RAG",
             [
@@ -181,7 +48,9 @@ def show_sidebar(memory_handler):
             """
         )
         
-        st.markdown("---")
+        # Model info
+        st.subheader("🤖 Model")
+        st.info(f"Using: {LLM_MODEL}")
         
         # Document stats
         st.subheader("📚 Knowledge Base")
@@ -216,33 +85,31 @@ def show_sidebar(memory_handler):
         )
         
         # Options
-        st.subheader("🛠️ Options")
+        st.subheader("📝 Options")
         
         # Debug Mode Toggle
         debug_mode = st.checkbox("🔍 Debug Mode", value=False, help="แสดงข้อมูล debug")
         
         clear_chat = st.button("🗑️ Clear Chat")
-        clear_memory = st.button(
-            "🗑️ Clear All Documents", 
-            help="ลบเอกสารทั้งหมด",
-            type="secondary"
-        )
+        clear_memory = st.button("🗑️ Clear All Documents", 
+                                help="ลบเอกสารทั้งหมด",
+                                type="secondary")
         
         # About
         st.markdown("---")
         st.markdown("""
         **Personal AI Assistant**
         
-        - 🤖 Multi-Model Support
+        - 🤖 Local LLM (Ollama)
         - 💾 Persistent Memory
-        - 📚 Advanced RAG
+        - 📚 RAG Support
         - 🖼️ Image Support
         - 🔒 100% Private
         
         [GitHub](https://github.com/6amdev/personal-ai-assistant)
         """)
         
-        return clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type, selected_model
+        return clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type  # 🆕 เพิ่ม rag_type
 
 
 def chat_interface(llm_handler, memory_handler, rag_system=None):
@@ -294,10 +161,9 @@ def chat_interface(llm_handler, memory_handler, rag_system=None):
                 debug_mode = st.session_state.get("debug_mode", False)
                 if debug_mode:
                     with st.expander("🔍 Debug Info", expanded=True):
-                        st.write(f"**RAG Type:** {result['rag_type']}")
-                        st.write(f"**Model:** {llm_handler.get_model_name()}")  # 🆕 แสดง model ที่ใช้
+                        st.write(f"**RAG Type:** {result['rag_type']}")  # 🆕
                         st.write(f"**Context length:** {len(result['context']) if result['context'] else 0} chars")
-                        st.write(f"**Sources:** {', '.join(result['sources'])}")
+                        st.write(f"**Sources:** {', '.join(result['sources'])}")  # 🆕
                         st.write(f"**Found images:** {len(images)}")
                         if images:
                             st.json(images)
@@ -321,7 +187,7 @@ def chat_interface(llm_handler, memory_handler, rag_system=None):
         # Add to history
         st.session_state.messages.append({
             "role": "assistant", 
-            "content": result['answer'],
+            "content": result['answer'],  # 🔥 เปลี่ยนตรงนี้
             "images": images if images else []
         })
 
@@ -329,6 +195,7 @@ def chat_interface(llm_handler, memory_handler, rag_system=None):
 def display_images(images: list):
     """
     แสดงรูปภาพแบบ inline thumbnail พร้อม Lightbox
+    🔥 COPY FUNCTION นี้ไปแทนที่ใน src/ui.py
     
     Args:
         images: List of image dicts [{"type": "url/local/base64", "data": "...", "caption": "..."}]
@@ -338,6 +205,9 @@ def display_images(images: list):
     
     import hashlib
     import time
+    import base64
+    import json
+    from pathlib import Path
     
     # สร้าง unique ID
     lightbox_id = hashlib.md5(str(time.time()).encode()).hexdigest()[:8]
@@ -644,7 +514,6 @@ def display_images(images: list):
     
     html_content += '</div>'
     st.markdown(html_content, unsafe_allow_html=True)
-
 
 def clear_chat_history():
     """Clear chat history"""

@@ -23,38 +23,24 @@ except ImportError:
 
 
 class LLMHandler:
-    def __init__(self, model_name: str = None):
-        """
-        Initialize LLM Handler
-        
-        Args:
-            model_name: ชื่อ model (ถ้าไม่ระบุจะใช้จาก config)
-        """
-        self.model_name = model_name or LLM_MODEL
-        
-        print(f"🤖 Initializing LLM: {self.model_name}")
-        
-        try:
-            self.llm = Ollama(
-                model=self.model_name,
-                temperature=LLM_TEMPERATURE,
-                system=SYSTEM_PROMPT
-            )
-            print(f"✅ LLM ready: {self.model_name}")
-        except Exception as e:
-            print(f"❌ Error initializing LLM: {e}")
-            raise
+    def __init__(self):
+        print(f"🤖 Initializing LLM: {LLM_MODEL}")
+        self.llm = Ollama(
+            model=LLM_MODEL,
+            temperature=LLM_TEMPERATURE,
+            system=SYSTEM_PROMPT
+        )
     
     def generate(self, prompt: str) -> str:
         """Generate response from LLM"""
         try:
-            return self.llm.invoke(prompt)
+            # เปลี่ยนจาก self.llm(prompt) เป็น invoke
+            return self.llm.invoke(prompt)  # ← เปลี่ยนตรงนี้!
         except Exception as e:
             return f"เกิดข้อผิดพลาด: {str(e)}"
     
     def get_model_name(self) -> str:
-        """Get current model name"""
-        return self.model_name
+        return LLM_MODEL
 
 
 if __name__ == "__main__":
