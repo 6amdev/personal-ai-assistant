@@ -25,28 +25,6 @@ def show_sidebar(memory_handler):
     """Show sidebar with document management"""
     with st.sidebar:
         st.header("⚙️ Settings")
-
-        # 🆕 RAG Type Selector
-        st.subheader("🤖 RAG Type")
-        rag_type = st.selectbox(
-            "เลือกแบบ RAG",
-            [
-                "Naive RAG",
-                "Contextual RAG",
-                "Rerank RAG",
-                "Hybrid RAG",
-                "Query Rewrite RAG",
-                "Multi-step RAG"
-            ],
-            help="""
-            Naive = พื้นฐาน
-            Contextual = เน้น context
-            Rerank = จัดอันดับใหม่
-            Hybrid = BM25 + Vector (ดีสุด!)
-            Query Rewrite = เขียนคำถามใหม่
-            Multi-step = ค้นหาหลายรอบ
-            """
-        )
         
         # Model info
         st.subheader("🤖 Model")
@@ -109,25 +87,11 @@ def show_sidebar(memory_handler):
         [GitHub](https://github.com/6amdev/personal-ai-assistant)
         """)
         
-        return clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type  # 🆕 เพิ่ม rag_type
+        return clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode
 
 
-def chat_interface(llm_handler, memory_handler, rag_system=None):
-    """
-    Main chat interface with RAG and Images (Enhanced)
-    
-    Args:
-        llm_handler: LLM Handler
-        memory_handler: Memory Handler
-        rag_system: RAG System (ใหม่!) 🆕
-    """
-    
-    # 🆕 สร้าง RAG system (ถ้ายังไม่มี)
-    if rag_system is None:
-        from src.rag import NaiveRAG
-        if "rag_system" not in st.session_state:
-            st.session_state.rag_system = NaiveRAG(llm_handler, memory_handler)
-        rag_system = st.session_state.rag_system
+def chat_interface(llm_handler, memory_handler):
+    """Main chat interface with RAG and Images (Enhanced)"""
     
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -151,27 +115,42 @@ def chat_interface(llm_handler, memory_handler, rag_system=None):
         # Get AI response with RAG
         with st.chat_message("assistant"):
             with st.spinner("🤔 กำลังคิด..."):
-                # 🔥 ใช้ RAG System แทน!
-                result = rag_system.query(prompt, k=3)
+                # Get context from documents
+                context = memory_handler.get_context(prompt, k=3)
                 
                 # ดึงรูปภาพจาก context
-                images = ImageHandler.extract_images_from_context(result['context']) if result['context'] else []
+                images = ImageHandler.extract_images_from_context(context) if context else []
                 
                 # Debug info (แสดงเฉพาะเมื่อเปิด debug mode)
                 debug_mode = st.session_state.get("debug_mode", False)
                 if debug_mode:
                     with st.expander("🔍 Debug Info", expanded=True):
-                        st.write(f"**RAG Type:** {result['rag_type']}")  # 🆕
-                        st.write(f"**Context length:** {len(result['context']) if result['context'] else 0} chars")
-                        st.write(f"**Sources:** {', '.join(result['sources'])}")  # 🆕
+                        st.write(f"**Context length:** {len(context) if context else 0} chars")
                         st.write(f"**Found images:** {len(images)}")
                         if images:
                             st.json(images)
-                        if result['context']:
-                            st.text_area("Context Preview", result['context'][:500] + "..." if len(result['context']) > 500 else result['context'], height=200)
+                        if context:
+                            st.text_area("Context Preview", context[:500] + "..." if len(context) > 500 else context, height=200)
                 
-                # แสดงคำตอบ
-                st.markdown(result['answer'])
+                # Create full prompt
+                if context:
+                    full_prompt = f"""{context}
+
+คำถาม: {prompt}
+
+วิธีตอบ:
+1. ตอบคำถามโดยอิงจากข้อมูลที่เกี่ยวข้องข้างต้น
+2. ถ้ามีรูปภาพที่เกี่ยวข้อง จะแสดงให้ดูด้านล่าง
+3. ระบุแหล่งที่มาของข้อมูล
+4. ตอบเป็นภาษาไทยที่เข้าใจง่าย
+
+คำตอบ:"""
+                else:
+                    full_prompt = prompt
+                
+                # Generate response
+                response = llm_handler.generate(full_prompt)
+                st.markdown(response)
                 
                 # แสดงรูปภาพ
                 if images:
@@ -180,14 +159,14 @@ def chat_interface(llm_handler, memory_handler, rag_system=None):
                     display_images(images)
                 
                 # Show context used
-                if result['context']:
+                if context:
                     with st.expander("📚 ข้อมูลอ้างอิง"):
-                        st.text(result['context'][:1000] + "..." if len(result['context']) > 1000 else result['context'])
+                        st.text(context[:1000] + "..." if len(context) > 1000 else context)
         
         # Add to history
         st.session_state.messages.append({
             "role": "assistant", 
-            "content": result['answer'],  # 🔥 เปลี่ยนตรงนี้
+            "content": response,
             "images": images if images else []
         })
 

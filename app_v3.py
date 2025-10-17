@@ -8,14 +8,7 @@ from src.ui import setup_page, show_header, show_sidebar, chat_interface, clear_
 from src.llm import LLMHandler
 from src.memory import MemoryHandler
 from src.document_processor import DocumentProcessor
-from src.rag import (
-    NaiveRAG, 
-    ContextualRAG, 
-    RerankRAG, 
-    HybridRAG, 
-    QueryRewriteRAG, 
-    MultiStepRAG
-)
+
 
 def main():
     setup_page()
@@ -37,42 +30,17 @@ def main():
     
     show_header()
     
-    # ⚠️ ต้องเรียก sidebar ก่อน เพื่อรับ rag_type
-    # Sidebar - รองรับ 5 และ 6 return values
+    # Sidebar - รองรับทั้ง 4 และ 5 return values
     sidebar_returns = show_sidebar(memory)
     
-    if len(sidebar_returns) == 6:  # 🆕 มี rag_type
-        clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode, rag_type = sidebar_returns
-    elif len(sidebar_returns) == 5:
+    if len(sidebar_returns) == 5:
+        # แบบใหม่ (มี debug_mode)
         clear_chat, clear_memory, uploaded_files, docs_to_delete, debug_mode = sidebar_returns
-        rag_type = "Naive RAG"  # default
+        st.session_state.debug_mode = debug_mode
     else:
+        # แบบเก่า (backward compatible)
         clear_chat, clear_memory, uploaded_files, docs_to_delete = sidebar_returns
         st.session_state.debug_mode = False
-        rag_type = "Naive RAG"
-    
-    st.session_state.debug_mode = debug_mode
-    
-    # 🆕 สร้าง RAG system ตาม type ที่เลือก
-    if "current_rag_type" not in st.session_state or st.session_state.current_rag_type != rag_type:
-        st.session_state.current_rag_type = rag_type
-        
-        if rag_type == "Naive RAG":
-            st.session_state.rag_system = NaiveRAG(llm, memory)
-        elif rag_type == "Contextual RAG":
-            st.session_state.rag_system = ContextualRAG(llm, memory)
-        elif rag_type == "Rerank RAG":
-            st.session_state.rag_system = RerankRAG(llm, memory)
-        elif rag_type == "Hybrid RAG":
-            st.session_state.rag_system = HybridRAG(llm, memory)
-        elif rag_type == "Query Rewrite RAG":
-            st.session_state.rag_system = QueryRewriteRAG(llm, memory)
-        elif rag_type == "Multi-step RAG":
-            st.session_state.rag_system = MultiStepRAG(llm, memory)
-        
-        st.sidebar.success(f"✅ ใช้ {rag_type}")
-    
-    rag = st.session_state.rag_system
     
     # Handle clear chat
     if clear_chat:
@@ -103,8 +71,8 @@ def main():
     if uploaded_files:
         process_uploaded_files(uploaded_files, memory)
     
-    # 🔥 Main chat - ส่ง rag ไปด้วย!
-    chat_interface(llm, memory, rag_system=rag)
+    # Main chat
+    chat_interface(llm, memory)
     
     st.markdown("---")
     st.markdown("""
