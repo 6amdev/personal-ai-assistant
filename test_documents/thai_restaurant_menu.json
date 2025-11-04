@@ -1,0 +1,880 @@
+{
+  "restaurant": {
+    "name": "ครัวบ้านไทย",
+    "name_en": "Krua Baan Thai",
+    "description": "ร้านอาหารไทยต้นตำรับ เสิร์ฟเมนูอาหารไทย 4 ภาค พร้อมบรรยากาศแบบไทยๆ",
+    "address": "123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110",
+    "phone": "02-123-4567",
+    "opening_hours": "10:00 - 22:00 น. (ทุกวัน)",
+    "rating": 4.5,
+    "price_range": "฿฿ (150-400 บาท)"
+  },
+  
+  "menu_categories": [
+    {
+      "category_id": "appetizers",
+      "category_name": "อาหารว่าง",
+      "category_name_en": "Appetizers",
+      "items": [
+        {
+          "id": "A001",
+          "name": "ปอเปี๊ยะทอด",
+          "name_en": "Spring Rolls",
+          "description": "ปอเปี๊ยะทอดกรอบ ไส้หมูสับผสมผักและเครื่องเทศ เสิร์ฟพร้อมน้ำจิ้มบ๊วย",
+          "price": 80,
+          "spicy_level": 0,
+          "vegetarian": false,
+          "ingredients": [
+            "แป้งปอเปี๊ยะ",
+            "หมูสับ",
+            "แครอท",
+            "ถั่วงอก",
+            "วุ้นเส้น",
+            "หอมแดง",
+            "กระเทียม"
+          ],
+          "allergens": ["gluten", "soy"],
+          "calories": 320,
+          "cooking_time": "15 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=800",
+          "notes": "ทานร้อนๆ จะอร่อยที่สุด เกรียมนอกนุ่มใน"
+        },
+        {
+          "id": "A002",
+          "name": "ทอดมันปลากราย",
+          "name_en": "Fish Cake",
+          "description": "ทอดมันปลากรายแท้ ผสมพริกแกงสูตรเด็ด เสิร์ฟพร้อมน้ำจิ้มและผักสด",
+          "price": 120,
+          "spicy_level": 2,
+          "vegetarian": false,
+          "ingredients": [
+            "เนื้อปลากราย 80%",
+            "พริกแกง",
+            "ใบมะกรูด",
+            "ถั่วฝักยาว",
+            "น้ำตาลปี๊บ"
+          ],
+          "allergens": ["fish", "peanut"],
+          "calories": 280,
+          "cooking_time": "20 นาที",
+          "popular": true,
+          "recommended": true,
+          "image_url": "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=800",
+          "notes": "ของขึ้นชื่อของร้าน ต้องลอง!"
+        },
+        {
+          "id": "A003",
+          "name": "สะเต๊ะหมู",
+          "name_en": "Pork Satay",
+          "description": "หมูย่างสะเต๊ะ หมักด้วยเครื่องเทศและกะทิ ย่างไฟถ่าน เสิร์ฟพร้อมน้ำจิ้มสะเต๊ะและอาจาด",
+          "price": 100,
+          "pieces": 10,
+          "spicy_level": 1,
+          "vegetarian": false,
+          "ingredients": [
+            "สันในหมู",
+            "กะทิ",
+            "ขมิ้น",
+            "พริกไทย",
+            "ใบเตย",
+            "ถั่วลิสง (น้ำจิ้ม)"
+          ],
+          "allergens": ["peanut", "dairy"],
+          "calories": 350,
+          "cooking_time": "25 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800"
+        }
+      ]
+    },
+    
+    {
+      "category_id": "soups",
+      "category_name": "ต้ม/แกง",
+      "category_name_en": "Soups & Curries",
+      "items": [
+        {
+          "id": "S001",
+          "name": "ต้มยำกุ้งน้ำข้น",
+          "name_en": "Tom Yum Goong (Creamy)",
+          "description": "ต้มยำกุ้งแท้ รสจัดจ้าน เปร้ยว เผ็ด เค็ม หวาน ครบรส พร้อมกุ้งแม่น้ำตัวโต",
+          "price": 180,
+          "spicy_level": 4,
+          "vegetarian": false,
+          "ingredients": [
+            "กุ้งแม่น้ำ 5 ตัว",
+            "ข่า",
+            "ตะไคร้",
+            "ใบมะกรูด",
+            "พริกขี้หนู",
+            "น้ำมะนาว",
+            "น้ำปลา",
+            "เห็ดฟาง",
+            "มะเขือเทศ",
+            "ข้าวโพด",
+            "นมข้นจืด"
+          ],
+          "allergens": ["shellfish", "dairy"],
+          "calories": 280,
+          "cooking_time": "15 นาที",
+          "popular": true,
+          "signature_dish": true,
+          "recommended": true,
+          "image_url": "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=800",
+          "notes": "เมนูยอดนิยมอันดับ 1 ของร้าน รสชาติต้นตำรับ",
+          "sizes": [
+            {"size": "เล็ก", "price": 180, "serves": "1-2 คน"},
+            {"size": "กลาง", "price": 280, "serves": "2-3 คน"},
+            {"size": "ใหญ่", "price": 380, "serves": "3-4 คน"}
+          ]
+        },
+        {
+          "id": "S002",
+          "name": "ต้มข่าไก่",
+          "name_en": "Tom Kha Gai",
+          "description": "ต้มข่าไก่กะทิสด รสชาติกลมกล่อม หอมข่า หวานกะทิ",
+          "price": 150,
+          "spicy_level": 2,
+          "vegetarian": false,
+          "ingredients": [
+            "เนื้อไก่",
+            "กะทิสด",
+            "ข่าอ่อน",
+            "ตะไคร้",
+            "พริกขี้หนูสวน",
+            "น้ำมะนาว",
+            "น้ำปลา",
+            "เห็ดฟาง",
+            "มะเขือเทศ"
+          ],
+          "allergens": ["dairy"],
+          "calories": 320,
+          "cooking_time": "20 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=800"
+        },
+        {
+          "id": "S003",
+          "name": "แกงเขียวหวานไก่",
+          "name_en": "Green Curry Chicken",
+          "description": "แกงเขียวหวานสูตรโบราณ พริกแกงบดสด กะทิหอมหวาน ผักสดกรอบ",
+          "price": 160,
+          "spicy_level": 3,
+          "vegetarian": false,
+          "ingredients": [
+            "เนื้อไก่",
+            "พริกแกงเขียวหวาน",
+            "กะทิ",
+            "มะเขือพวง",
+            "มะเขือเปราะ",
+            "ใบโหระพา",
+            "พริกชี้ฟ้า",
+            "ใบมะกรูด"
+          ],
+          "allergens": ["dairy"],
+          "calories": 380,
+          "cooking_time": "25 นาที",
+          "popular": false,
+          "image_url": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800"
+        },
+        {
+          "id": "S004",
+          "name": "แกงมัสมั่นเนื้อ",
+          "name_en": "Massaman Beef Curry",
+          "description": "แกงมัสมั่นเนื้อ รสหวานมัน เนื้อนุ่ม มันฝรั่งร่วน ถั่วลิสงหอม",
+          "price": 180,
+          "spicy_level": 1,
+          "vegetarian": false,
+          "ingredients": [
+            "เนื้อวัวสันใน",
+            "พริกแกงมัสมั่น",
+            "กะทิ",
+            "มันฝรั่ง",
+            "หัวหอมใหญ่",
+            "ถั่วลิสงคั่ว",
+            "น้ำตาลปี๊บ",
+            "น้ำมะขามเปียก"
+          ],
+          "allergens": ["dairy", "peanut"],
+          "calories": 450,
+          "cooking_time": "45 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1604908816004-f50a1c6f53ba?w=800",
+          "notes": "เนื้อนุ่มต้องเคี่ยวอย่างน้อย 1 ชั่วโมง"
+        }
+      ]
+    },
+    
+    {
+      "category_id": "stir_fry",
+      "category_name": "ผัด",
+      "category_name_en": "Stir-Fried Dishes",
+      "items": [
+        {
+          "id": "F001",
+          "name": "ผัดไทยกุ้งสด",
+          "name_en": "Pad Thai with Prawns",
+          "description": "ผัดไทยต้นตำรับ รสชาติกลมกล่อม เปรี้ยว หวาน เค็ม ครบรส พร้อมกุ้งสดตัวใหญ่",
+          "price": 150,
+          "spicy_level": 1,
+          "vegetarian": false,
+          "ingredients": [
+            "เส้นจันทร์แช่น้ำ",
+            "กุ้งสด 5 ตัว",
+            "ไข่ไก่",
+            "เต้าหู้แข็ง",
+            "ถั่วงอก",
+            "กุ้ยช่าย",
+            "ถั่วลิสงป่น",
+            "มะนาว",
+            "น้ำตาลปี๊บ",
+            "น้ำมะขามเปียก",
+            "น้ำปลา"
+          ],
+          "allergens": ["shellfish", "egg", "peanut", "soy"],
+          "calories": 520,
+          "cooking_time": "15 นาที",
+          "popular": true,
+          "signature_dish": true,
+          "image_url": "https://images.unsplash.com/photo-1559314809-0d155014e29e?w=800",
+          "notes": "เมนูขึ้นชื่อของไทย ต้องลองสักครั้ง"
+        },
+        {
+          "id": "F002",
+          "name": "ผัดกะเพราหมูสับไข่ดาว",
+          "name_en": "Stir-Fried Basil Pork with Fried Egg",
+          "description": "ผัดกะเพราหมูสับสูตรเด็ด เผ็ดร้อน หอมกระเทียม โหระพา ราดข้าวสวยร้อนๆ",
+          "price": 70,
+          "spicy_level": 4,
+          "vegetarian": false,
+          "ingredients": [
+            "หมูสับ",
+            "พริกขี้หนู",
+            "กระเทียม",
+            "ใบกะเพรา",
+            "พริกชี้ฟ้า",
+            "ถั่วฝักยาว",
+            "ไข่ดาว",
+            "น้ำปลา",
+            "ซอสหอยนางรม"
+          ],
+          "allergens": ["egg", "soy"],
+          "calories": 580,
+          "cooking_time": "10 นาที",
+          "popular": true,
+          "recommended": true,
+          "image_url": "https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?w=800",
+          "notes": "เมนูยอดนิยมของคนไทย ต้องเผ็ดถึงจะอร่อย",
+          "options": [
+            {"meat": "หมูสับ", "price": 70},
+            {"meat": "ไก่สับ", "price": 70},
+            {"meat": "เนื้อสับ", "price": 90},
+            {"meat": "กุ้ง", "price": 110},
+            {"meat": "ปลาหมึก", "price": 100},
+            {"meat": "รวมมิตร (หมู+ไก่+กุ้ง+ปลาหมึก)", "price": 130}
+          ]
+        },
+        {
+          "id": "F003",
+          "name": "ผัดซีอิ๊วเนื้อ",
+          "name_en": "Stir-Fried Beef in Soy Sauce",
+          "description": "ผัดซีอิ๊วเนื้อชิ้นใหญ่ ผัดไฟแรง ซีอิ๊วหอม ผักสดกรอบ",
+          "price": 120,
+          "spicy_level": 0,
+          "vegetarian": false,
+          "ingredients": [
+            "เนื้อวัวสันใน",
+            "ซีอิ๊วดำ",
+            "ซีอิ๊วขาว",
+            "กระเทียม",
+            "น้ำมันหอย",
+            "บร็อคโคลี่",
+            "แครอท",
+            "หอมใหญ่"
+          ],
+          "allergens": ["soy"],
+          "calories": 420,
+          "cooking_time": "12 นาที",
+          "popular": false,
+          "image_url": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800"
+        },
+        {
+          "id": "F004",
+          "name": "ผัดผักรวมมิตร",
+          "name_en": "Stir-Fried Mixed Vegetables",
+          "description": "ผัดผักรวม 8 ชนิด สด สะอาด มีประโยชน์ เหมาะสำหรับมังสวิรัติ",
+          "price": 80,
+          "spicy_level": 0,
+          "vegetarian": true,
+          "vegan": true,
+          "ingredients": [
+            "บร็อคโคลี่",
+            "คะน้า",
+            "แครอท",
+            "ข้าวโพดอ่อน",
+            "เห็ดหอม",
+            "ถั่วฝักยาว",
+            "กะหล่ำดอก",
+            "วุ้นเส้น"
+          ],
+          "allergens": ["soy"],
+          "calories": 180,
+          "cooking_time": "10 นาที",
+          "popular": false,
+          "healthy": true,
+          "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800"
+        }
+      ]
+    },
+    
+    {
+      "category_id": "salads",
+      "category_name": "ยำ",
+      "category_name_en": "Thai Salads",
+      "items": [
+        {
+          "id": "Y001",
+          "name": "ส้มตำไทย",
+          "name_en": "Thai Papaya Salad",
+          "description": "ส้มตำต้นตำรับ ตำสด เปรี้ยว หวาน เค็ม เผ็ด ครบรส",
+          "price": 60,
+          "spicy_level": 4,
+          "vegetarian": true,
+          "ingredients": [
+            "มะละกอดิบ",
+            "มะเขือเทศ",
+            "ถั่วฝักยาว",
+            "พริกขี้หนู",
+            "กระเทียม",
+            "มะนาว",
+            "น้ำปลา",
+            "น้ำตาลปี๊บ",
+            "ถั่วลิสงคั่ว"
+          ],
+          "allergens": ["peanut", "fish_sauce"],
+          "calories": 120,
+          "cooking_time": "10 นาที",
+          "popular": true,
+          "recommended": true,
+          "image_url": "https://images.unsplash.com/photo-1559847844-d866f6146228?w=800",
+          "notes": "สามารถปรับระดับความเผ็ดได้",
+          "options": [
+            {"type": "ส้มตำไทย (ธรรมดา)", "price": 60},
+            {"type": "ส้มตำปู (ใส่ปูนา)", "price": 80},
+            {"type": "ส้มตำปูม้า (ม้าดอง)", "price": 100},
+            {"type": "ส้มตำไข่เค็ม", "price": 70},
+            {"type": "ส้มตำขนมจีน", "price": 80}
+          ]
+        },
+        {
+          "id": "Y002",
+          "name": "ยำวุ้นเส้น",
+          "name_en": "Glass Noodle Salad",
+          "description": "ยำวุ้นเส้นทะเล ปลาหมึก กุ้ง หมูสับ รสจัดจ้าน",
+          "price": 120,
+          "spicy_level": 3,
+          "vegetarian": false,
+          "ingredients": [
+            "วุ้นเส้น",
+            "กุ้งสด",
+            "ปลาหมึก",
+            "หมูสับ",
+            "ข้าวโพดอ่อน",
+            "มะเขือเทศ",
+            "หอมใหญ่",
+            "ขึ้นฉ่าย",
+            "พริกขี้หนู",
+            "มะนาว",
+            "น้ำปลา"
+          ],
+          "allergens": ["shellfish", "fish_sauce"],
+          "calories": 220,
+          "cooking_time": "15 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=800"
+        },
+        {
+          "id": "Y003",
+          "name": "ลาบหมู",
+          "name_en": "Spicy Minced Pork Salad",
+          "description": "ลาบหมูสไตล์อีสาน รสชาติจัดจ้าน เผ็ดร้อน หอมเครื่องเทศ",
+          "price": 90,
+          "spicy_level": 5,
+          "vegetarian": false,
+          "ingredients": [
+            "หมูสับ",
+            "ข้าวคั่ว",
+            "พริกป่น",
+            "น้ำปลา",
+            "น้ำมะนาว",
+            "หอมแดง",
+            "ต้นหอม",
+            "ผักชี",
+            "ใบมะกรูด"
+          ],
+          "allergens": ["fish_sauce"],
+          "calories": 280,
+          "cooking_time": "15 นาที",
+          "popular": true,
+          "region": "อีสาน",
+          "image_url": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800",
+          "notes": "ทานคู่กับข้าวเหนียว จะเข้ากันมาก"
+        },
+        {
+          "id": "Y004",
+          "name": "ยำทะเล",
+          "name_en": "Spicy Seafood Salad",
+          "description": "ยำทะเลรวม กุ้ง ปลาหมึก หอย ปู รสเปรี้ยวจี๊ด เผ็ดถึงใจ",
+          "price": 180,
+          "spicy_level": 4,
+          "vegetarian": false,
+          "ingredients": [
+            "กุ้งสด",
+            "ปลาหมึกสด",
+            "หอยแมลงภู่",
+            "ปูม้า",
+            "มะเขือเทศ",
+            "หอมใหญ่",
+            "ขึ้นฉ่าย",
+            "พริกขี้หนู",
+            "น้ำมะนาว",
+            "น้ำปลา"
+          ],
+          "allergens": ["shellfish", "fish_sauce"],
+          "calories": 260,
+          "cooking_time": "20 นาที",
+          "popular": true,
+          "recommended": true,
+          "image_url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800"
+        }
+      ]
+    },
+    
+    {
+      "category_id": "noodles",
+      "category_name": "ก๋วยเตี๋ยว/ข้าว",
+      "category_name_en": "Noodles & Rice",
+      "items": [
+        {
+          "id": "N001",
+          "name": "ก๋วยเตี๋ยวเรือน้ำตก",
+          "name_en": "Boat Noodles",
+          "description": "ก๋วยเตี๋ยวเรือต้นตำรับ น้ำซุปเข้มข้น เนื้อนุ่ม เครื่องแน่น",
+          "price": 50,
+          "spicy_level": 2,
+          "vegetarian": false,
+          "ingredients": [
+            "เส้นก๋วยเตี๋ยว",
+            "เนื้อวัว",
+            "ลูกชิ้นเนื้อ",
+            "เครื่องใน",
+            "เลือดวัว",
+            "ผักบุ้ง",
+            "ต้นหอม",
+            "ถั่วงอก"
+          ],
+          "allergens": ["soy"],
+          "calories": 380,
+          "cooking_time": "10 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1617196035183-421b4917c92d?w=800",
+          "sizes": [
+            {"size": "ธรรมดา", "price": 50},
+            {"size": "พิเศษ (เนื้อเยอะ)", "price": 70},
+            {"size": "จัมโบ้", "price": 90}
+          ],
+          "noodle_types": ["เส้นเล็ก", "เส้นใหญ่", "เส้นหมี่", "บะหมี่", "วุ้นเส้น", "มาม่า"]
+        },
+        {
+          "id": "N002",
+          "name": "ข้าวผัดกุ้ง",
+          "name_en": "Fried Rice with Prawns",
+          "description": "ข้าวผัดกุ้งสด ข้าวร่วน หอม อร่อย ไม่มัน",
+          "price": 80,
+          "spicy_level": 0,
+          "vegetarian": false,
+          "ingredients": [
+            "ข้าวสวย",
+            "กุ้งสด",
+            "ไข่ไก่",
+            "หอมใหญ่",
+            "มะเขือเทศ",
+            "ต้นหอม",
+            "ซอสมะเขือเทศ",
+            "ซอสปรุงรส"
+          ],
+          "allergens": ["shellfish", "egg", "soy"],
+          "calories": 520,
+          "cooking_time": "10 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800",
+          "options": [
+            {"type": "ข้าวผัดกุ้ง", "price": 80},
+            {"type": "ข้าวผัดหมู", "price": 60},
+            {"type": "ข้าวผัดไก่", "price": 60},
+            {"type": "ข้าวผัดปู", "price": 120},
+            {"type": "ข้าวผัดสับปะรด", "price": 90},
+            {"type": "ข้าวผัดอเมริกัน", "price": 80}
+          ]
+        },
+        {
+          "id": "N003",
+          "name": "ข้าวหมกไก่",
+          "name_en": "Chicken Biryani Thai Style",
+          "description": "ข้าวหมกไก่สูตรมุสลิม หอมเครื่องเทศ เนื้อไก่นุ่มชุ่มรส",
+          "price": 90,
+          "spicy_level": 1,
+          "vegetarian": false,
+          "ingredients": [
+            "ข้าวหอมมะลิ",
+            "เนื้อไก่",
+            "กะทิ",
+            "ขมิ้น",
+            "อบเชย",
+            "กานพลู",
+            "โป๊ยกั๊ก",
+            "หอมใหญ่"
+          ],
+          "allergens": ["dairy"],
+          "calories": 580,
+          "cooking_time": "30 นาที",
+          "popular": false,
+          "region": "ภาคใต้",
+          "image_url": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800"
+        },
+        {
+          "id": "N004",
+          "name": "ขนมจีนน้ำยา",
+          "name_en": "Rice Noodles with Fish Curry",
+          "description": "ขนมจีนน้ำยาปลา กะทิหอมหวาน น้ำยาเข้มข้น เครื่องเคียงครบ",
+          "price": 70,
+          "spicy_level": 2,
+          "vegetarian": false,
+          "ingredients": [
+            "ขนมจีนสด",
+            "ปลาช่อน",
+            "กะทิ",
+            "พริกแกง",
+            "ใบชะพลู",
+            "ผักกาดขาว",
+            "ถั่วฝักยาว",
+            "กะหล่ำปลี"
+          ],
+          "allergens": ["fish", "dairy"],
+          "calories": 420,
+          "cooking_time": "25 นาที",
+          "popular": false,
+          "region": "ภาคใต้",
+          "image_url": "https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=800"
+        }
+      ]
+    },
+    
+    {
+      "category_id": "desserts",
+      "category_name": "ของหวาน",
+      "category_name_en": "Desserts",
+      "items": [
+        {
+          "id": "D001",
+          "name": "มะม่วงข้าวเหนียว",
+          "name_en": "Mango Sticky Rice",
+          "description": "มะม่วงสุกหวาน ข้าวเหนียวนุ่ม กะทิหอม เมนูของหวานยอดนิยมของไทย",
+          "price": 80,
+          "spicy_level": 0,
+          "vegetarian": true,
+          "ingredients": [
+            "ข้าวเหนียว",
+            "มะม่วงน้ำดอกไม้",
+            "กะทิสด",
+            "น้ำตาล",
+            "เกลือ",
+            "ถั่วลิสงคั่ว"
+          ],
+          "allergens": ["dairy", "peanut"],
+          "calories": 420,
+          "cooking_time": "15 นาที",
+          "popular": true,
+          "signature_dish": true,
+          "seasonal": true,
+          "season": "มีนาคม - พฤษภาคม",
+          "image_url": "https://images.unsplash.com/photo-1604467715878-83e57e08aeb4?w=800",
+          "notes": "มีเฉพาะฤดูมะม่วง แนะนำทานสดๆ"
+        },
+        {
+          "id": "D002",
+          "name": "ข้าวเหนียวทุเรียน",
+          "name_en": "Durian Sticky Rice",
+          "description": "ข้าวเหนียวหอมมัน ทุเรียนหมอนทอง หอมนุ่ม ชวนหลงใหล",
+          "price": 120,
+          "spicy_level": 0,
+          "vegetarian": true,
+          "ingredients": [
+            "ข้าวเหนียว",
+            "ทุเรียนหมอนทอง",
+            "กะทิสด",
+            "น้ำตาล",
+            "เกลือ"
+          ],
+          "allergens": ["dairy"],
+          "calories": 580,
+          "cooking_time": "15 นาที",
+          "popular": true,
+          "seasonal": true,
+          "season": "เมษายน - มิถุนายน",
+          "image_url": "https://images.unsplash.com/photo-1597373762004-0ac5f2d5b51d?w=800"
+        },
+        {
+          "id": "D003",
+          "name": "บัวลอย",
+          "name_en": "Glutinous Rice Balls in Coconut Milk",
+          "description": "บัวลอย 4 สี (เผือก มะม่วง งาดำ ฟักทอง) น้ำกะทิหวานมัน",
+          "price": 50,
+          "spicy_level": 0,
+          "vegetarian": true,
+          "ingredients": [
+            "แป้งข้าวเหนียว",
+            "เผือก",
+            "มะม่วง",
+            "งาดำ",
+            "ฟักทอง",
+            "กะทิสด",
+            "น้ำตาลปี๊บ",
+            "ไข่ต้ม"
+          ],
+          "allergens": ["dairy", "egg"],
+          "calories": 350,
+          "cooking_time": "20 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800"
+        },
+        {
+          "id": "D004",
+          "name": "ลอดช่องสิงคโปร์",
+          "name_en": "Pandan Jelly with Coconut Milk",
+          "description": "ลอดช่องใบเตยหอม น้ำกะทิเย็นชื่นใจ ของหวานเย็นๆ",
+          "price": 45,
+          "spicy_level": 0,
+          "vegetarian": true,
+          "ingredients": [
+            "แป้งข้าวเหนียว",
+            "ใบเตย",
+            "กะทิสด",
+            "น้ำตาล",
+            "น้ำแข็ง"
+          ],
+          "allergens": ["dairy"],
+          "calories": 280,
+          "cooking_time": "15 นาที",
+          "popular": false,
+          "image_url": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800"
+        },
+        {
+          "id": "D005",
+          "name": "ทับทิมกรอบ",
+          "name_en": "Red Rubies in Coconut Milk",
+          "description": "ทับทิมกรอบเม็ดสวย น้ำกะทิเย็นฉ่ำ ใส่น้ำแข็งไส",
+          "price": 50,
+          "spicy_level": 0,
+          "vegetarian": true,
+          "ingredients": [
+            "แห้วกรอบ",
+            "สีแดงจากผักบีท",
+            "แป้งมัน",
+            "กะทิสด",
+            "น้ำเชื่อม",
+            "น้ำแข็งไส"
+          ],
+          "allergens": ["dairy"],
+          "calories": 320,
+          "cooking_time": "20 นาที",
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800"
+        }
+      ]
+    },
+    
+    {
+      "category_id": "beverages",
+      "category_name": "เครื่องดื่ม",
+      "category_name_en": "Beverages",
+      "items": [
+        {
+          "id": "B001",
+          "name": "ชาเย็น",
+          "name_en": "Thai Iced Tea",
+          "description": "ชาไทยต้นตำรับ หวานมัน สีส้มสวย",
+          "price": 35,
+          "vegetarian": true,
+          "ingredients": [
+            "ชาไทย",
+            "น้ำตาล",
+            "นมข้นหวาน",
+            "นมจืด",
+            "น้ำแข็ง"
+          ],
+          "allergens": ["dairy"],
+          "calories": 280,
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800"
+        },
+        {
+          "id": "B002",
+          "name": "น้ำมะนาว",
+          "name_en": "Fresh Lime Juice",
+          "description": "น้ำมะนาวสดบีบ เปรี้ยว หวาน สดชื่น",
+          "price": 30,
+          "vegetarian": true,
+          "vegan": true,
+          "ingredients": [
+            "มะนาวสด",
+            "น้ำตาล",
+            "น้ำเปล่า",
+            "เกลือ",
+            "น้ำแข็ง"
+          ],
+          "allergens": [],
+          "calories": 80,
+          "popular": true,
+          "healthy": true,
+          "image_url": "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9c?w=800"
+        },
+        {
+          "id": "B003",
+          "name": "กาแฟโบราณ",
+          "name_en": "Traditional Thai Coffee",
+          "description": "กาแฟถุงผ้าต้มแบบโบราณ หอมกรุ่น เข้มข้น",
+          "price": 40,
+          "vegetarian": true,
+          "ingredients": [
+            "เมล็ดกาแฟคั่ว",
+            "น้ำตาลทราย",
+            "นมข้นหวาน",
+            "น้ำแข็ง"
+          ],
+          "allergens": ["dairy"],
+          "calories": 250,
+          "popular": true,
+          "image_url": "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=800"
+        },
+        {
+          "id": "B004",
+          "name": "น้ำใบเตยสด",
+          "name_en": "Fresh Pandan Juice",
+          "description": "น้ำใบเตยปั่นสด หอมใบเตย สดชื่น มีประโยชน์",
+          "price": 35,
+          "vegetarian": true,
+          "vegan": true,
+          "ingredients": [
+            "ใบเตยสด",
+            "น้ำตาล",
+            "น้ำเปล่า",
+            "น้ำแข็ง"
+          ],
+          "allergens": [],
+          "calories": 90,
+          "popular": false,
+          "healthy": true,
+          "image_url": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800"
+        },
+        {
+          "id": "B005",
+          "name": "น้ำกระเจี๊ยบ",
+          "name_en": "Roselle Juice",
+          "description": "น้ำกระเจี๊ยบสีแดงสด เปรี้ยวหวาน ช่วยดับกระหาย",
+          "price": 30,
+          "vegetarian": true,
+          "vegan": true,
+          "ingredients": [
+            "ดอกกระเจี๊ยบแห้ง",
+            "น้ำตาล",
+            "น้ำเปล่า",
+            "น้ำแข็ง"
+          ],
+          "allergens": [],
+          "calories": 70,
+          "popular": false,
+          "healthy": true,
+          "image_url": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800"
+        }
+      ]
+    }
+  ],
+  
+  "promotions": [
+    {
+      "id": "PROMO001",
+      "name": "Set Lunch พิเศษ",
+      "description": "อาหารจานหลัก + น้ำดื่ม ราคาเพียง 99 บาท",
+      "price": 99,
+      "available_time": "11:00 - 14:00 น. (วันจันทร์-ศุกร์)",
+      "valid_until": "2025-12-31",
+      "image_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    },
+    {
+      "id": "PROMO002",
+      "name": "Set คู่สุดคุ้ม",
+      "description": "ต้มยำกุ้ง + ผัดไทย + ข้าวเหนียวมะม่วง + เครื่องดื่ม 2 แก้ว",
+      "original_price": 490,
+      "discount_price": 399,
+      "save": 91,
+      "available_time": "ทุกวัน",
+      "valid_until": "2025-06-30",
+      "image_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
+    }
+  ],
+  
+  "special_menus": {
+    "chef_recommendations": ["A002", "S001", "F001", "Y001", "D001"],
+    "vegetarian_options": ["F004", "D001", "D003", "B002"],
+    "spicy_favorites": ["F002", "Y001", "Y003"],
+    "healthy_choices": ["F004", "Y002", "B002", "B004", "B005"],
+    "best_sellers": ["S001", "F001", "F002", "Y001", "D001"]
+  },
+  
+  "restaurant_policies": {
+    "payment_methods": ["เงินสด", "บัตรเครดิต/เดบิต", "โอนผ่านแอพ", "QR Code"],
+    "delivery": {
+      "available": true,
+      "platforms": ["Grab Food", "Food Panda", "Line Man", "Robinhood"],
+      "minimum_order": 150,
+      "delivery_fee": "ขึ้นอยู่กับระยะทาง"
+    },
+    "reservation": {
+      "available": true,
+      "phone": "02-123-4567",
+      "online": "www.kruabaanthai.com/booking"
+    },
+    "dietary_accommodations": {
+      "vegetarian": true,
+      "vegan": "บางเมนู",
+      "halal": false,
+      "gluten_free": "บางเมนู",
+      "allergy_friendly": "กรุณาแจ้งพนักงาน"
+    }
+  },
+  
+  "customer_reviews": {
+    "average_rating": 4.5,
+    "total_reviews": 1247,
+    "highlights": [
+      "ต้มยำกุ้งอร่อยมาก รสชาติต้นตำรับ",
+      "ผัดไทยเด็ด เส้นไม่เละ",
+      "บริการดี พนักงานใจดี",
+      "ราคาไม่แพง คุ้มค่า",
+      "บรรยากาศดี สะอาด"
+    ]
+  },
+  
+  "fun_facts": {
+    "established_year": 2010,
+    "chef_experience": "15+ ปี",
+    "daily_customers": "200+ คน",
+    "signature_dish_sales": "ต้มยำกุ้ง ขายวันละ 50+ ชาม",
+    "awards": [
+      "รางวัล Top 10 ร้านอาหารไทยยอดนิยม 2023",
+      "รางวัล Best Thai Restaurant กรุงเทพฯ 2022"
+    ]
+  }
+}
