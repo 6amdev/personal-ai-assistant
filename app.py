@@ -1,4 +1,4 @@
-"""Personal AI Assistant - Main App (Final Fix)"""
+"""Personal AI Assistant - Main App (With LightRAG Support)"""
 import streamlit as st
 import tempfile
 import os
@@ -8,14 +8,26 @@ from src.ui import setup_page, show_header, show_sidebar, chat_interface, clear_
 from src.llm import LLMHandler
 from src.memory import MemoryHandler
 from src.document_processor import DocumentProcessor
+
+# Import RAG systems (including LightRAG)
 from src.rag import (
     NaiveRAG, 
     ContextualRAG, 
     RerankRAG, 
     HybridRAG, 
     QueryRewriteRAG, 
-    MultiStepRAG
+    MultiStepRAG,
+    is_lightrag_available
 )
+
+# Try to import LightRAG
+try:
+    from src.rag import LightRAGWrapper
+    HAS_LIGHTRAG = True
+except ImportError:
+    HAS_LIGHTRAG = False
+    LightRAGWrapper = None
+
 
 def init_session_state():
     """Initialize all session state variables ONCE"""
@@ -28,8 +40,13 @@ def init_session_state():
         st.session_state.embedding_device = "cuda" if torch.cuda.is_available() else "cpu"
         st.session_state.app_initialized = True
         st.session_state.components_loaded = False
+        st.session_state.lightrag_available = is_lightrag_available()
         
         print("🔧 Session state initialized")
+        if st.session_state.lightrag_available:
+            print("✅ LightRAG is available")
+        else:
+            print("⚠️ LightRAG not installed (optional)")
 
 
 def load_components():
@@ -76,7 +93,7 @@ def main():
     
     show_header()
     
-    # 🔥 Sidebar - รับค่ากลับมา แต่ไม่ทำอะไร
+    # 🔥 Sidebar - รับค่ากลับมา
     sidebar_returns = show_sidebar(memory)
     
     # Unpack returns
@@ -132,22 +149,42 @@ def main():
             # ใช้ค่าเดิมต่อไป
             llm, memory = load_components()
     
-    # สร้าง RAG system
+    # 🆕 สร้าง RAG system (รวม LightRAG)
     if "current_rag_type" not in st.session_state or st.session_state.current_rag_type != rag_type:
         st.session_state.current_rag_type = rag_type
         
-        if rag_type == "Naive RAG":
+        try:
+            if rag_type == "Naive RAG":
+                st.session_state.rag_system = NaiveRAG(llm, memory)
+            elif rag_type == "Contextual RAG":
+                st.session_state.rag_system = ContextualRAG(llm, memory)
+            elif rag_type == "Rerank RAG":
+                st.session_state.rag_system = RerankRAG(llm, memory)
+            elif rag_type == "Hybrid RAG":
+                st.session_state.rag_system = HybridRAG(llm, memory)
+            elif rag_type == "Query Rewrite RAG":
+                st.session_state.rag_system = QueryRewriteRAG(llm, memory)
+            elif rag_type == "Multi-step RAG":
+                st.session_state.rag_system = MultiStepRAG(llm, memory)
+            elif rag_type == "LightRAG 🌟":
+                # ตรวจสอบว่า LightRAG พร้อมใช้งานหรือไม่
+                if st.session_state.lightrag_available and LightRAGWrapper:
+                    with st.spinner("🔧 Initializing LightRAG... (may take a moment)"):
+                        st.session_state.rag_system = LightRAGWrapper(llm, memory)
+                    st.success("✅ LightRAG ready!")
+                else:
+                    st.error("❌ LightRAG not available")
+                    st.info("Install with: `pip install lightrag-hku networkx`")
+                    # Fallback to Hybrid RAG
+                    st.warning("⚠️ Falling back to Hybrid RAG")
+                    st.session_state.rag_system = HybridRAG(llm, memory)
+                    st.session_state.current_rag_type = "Hybrid RAG"
+        except Exception as e:
+            st.error(f"❌ Error initializing RAG: {str(e)}")
+            # Fallback to Naive RAG
+            st.warning("⚠️ Falling back to Naive RAG")
             st.session_state.rag_system = NaiveRAG(llm, memory)
-        elif rag_type == "Contextual RAG":
-            st.session_state.rag_system = ContextualRAG(llm, memory)
-        elif rag_type == "Rerank RAG":
-            st.session_state.rag_system = RerankRAG(llm, memory)
-        elif rag_type == "Hybrid RAG":
-            st.session_state.rag_system = HybridRAG(llm, memory)
-        elif rag_type == "Query Rewrite RAG":
-            st.session_state.rag_system = QueryRewriteRAG(llm, memory)
-        elif rag_type == "Multi-step RAG":
-            st.session_state.rag_system = MultiStepRAG(llm, memory)
+            st.session_state.current_rag_type = "Naive RAG"
     
     rag = st.session_state.rag_system
     
@@ -177,21 +214,31 @@ def main():
     
     # Handle file uploads
     if uploaded_files:
-        process_uploaded_files(uploaded_files, memory)
+        process_uploaded_files(uploaded_files, memory, rag)
     
     # Main chat
     chat_interface(llm, memory, rag_system=rag)
     
     # Footer
     st.markdown("---")
+    
+    # แสดง RAG type ที่กำลังใช้งาน
+    rag_display = st.session_state.current_rag_type
+    if st.session_state.lightrag_available:
+        lightrag_emoji = " (🌟 LightRAG Available)"
+    else:
+        lightrag_emoji = ""
+    
     st.markdown(f"""
     <div style='text-align: center; color: #666;'>
-        Made with ❤️ using <strong>{st.session_state.selected_model}</strong> ({st.session_state.processing_device}) • Embeddings ({st.session_state.embedding_device.upper()})
+        Made with ❤️ using <strong>{st.session_state.selected_model}</strong> ({st.session_state.processing_device}) • 
+        Embeddings ({st.session_state.embedding_device.upper()}) • 
+        RAG: <strong>{rag_display}</strong>{lightrag_emoji}
     </div>
     """, unsafe_allow_html=True)
 
 
-def process_uploaded_files(uploaded_files, memory):
+def process_uploaded_files(uploaded_files, memory, rag_system):
     """Process and store uploaded files with detailed progress"""
     
     # ป้องกันการประมวลผลซ้ำ
@@ -260,8 +307,19 @@ def process_uploaded_files(uploaded_files, memory):
             
             progress_bar.progress(0.5)
             
-            # เรียกครั้งเดียว!
+            # บันทึกลง ChromaDB (สำหรับ RAG ทั่วไป)
             memory.add_documents(all_chunks, all_metadatas)
+            
+            progress_bar.progress(0.7)
+            
+            # 🆕 ถ้าใช้ LightRAG ให้เพิ่มเอกสารเข้า graph ด้วย
+            if isinstance(rag_system, LightRAGWrapper):
+                status_text.text(f"🌐 Building Knowledge Graph...")
+                try:
+                    rag_system.insert_documents(all_chunks, all_metadatas)
+                    detail_text.success("✅ Knowledge Graph updated!")
+                except Exception as e:
+                    detail_text.warning(f"⚠️ Graph update failed: {e}")
             
             elapsed = time.time() - start_time
             
@@ -271,6 +329,11 @@ def process_uploaded_files(uploaded_files, memory):
             
             st.success(f"✅ เรียนรู้เอกสารสำเร็จ! ({total_chunks} chunks จาก {total_files} ไฟล์)")
             st.info(f"⏱️ ใช้เวลา: {elapsed:.1f} วินาที (~{elapsed/total_chunks:.2f}s/chunk)")
+            
+            # แสดงข้อความเพิ่มเติมถ้าใช้ LightRAG
+            if isinstance(rag_system, LightRAGWrapper):
+                st.success("🌟 LightRAG Knowledge Graph updated!")
+            
             st.balloons()
             
             st.rerun()

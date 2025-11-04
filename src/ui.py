@@ -1,4 +1,4 @@
-"""UI Components - With Model Selector & Multi-RAG Support"""
+"""UI Components - With Model Selector & Multi-RAG Support (including LightRAG)"""
 import streamlit as st
 import subprocess
 import json
@@ -262,27 +262,62 @@ def show_sidebar(memory_handler):
 
         st.markdown("---")
 
-        # 🆕 RAG Type Selector
+        # 🆕 RAG Type Selector (เพิ่ม LightRAG)
         st.subheader("🔍 RAG Type")
+        
+        # ตรวจสอบว่า LightRAG พร้อมใช้งานหรือไม่
+        from src.rag import is_lightrag_available
+        lightrag_available = is_lightrag_available()
+        
+        # สร้าง options
+        rag_options = [
+            "Naive RAG",
+            "Contextual RAG",
+            "Rerank RAG",
+            "Hybrid RAG",
+            "Query Rewrite RAG",
+            "Multi-step RAG"
+        ]
+        
+        # เพิ่ม LightRAG ถ้าพร้อมใช้งาน
+        if lightrag_available:
+            rag_options.append("LightRAG 🌟")
+        
         rag_type = st.selectbox(
             "เลือกแบบ RAG",
-            [
-                "Naive RAG",
-                "Contextual RAG",
-                "Rerank RAG",
-                "Hybrid RAG",
-                "Query Rewrite RAG",
-                "Multi-step RAG"
-            ],
+            rag_options,
+            index=3,  # Default: Hybrid RAG
             help="""
-            Naive = พื้นฐาน
-            Contextual = เน้น context
-            Rerank = จัดอันดับใหม่
-            Hybrid = BM25 + Vector (ดีสุด!)
-            Query Rewrite = เขียนคำถามใหม่
-            Multi-step = ค้นหาหลายรอบ
+            **Naive RAG**: พื้นฐาน - Vector search (เร็วที่สุด)
+            
+            **Contextual RAG**: เน้น context รอบๆ
+            
+            **Rerank RAG**: ค้นหาแล้วจัดอันดับใหม่
+            
+            **Hybrid RAG** 🔥: BM25 (keyword) + Vector (semantic) - ดีที่สุดสำหรับภาษาไทย!
+            
+            **Query Rewrite RAG**: เขียนคำถามใหม่หลายแบบ
+            
+            **Multi-step RAG**: ค้นหาหลายรอบถ้าข้อมูลไม่พอ
+            
+            **LightRAG** 🌟: Graph-based RAG with Knowledge Graph
+            - Entity & Relationship extraction
+            - Multi-hop reasoning
+            - เหมาะกับคำถามซับซ้อน
+            - ช้ากว่า RAG อื่น แต่แม่นมาก
             """
         )
+        
+        # แสดงสถานะ LightRAG
+        if lightrag_available:
+            st.success("✅ LightRAG Available")
+        else:
+            st.info("💡 ต้องการ LightRAG?")
+            with st.expander("📦 Installation"):
+                st.code("""
+pip install lightrag-hku networkx
+                """.strip(), language="bash")
+                st.caption("ติดตั้งแล้ว restart Streamlit")
         
         st.markdown("---")
         
@@ -290,6 +325,39 @@ def show_sidebar(memory_handler):
         st.subheader("📚 Knowledge Base")
         doc_count = memory_handler.count_documents()
         st.metric("Total Chunks", doc_count)
+        
+        # ✅ แสดงสถานะ LightRAG (ถ้าเลือก LightRAG)
+        if rag_type == "LightRAG 🌟":
+            st.markdown("---")
+            st.markdown("#### 🌟 LightRAG Graph Status")
+            
+            # ตรวจสอบว่ามีข้อมูลใน LightRAG DB หรือไม่
+            lightrag_dir = Path("./data/lightrag_db")
+            
+            if lightrag_dir.exists() and any(lightrag_dir.glob("*")):
+                # มีข้อมูลแล้ว
+                graph_files = list(lightrag_dir.glob("*"))
+                st.success(f"✅ Graph Ready ({len(graph_files)} files)")
+                
+                with st.expander("📊 View Graph Files"):
+                    for f in graph_files:
+                        try:
+                            size = f.stat().st_size / 1024  # KB
+                            st.text(f"  📄 {f.name} ({size:.1f} KB)")
+                        except:
+                            st.text(f"  📄 {f.name}")
+            else:
+                # ยังไม่มีข้อมูล - แสดงคำเตือน
+                st.warning("⚠️ **LightRAG Database Empty**")
+                st.info("""
+**To use LightRAG:**
+1. Keep "LightRAG 🌟" selected
+2. Upload documents below  
+3. Wait for graph building
+4. Start asking questions
+                """)
+            
+            st.markdown("---")
         
         # Show document list
         sources = memory_handler.get_all_sources()
@@ -338,7 +406,8 @@ def show_sidebar(memory_handler):
         
         - 🤖 Multi-Model Support
         - 💾 Persistent Memory
-        - 📚 Advanced RAG
+        - 📚 Advanced RAG (7 types)
+        - 🌟 LightRAG Support
         - 🖼️ Image Support
         - 🔒 100% Private
         
@@ -387,46 +456,51 @@ def chat_interface(llm_handler, memory_handler, rag_system=None):
         # Get AI response with RAG
         with st.chat_message("assistant"):
             with st.spinner("🤔 กำลังคิด..."):
-                # 🔥 ใช้ RAG System แทน!
-                result = rag_system.query(prompt, k=3)
-                
-                # ดึงรูปภาพจาก context
-                images = ImageHandler.extract_images_from_context(result['context']) if result['context'] else []
-                
-                # Debug info (แสดงเฉพาะเมื่อเปิด debug mode)
-                debug_mode = st.session_state.get("debug_mode", False)
-                if debug_mode:
-                    with st.expander("🔍 Debug Info", expanded=True):
-                        st.write(f"**RAG Type:** {result['rag_type']}")
-                        st.write(f"**Model:** {llm_handler.get_model_name()}")  # 🆕 แสดง model ที่ใช้
-                        st.write(f"**Context length:** {len(result['context']) if result['context'] else 0} chars")
-                        st.write(f"**Sources:** {', '.join(result['sources'])}")
-                        st.write(f"**Found images:** {len(images)}")
-                        if images:
-                            st.json(images)
-                        if result['context']:
-                            st.text_area("Context Preview", result['context'][:500] + "..." if len(result['context']) > 500 else result['context'], height=200)
-                
-                # แสดงคำตอบ
-                st.markdown(result['answer'])
-                
-                # แสดงรูปภาพ
-                if images:
-                    st.markdown("---")
-                    st.markdown("**🖼️ รูปภาพที่เกี่ยวข้อง:**")
-                    display_images(images)
-                
-                # Show context used
-                if result['context']:
-                    with st.expander("📚 ข้อมูลอ้างอิง"):
-                        st.text(result['context'][:1000] + "..." if len(result['context']) > 1000 else result['context'])
-        
-        # Add to history
-        st.session_state.messages.append({
-            "role": "assistant", 
-            "content": result['answer'],
-            "images": images if images else []
-        })
+                try:
+                    # 🔥 ใช้ RAG System แทน!
+                    result = rag_system.query(prompt, k=3)
+                    
+                    # ดึงรูปภาพจาก context
+                    images = ImageHandler.extract_images_from_context(result['context']) if result['context'] else []
+                    
+                    # Debug info (แสดงเฉพาะเมื่อเปิด debug mode)
+                    debug_mode = st.session_state.get("debug_mode", False)
+                    if debug_mode:
+                        with st.expander("🔍 Debug Info", expanded=True):
+                            st.write(f"**RAG Type:** {result['rag_type']}")
+                            st.write(f"**Model:** {llm_handler.get_model_name()}")
+                            st.write(f"**Context length:** {len(result['context']) if result['context'] else 0} chars")
+                            st.write(f"**Sources:** {', '.join(result['sources'])}")
+                            st.write(f"**Found images:** {len(images)}")
+                            if images:
+                                st.json(images)
+                            if result['context']:
+                                st.text_area("Context Preview", result['context'][:500] + "..." if len(result['context']) > 500 else result['context'], height=200)
+                    
+                    # แสดงคำตอบ
+                    st.markdown(result['answer'])
+                    
+                    # แสดงรูปภาพ
+                    if images:
+                        st.markdown("---")
+                        st.markdown("**🖼️ รูปภาพที่เกี่ยวข้อง:**")
+                        display_images(images)
+                    
+                    # Show context used
+                    if result['context']:
+                        with st.expander("📚 ข้อมูลอ้างอิง"):
+                            st.text(result['context'][:1000] + "..." if len(result['context']) > 1000 else result['context'])
+                    
+                    # Add to history
+                    st.session_state.messages.append({
+                        "role": "assistant", 
+                        "content": result['answer'],
+                        "images": images if images else []
+                    })
+                    
+                except Exception as e:
+                    st.error(f"❌ Error: {str(e)}")
+                    st.info("💡 ลองเปลี่ยน RAG type หรือ upload เอกสารใหม่")
 
 
 def display_images(images: list):
