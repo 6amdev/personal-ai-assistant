@@ -1,20 +1,12 @@
 """
-FastAPI Wrapper for n8n Integration (With LightRAG Support)
-
-Complete API server for Personal AI Assistant with:
-- 7 RAG types (including LightRAG)
-- Document upload/management
-- Health checks
-- Error handling
-- Optional authentication
+✅ COMPLETE: FastAPI with LightRAG - Production Ready
+Fixed all import paths and initialization issues
 """
 
-from fastapi import FastAPI, File, UploadFile, HTTPException, Header, Depends
+from fastapi import FastAPI, File, UploadFile, HTTPException, Header, Depends, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
-import tempfile
 from pathlib import Path
 import os
 import logging
@@ -32,52 +24,65 @@ try:
     from src.llm import LLMHandler
     from src.memory import MemoryHandler
     from src.document_processor import DocumentProcessor
-    from src.utils import ImageHandler
     
-    # Import all RAG types
-    from src.rag import (
-        NaiveRAG,
-        ContextualRAG,
-        RerankRAG,
-        HybridRAG,
-        QueryRewriteRAG,
-        MultiStepRAG,
-        is_lightrag_available
-    )
+    from src.rag.naive_rag import NaiveRAG
+    from src.rag.contextual_rag import ContextualRAG
+    from src.rag.rerank_rag import RerankRAG
+    from src.rag.hybrid_rag import HybridRAG
+    from src.rag.query_rewrite_rag import QueryRewriteRAG
+    from src.rag.multistep_rag import MultiStepRAG
     
-    # Try to import LightRAG
     try:
-        from src.rag import LightRAGWrapper
+        from src.rag.light_rag import LightRAGWrapper
         HAS_LIGHTRAG = True
-    except ImportError:
+        logger.info("✅ LightRAG imported successfully")
+    except ImportError as e:
         HAS_LIGHTRAG = False
         LightRAGWrapper = None
-        logger.warning("LightRAG not available (optional)")
+        logger.warning(f"⚠️ LightRAG not available: {e}")
     
     logger.info("✅ All components imported successfully")
+    
 except ImportError as e:
     logger.error(f"❌ Failed to import components: {e}")
+    import traceback
+    traceback.print_exc()
     raise
 
 # ===== Configuration =====
-from config import LLM_MODEL
+try:
+    from config import LLM_MODEL
+except ImportError:
+    logger.warning("⚠️ config.py not found, using defaults")
+    LLM_MODEL = "llama3.2:3b"
 
 # API Configuration
-API_VERSION = "1.0.0"
-API_TITLE = "Personal AI Assistant API"
+API_VERSION = "2.0.0"
+API_TITLE = "Personal AI Assistant API with LightRAG"
 API_DESCRIPTION = """
-🤖 AI Chat API with Advanced RAG Support
+🤖 Advanced AI Chat API with Knowledge Graph RAG
 
-Features:
-- 7 RAG types (Naive, Contextual, Rerank, Hybrid, Query Rewrite, Multi-step, LightRAG)
+✨ Features:
+- 7 RAG types (Naive, Contextual, Rerank, Hybrid, Query Rewrite, Multi-step, **LightRAG**)
+- **Knowledge Graph** reasoning (LightRAG)
 - Document upload & management
 - Multi-format support (TXT, PDF, DOCX, JSON, MD)
-- Image extraction
-- Persistent memory (ChromaDB)
+- Persistent memory (ChromaDB + Graph)
 - 100% Local & Private
 """
 
-# Security (change in production!)
+# Paths Configuration
+BASE_DATA_DIR = Path("./data")
+CHROMA_DB_PATH = BASE_DATA_DIR / "chroma_db"
+LIGHTRAG_DB_PATH = BASE_DATA_DIR / "lightrag_db"
+UPLOAD_DIR = BASE_DATA_DIR / "uploads"
+
+# Create directories
+for path in [BASE_DATA_DIR, CHROMA_DB_PATH, LIGHTRAG_DB_PATH, UPLOAD_DIR]:
+    path.mkdir(parents=True, exist_ok=True)
+    logger.info(f"📁 Directory ready: {path}")
+
+# Security
 API_KEY = os.getenv("API_KEY", "your-secret-key-here")
 ENABLE_AUTH = os.getenv("ENABLE_AUTH", "false").lower() == "true"
 
@@ -87,14 +92,13 @@ app = FastAPI(
     description=API_DESCRIPTION,
     version=API_VERSION,
     docs_url="/docs",
-    redoc_url="/redoc",
-    openapi_url="/openapi.json"
+    redoc_url="/redoc"
 )
 
 # ===== CORS Middleware =====
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Production: specify domains
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -104,82 +108,62 @@ app.add_middleware(
 llm = None
 memory = None
 rag_systems = {}
+lightrag_system = None
 startup_time = None
 
 # ===== Request/Response Models =====
 
 class ChatRequest(BaseModel):
-    """Chat request model"""
-    query: str = Field(..., description="คำถามที่ต้องการถาม", min_length=1)
-    rag_type: str = Field(
-        default="hybrid",
-        description="ประเภท RAG: naive, contextual, rerank, hybrid, query_rewrite, multistep, lightrag"
-    )
-    k: int = Field(default=3, ge=1, le=10, description="จำนวนเอกสารที่ต้องการค้นหา")
-    include_images: bool = Field(default=True, description="รวมรูปภาพในผลลัพธ์")
-    include_context: bool = Field(default=False, description="รวม context ที่ใช้ในการตอบ")
-    session_id: Optional[str] = Field(default=None, description="Session ID (สำหรับอนาคต)")
+    query: str = Field(..., min_length=1)
+    rag_type: str = Field(default="hybrid")
+    k: int = Field(default=3, ge=1, le=10)
+    include_context: bool = Field(default=False)
 
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "query": "RAG คืออะไร?",
-                "rag_type": "hybrid",
-                "k": 3,
-                "include_images": True,
-                "include_context": False
-            }
-        }
+
+class LightRAGQueryRequest(BaseModel):
+    query: str = Field(...)
+    mode: str = Field(default="hybrid")
+    include_context: bool = Field(default=False)
+
+
+class LightRAGUploadRequest(BaseModel):
+    text: str = Field(...)
 
 
 class ChatResponse(BaseModel):
-    """Chat response model"""
-    answer: str = Field(..., description="คำตอบจาก AI")
-    sources: List[str] = Field(default=[], description="แหล่งที่มาของข้อมูล")
-    rag_type: str = Field(..., description="ประเภท RAG ที่ใช้")
-    images: List[Dict[str, Any]] = Field(default=[], description="รูปภาพที่เกี่ยวข้อง")
-    context: Optional[str] = Field(default=None, description="Context ที่ใช้ (ถ้าเปิด)")
-    metadata: Dict[str, Any] = Field(default={}, description="ข้อมูลเพิ่มเติม")
+    answer: str
+    sources: List[str] = []
+    rag_type: str
+    context: Optional[str] = None
+    metadata: Dict[str, Any] = {}
 
 
 class DocumentUploadResponse(BaseModel):
-    """Document upload response"""
-    status: str = Field(..., description="สถานะ: success/error")
-    filename: str = Field(..., description="ชื่อไฟล์")
-    chunks: int = Field(..., description="จำนวน chunks ที่สร้างได้")
-    message: str = Field(..., description="ข้อความ")
-    processing_time: Optional[float] = Field(default=None, description="เวลาในการประมวลผล (วินาที)")
+    status: str
+    filename: str
+    chunks: int
+    message: str
+    processing_time: Optional[float] = None
+    lightrag_processed: bool = False
 
 
 class HealthResponse(BaseModel):
-    """Health check response"""
-    status: str = Field(..., description="สถานะ: healthy/unhealthy")
-    model: str = Field(..., description="LLM model ที่กำลังใช้")
-    rag_types: List[str] = Field(..., description="RAG types ที่พร้อมใช้งาน")
-    documents_count: int = Field(..., description="จำนวนเอกสารใน memory")
-    uptime: Optional[str] = Field(default=None, description="เวลาที่ server ทำงาน")
-    lightrag_available: bool = Field(..., description="LightRAG พร้อมใช้งานหรือไม่")
-
-
-class ErrorResponse(BaseModel):
-    """Error response"""
-    error: str = Field(..., description="ประเภทของ error")
-    message: str = Field(..., description="รายละเอียด error")
-    detail: Optional[str] = Field(default=None, description="ข้อมูลเพิ่มเติม")
+    status: str
+    model: str
+    rag_types: List[str]
+    documents_count: int
+    uptime: Optional[str] = None
+    lightrag_available: bool
+    lightrag_stats: Optional[Dict] = None
 
 
 # ===== Authentication =====
 
 async def verify_api_key(x_api_key: str = Header(None)):
-    """Verify API key for protected endpoints"""
     if not ENABLE_AUTH:
         return True
-    
     if x_api_key != API_KEY:
-        raise HTTPException(
-            status_code=401,
-            detail="Invalid or missing API key. Use X-API-Key header."
-        )
+        raise HTTPException(status_code=401, detail="Invalid API key")
     return True
 
 
@@ -187,8 +171,7 @@ async def verify_api_key(x_api_key: str = Header(None)):
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize AI components on startup"""
-    global llm, memory, rag_systems, startup_time
+    global llm, memory, rag_systems, lightrag_system, startup_time
     
     startup_time = datetime.now()
     
@@ -198,18 +181,18 @@ async def startup_event():
     
     try:
         # Initialize LLM
-        logger.info("📦 Initializing LLM Handler...")
+        logger.info("🔧 Initializing LLM Handler...")
         llm = LLMHandler(model_name=LLM_MODEL, device="GPU")
         logger.info(f"✅ LLM Ready: {llm.get_model_name()}")
         
-        # Initialize Memory
-        logger.info("📦 Initializing Memory Handler...")
+        # Initialize Memory - ✅ FIXED: ไม่ส่ง persist_directory
+        logger.info("🔧 Initializing Memory Handler...")
         memory = MemoryHandler(device="cuda")
         doc_count = memory.count_documents()
         logger.info(f"✅ Memory Ready: {doc_count} documents")
         
-        # Initialize RAG systems
-        logger.info("📦 Initializing RAG Systems...")
+        # Initialize standard RAG systems
+        logger.info("🔧 Initializing RAG Systems...")
         rag_systems = {
             "naive": NaiveRAG(llm, memory),
             "contextual": ContextualRAG(llm, memory),
@@ -218,510 +201,338 @@ async def startup_event():
             "query_rewrite": QueryRewriteRAG(llm, memory),
             "multistep": MultiStepRAG(llm, memory)
         }
-        logger.info(f"✅ Initialized {len(rag_systems)} RAG systems")
+        logger.info(f"✅ Initialized {len(rag_systems)} standard RAG systems")
         
         # Try to initialize LightRAG
-        if is_lightrag_available() and HAS_LIGHTRAG:
+        if HAS_LIGHTRAG:
             try:
-                logger.info("🌟 Initializing LightRAG...")
-                rag_systems["lightrag"] = LightRAGWrapper(llm, memory)
-                logger.info("✅ LightRAG ready!")
+                logger.info("🔧 Initializing LightRAG...")
+                lightrag_system = LightRAGWrapper(llm, memory, query_mode="hybrid")
+                lightrag_system.working_dir = str(LIGHTRAG_DB_PATH)
+                rag_systems["lightrag"] = lightrag_system
+                logger.info(f"✅ LightRAG initialized at {LIGHTRAG_DB_PATH}")
             except Exception as e:
-                logger.warning(f"⚠️ LightRAG init failed: {e}")
-                logger.info("📝 LightRAG is optional, continuing without it")
-        else:
-            logger.info("⚠️ LightRAG not installed (optional)")
+                logger.error(f"⚠️ LightRAG initialization failed: {e}")
+                import traceback
+                traceback.print_exc()
+                lightrag_system = None
         
         logger.info("=" * 60)
-        logger.info("🎉 API is ready to serve!")
-        logger.info(f"📖 Documentation: http://localhost:8000/docs")
-        logger.info(f"🔧 RAG Systems: {list(rag_systems.keys())}")
-        logger.info(f"🔐 Authentication: {'Enabled' if ENABLE_AUTH else 'Disabled'}")
+        logger.info("✅ All systems ready!")
+        logger.info(f"📚 Total RAG types: {len(rag_systems)}")
+        logger.info(f"🧠 LightRAG: {'Enabled' if lightrag_system else 'Disabled'}")
         logger.info("=" * 60)
         
     except Exception as e:
         logger.error(f"❌ Startup failed: {e}")
+        import traceback
+        traceback.print_exc()
         raise
 
 
 @app.on_event("shutdown")
 async def shutdown_event():
-    """Cleanup on shutdown"""
-    logger.info("=" * 60)
-    logger.info("👋 Shutting down API server...")
-    logger.info("=" * 60)
+    logger.info("🛑 Shutting down...")
+    if lightrag_system:
+        try:
+            lightrag_system.shutdown()
+        except:
+            pass
+    logger.info("👋 Goodbye!")
 
 
-# ===== Exception Handlers =====
-
-@app.exception_handler(404)
-async def not_found_handler(request, exc):
-    """Handle 404 errors"""
-    return JSONResponse(
-        status_code=404,
-        content={
-            "error": "Not Found",
-            "message": "The requested endpoint does not exist",
-            "path": str(request.url),
-            "available_endpoints": [
-                "/docs", "/health", "/chat", "/documents", "/models"
-            ]
-        }
-    )
-
-
-@app.exception_handler(500)
-async def internal_error_handler(request, exc):
-    """Handle 500 errors"""
-    logger.error(f"Internal error: {exc}")
-    return JSONResponse(
-        status_code=500,
-        content={
-            "error": "Internal Server Error",
-            "message": "An unexpected error occurred",
-            "detail": str(exc) if not ENABLE_AUTH else "Error details hidden"
-        }
-    )
-
-
-# ===== Endpoints =====
-
-@app.get("/", tags=["Root"])
-async def root():
-    """
-    Root endpoint - API information
-    
-    Returns basic information about the API
-    """
-    return {
-        "name": API_TITLE,
-        "version": API_VERSION,
-        "status": "running",
-        "timestamp": datetime.now().isoformat(),
-        "endpoints": {
-            "health": "/health",
-            "chat": "/chat",
-            "documents": {
-                "list": "/documents",
-                "upload": "/documents/upload",
-                "delete": "/documents/{source}"
-            },
-            "models": "/models",
-            "documentation": "/docs"
-        },
-        "features": {
-            "rag_types": list(rag_systems.keys()),
-            "authentication": ENABLE_AUTH,
-            "lightrag": is_lightrag_available()
-        }
-    }
-
+# ===== Health Check =====
 
 @app.get("/health", response_model=HealthResponse, tags=["System"])
 async def health_check():
-    """
-    Health check endpoint
-    
-    Returns system status, model info, and statistics
-    """
-    uptime = None
-    if startup_time:
-        delta = datetime.now() - startup_time
-        hours, remainder = divmod(delta.seconds, 3600)
-        minutes, seconds = divmod(remainder, 60)
-        uptime = f"{delta.days}d {hours}h {minutes}m {seconds}s"
-    
-    return HealthResponse(
-        status="healthy",
-        model=llm.get_model_name() if llm else "Not initialized",
-        rag_types=list(rag_systems.keys()),
-        documents_count=memory.count_documents() if memory else 0,
-        uptime=uptime,
-        lightrag_available=is_lightrag_available() and "lightrag" in rag_systems
-    )
-
-
-@app.post(
-    "/chat",
-    response_model=ChatResponse,
-    tags=["Chat"],
-    dependencies=[Depends(verify_api_key)] if ENABLE_AUTH else []
-)
-async def chat(request: ChatRequest):
-    """
-    Main chat endpoint with RAG support
-    
-    **RAG Types:**
-    - `naive`: พื้นฐาน - Vector search (เร็วที่สุด)
-    - `contextual`: เน้น context รอบๆ
-    - `rerank`: ค้นหาแล้วจัดอันดับใหม่
-    - `hybrid`: BM25 + Vector (ดีที่สุดสำหรับภาษาไทย) 🔥
-    - `query_rewrite`: เขียนคำถามใหม่หลายแบบ
-    - `multistep`: ค้นหาหลายรอบถ้าข้อมูลไม่พอ
-    - `lightrag`: Graph-based RAG with Knowledge Graph 🌟
-    
-    **Example Request:**
-    ```bash
-    curl -X POST "http://localhost:8000/chat" \\
-      -H "Content-Type: application/json" \\
-      -d '{
-        "query": "RAG คืออะไร?",
-        "rag_type": "hybrid",
-        "k": 3
-      }'
-    ```
-    
-    **With Authentication:**
-    ```bash
-    curl -X POST "http://localhost:8000/chat" \\
-      -H "Content-Type: application/json" \\
-      -H "X-API-Key: your-secret-key-here" \\
-      -d '{"query": "test"}'
-    ```
-    """
-    # Validate RAG type
-    rag_type_lower = request.rag_type.lower()
-    if rag_type_lower not in rag_systems:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Invalid rag_type '{request.rag_type}'. Must be one of: {list(rag_systems.keys())}"
+    """System health check"""
+    try:
+        uptime = str(datetime.now() - startup_time) if startup_time else None
+        
+        lightrag_stats = None
+        if lightrag_system:
+            try:
+                lightrag_stats = lightrag_system.get_graph_stats()
+            except:
+                pass
+        
+        return HealthResponse(
+            status="healthy",
+            model=llm.get_model_name() if llm else "unknown",
+            rag_types=list(rag_systems.keys()),
+            documents_count=memory.count_documents() if memory else 0,
+            uptime=uptime,
+            lightrag_available=lightrag_system is not None,
+            lightrag_stats=lightrag_stats
         )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ===== Chat Endpoints =====
+
+@app.post("/chat", response_model=ChatResponse, tags=["Chat"])
+async def chat(request: ChatRequest, authenticated: bool = Depends(verify_api_key)):
+    """Main chat endpoint - supports all RAG types including LightRAG"""
+    try:
+        logger.info(f"📨 Chat: '{request.query}' (type: {request.rag_type})")
+        
+        if request.rag_type not in rag_systems:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid RAG type. Available: {list(rag_systems.keys())}"
+            )
+        
+        rag_system = rag_systems[request.rag_type]
+        
+        start_time = datetime.now()
+        result = rag_system.query(request.query, k=request.k)
+        processing_time = (datetime.now() - start_time).total_seconds()
+        
+        context_parts = []
+        sources = []
+        
+        if isinstance(result.get('context'), list):
+            for item in result['context']:
+                if isinstance(item, dict):
+                    context_parts.append(item.get('content', ''))
+                    if 'metadata' in item and 'source' in item['metadata']:
+                        sources.append(item['metadata']['source'])
+        
+        context_text = "\n\n".join(context_parts) if context_parts else ""
+        
+        response = ChatResponse(
+            answer=result.get('answer', 'No answer generated'),
+            sources=list(set(sources)),
+            rag_type=request.rag_type,
+            context=context_text if request.include_context else None,
+            metadata={'processing_time': processing_time, 'timestamp': datetime.now().isoformat()}
+        )
+        
+        logger.info(f"✅ Response in {processing_time:.2f}s")
+        return response
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ Chat error: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ===== LightRAG Endpoints =====
+
+@app.post("/lightrag/query", response_model=ChatResponse, tags=["LightRAG"])
+async def lightrag_query(request: LightRAGQueryRequest, authenticated: bool = Depends(verify_api_key)):
+    """Query LightRAG Knowledge Graph"""
+    if not lightrag_system:
+        raise HTTPException(status_code=503, detail="LightRAG not available")
     
     try:
-        # Get RAG system
-        rag = rag_systems[rag_type_lower]
+        logger.info(f"🧠 LightRAG: '{request.query}' (mode: {request.mode})")
         
-        # Query RAG
-        logger.info(f"Processing query with {rag_type_lower} RAG: {request.query[:50]}...")
-        result = rag.query(request.query, k=request.k)
+        original_mode = lightrag_system.get_query_mode()
+        lightrag_system.set_query_mode(request.mode)
         
-        # Extract images if requested
-        images = []
-        if request.include_images and result.get('context'):
-            try:
-                images = ImageHandler.extract_images_from_context(result['context'])
-                logger.info(f"Found {len(images)} images")
-            except Exception as e:
-                logger.warning(f"Image extraction failed: {e}")
+        start_time = datetime.now()
+        result = lightrag_system.query(request.query, k=3)
+        processing_time = (datetime.now() - start_time).total_seconds()
         
-        # Prepare response
+        lightrag_system.set_query_mode(original_mode)
+        
+        context_text = ""
+        if isinstance(result.get('context'), list) and result['context']:
+            context_text = result['context'][0].get('content', '')
+        
         return ChatResponse(
-            answer=result['answer'],
-            sources=result.get('sources', []),
-            rag_type=result['rag_type'],
-            images=images,
-            context=result.get('context') if request.include_context else None,
-            metadata={
-                "documents_searched": request.k,
-                "query_length": len(request.query),
-                "response_length": len(result['answer']),
-                "has_context": bool(result.get('context')),
-                "timestamp": datetime.now().isoformat()
-            }
+            answer=result.get('answer', 'No answer'),
+            sources=['lightrag_knowledge_graph'],
+            rag_type="lightrag",
+            context=context_text if request.include_context else None,
+            metadata={'processing_time': processing_time, 'mode': request.mode}
         )
         
     except Exception as e:
-        logger.error(f"Error processing query: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error processing query: {str(e)}"
-        )
+        logger.error(f"❌ LightRAG error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.post(
-    "/documents/upload",
-    response_model=DocumentUploadResponse,
-    tags=["Documents"],
-    dependencies=[Depends(verify_api_key)] if ENABLE_AUTH else []
-)
-async def upload_document(file: UploadFile = File(...)):
-    """
-    Upload and process a document
-    
-    **Supported formats:** TXT, PDF, DOCX, JSON, MD
-    
-    **Example:**
-    ```bash
-    curl -X POST "http://localhost:8000/documents/upload" \\
-      -F "file=@document.pdf"
-    ```
-    
-    **With Authentication:**
-    ```bash
-    curl -X POST "http://localhost:8000/documents/upload" \\
-      -H "X-API-Key: your-secret-key-here" \\
-      -F "file=@document.pdf"
-    ```
-    """
-    import time
-    start_time = time.time()
-    
-    # Check file extension
-    suffix = Path(file.filename).suffix.lower()
-    supported = ['.txt', '.pdf', '.docx', '.json', '.md']
-    
-    if suffix not in supported:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Unsupported file type '{suffix}'. Supported: {supported}"
-        )
-    
-    # Save temp file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-        content = await file.read()
-        tmp.write(content)
-        tmp_path = tmp.name
+@app.post("/lightrag/insert", tags=["LightRAG"])
+async def lightrag_insert(
+    request: LightRAGUploadRequest,
+    background_tasks: BackgroundTasks,
+    authenticated: bool = Depends(verify_api_key)
+):
+    """Insert text into LightRAG Knowledge Graph"""
+    if not lightrag_system:
+        raise HTTPException(status_code=503, detail="LightRAG not available")
     
     try:
-        # Process document
-        logger.info(f"Processing document: {file.filename}")
-        processor = DocumentProcessor()
-        chunks = processor.process_file(tmp_path)
+        logger.info(f"📚 Inserting: {len(request.text)} chars")
         
-        if not chunks:
-            raise HTTPException(
-                status_code=400,
-                detail="No content extracted from file. File may be empty or corrupted."
-            )
-        
-        # Add to memory
-        logger.info(f"Adding {len(chunks)} chunks to memory...")
-        metadata = [{'source': file.filename} for _ in chunks]
-        memory.add_documents(chunks, metadata)
-        
-        # If LightRAG is active, add to knowledge graph
-        if "lightrag" in rag_systems:
+        def process():
             try:
-                logger.info("Adding to LightRAG Knowledge Graph...")
-                rag_systems["lightrag"].insert_documents(chunks, metadata)
-                logger.info("✅ LightRAG graph updated")
+                lightrag_system.insert_documents([request.text])
+                logger.info("✅ Insert complete")
             except Exception as e:
-                logger.warning(f"LightRAG update failed: {e}")
+                logger.error(f"❌ Insert error: {e}")
         
-        processing_time = time.time() - start_time
+        background_tasks.add_task(process)
         
-        logger.info(f"✅ Document processed: {file.filename} ({len(chunks)} chunks, {processing_time:.2f}s)")
+        return {
+            "status": "accepted",
+            "message": "Text queued for processing",
+            "text_length": len(request.text)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/lightrag/upload", tags=["LightRAG"])
+async def lightrag_upload(
+    file: UploadFile = File(...),
+    background_tasks: BackgroundTasks = None,
+    authenticated: bool = Depends(verify_api_key)
+):
+    """Upload document to LightRAG"""
+    if not lightrag_system:
+        raise HTTPException(status_code=503, detail="LightRAG not available")
+    
+    try:
+        temp_path = UPLOAD_DIR / file.filename
+        with open(temp_path, "wb") as f:
+            content = await file.read()
+            f.write(content)
+        
+        processor = DocumentProcessor()
+        documents = processor.process_file(str(temp_path))
+        
+        if not documents:
+            raise HTTPException(status_code=400, detail="No content")
+        
+        texts = [doc['content'] for doc in documents]
+        
+        def process():
+            try:
+                lightrag_system.insert_documents(texts)
+                logger.info(f"✅ Processed {len(texts)} chunks")
+            except Exception as e:
+                logger.error(f"❌ Processing error: {e}")
+        
+        if background_tasks:
+            background_tasks.add_task(process)
+        
+        if temp_path.exists():
+            temp_path.unlink()
+        
+        return {
+            "status": "accepted",
+            "filename": file.filename,
+            "chunks": len(texts),
+            "message": f"Queued {len(texts)} chunks"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/lightrag/stats", tags=["LightRAG"])
+async def lightrag_stats():
+    """Get LightRAG statistics"""
+    if not lightrag_system:
+        raise HTTPException(status_code=503, detail="LightRAG not available")
+    
+    try:
+        stats = lightrag_system.get_graph_stats()
+        return {"status": "success", "stats": stats}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/lightrag/mode", tags=["LightRAG"])
+async def set_lightrag_mode(mode: str, authenticated: bool = Depends(verify_api_key)):
+    """Change LightRAG query mode"""
+    if not lightrag_system:
+        raise HTTPException(status_code=503, detail="LightRAG not available")
+    
+    try:
+        lightrag_system.set_query_mode(mode)
+        return {"status": "success", "mode": mode}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+# ===== Document Management =====
+
+@app.post("/upload", response_model=DocumentUploadResponse, tags=["Documents"])
+async def upload_document(
+    file: UploadFile = File(...),
+    add_to_lightrag: bool = False,
+    background_tasks: BackgroundTasks = None,
+    authenticated: bool = Depends(verify_api_key)
+):
+    """Upload document to standard RAG"""
+    try:
+        temp_path = UPLOAD_DIR / file.filename
+        with open(temp_path, "wb") as f:
+            content = await file.read()
+            f.write(content)
+        
+        start_time = datetime.now()
+        processor = DocumentProcessor()
+        documents = processor.process_file(str(temp_path))
+        
+        if not documents:
+            raise HTTPException(status_code=400, detail="No content")
+        
+        memory.add_documents(documents)
+        
+        lightrag_processed = False
+        if add_to_lightrag and lightrag_system:
+            texts = [doc['content'] for doc in documents]
+            
+            def add_to_graph():
+                try:
+                    lightrag_system.insert_documents(texts)
+                except Exception as e:
+                    logger.error(f"⚠️ LightRAG add error: {e}")
+            
+            if background_tasks:
+                background_tasks.add_task(add_to_graph)
+                lightrag_processed = True
+        
+        processing_time = (datetime.now() - start_time).total_seconds()
+        
+        if temp_path.exists():
+            temp_path.unlink()
         
         return DocumentUploadResponse(
             status="success",
             filename=file.filename,
-            chunks=len(chunks),
-            message=f"Successfully processed and stored {len(chunks)} chunks from {file.filename}",
-            processing_time=round(processing_time, 2)
+            chunks=len(documents),
+            message=f"Processed {len(documents)} chunks",
+            processing_time=processing_time,
+            lightrag_processed=lightrag_processed
         )
-        
-    except HTTPException:
-        raise
     except Exception as e:
-        logger.error(f"Error processing file: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error processing file: {str(e)}"
-        )
-        
-    finally:
-        # Cleanup temp file
-        if Path(tmp_path).exists():
-            Path(tmp_path).unlink()
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.get(
-    "/documents",
-    tags=["Documents"],
-    dependencies=[Depends(verify_api_key)] if ENABLE_AUTH else []
-)
-async def list_documents():
-    """
-    List all uploaded documents
-    
-    Returns list of document sources and statistics
-    
-    **Example:**
-    ```bash
-    curl http://localhost:8000/documents
-    ```
-    """
-    try:
-        sources = memory.get_all_sources()
-        total_chunks = memory.count_documents()
-        
-        # Group by source
-        documents_info = []
-        for source in sources:
-            # Count chunks per source (approximate)
-            documents_info.append({
-                "filename": source,
-                "type": Path(source).suffix[1:].upper() if Path(source).suffix else "UNKNOWN"
-            })
-        
-        return {
-            "status": "success",
-            "total_documents": len(sources),
-            "total_chunks": total_chunks,
-            "documents": documents_info,
-            "timestamp": datetime.now().isoformat()
-        }
-    except Exception as e:
-        logger.error(f"Error listing documents: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error listing documents: {str(e)}"
-        )
-
-
-@app.delete(
-    "/documents/{source}",
-    tags=["Documents"],
-    dependencies=[Depends(verify_api_key)] if ENABLE_AUTH else []
-)
-async def delete_document(source: str):
-    """
-    Delete a document by source name
-    
-    **Parameters:**
-    - `source`: ชื่อไฟล์ที่ต้องการลบ (URL encoded)
-    
-    **Example:**
-    ```bash
-    curl -X DELETE "http://localhost:8000/documents/myfile.pdf"
-    ```
-    """
-    try:
-        logger.info(f"Deleting document: {source}")
-        count = memory.delete_by_source(source)
-        
-        if count == 0:
-            raise HTTPException(
-                status_code=404,
-                detail=f"Document '{source}' not found"
-            )
-        
-        logger.info(f"✅ Deleted {count} chunks from {source}")
-        
-        return {
-            "status": "success",
-            "deleted_chunks": count,
-            "source": source,
-            "message": f"Deleted {count} chunks from {source}",
-            "timestamp": datetime.now().isoformat()
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error deleting document: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error deleting document: {str(e)}"
-        )
-
-
-@app.delete(
-    "/documents",
-    tags=["Documents"],
-    dependencies=[Depends(verify_api_key)] if ENABLE_AUTH else []
-)
-async def clear_all_documents():
-    """
-    Clear all documents from memory
-    
-    ⚠️ **Warning:** This action cannot be undone!
-    
-    **Example:**
-    ```bash
-    curl -X DELETE "http://localhost:8000/documents"
-    ```
-    """
-    try:
-        logger.warning("⚠️ Clearing all documents...")
-        success = memory.clear_all_documents()
-        
-        if success:
-            logger.info("✅ All documents cleared")
-            return {
-                "status": "success",
-                "message": "All documents cleared successfully",
-                "timestamp": datetime.now().isoformat()
-            }
-        else:
-            raise HTTPException(
-                status_code=500,
-                detail="Failed to clear documents"
-            )
-            
-    except Exception as e:
-        logger.error(f"Error clearing documents: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error clearing documents: {str(e)}"
-        )
-
-
-@app.get("/models", tags=["System"])
-async def list_models():
-    """
-    List available models and RAG types
-    
-    Returns information about LLM model, RAG systems, and embeddings
-    
-    **Example:**
-    ```bash
-    curl http://localhost:8000/models
-    ```
-    """
+@app.get("/info", tags=["System"])
+async def system_info():
+    """Get system information"""
     return {
-        "llm": {
-            "current_model": llm.get_model_name() if llm else None,
-            "provider": "Ollama",
-            "device": "GPU/CPU"
-        },
-        "rag_types": {
-            "available": list(rag_systems.keys()),
-            "total": len(rag_systems),
-            "lightrag_enabled": "lightrag" in rag_systems
-        },
-        "embeddings": {
-            "provider": "Sentence Transformers",
-            "model": "paraphrase-multilingual-MiniLM-L12-v2",
-            "dimensions": 384
-        },
-        "statistics": {
-            "total_documents": memory.count_documents() if memory else 0,
-            "available_sources": len(memory.get_all_sources()) if memory else 0
-        },
-        "timestamp": datetime.now().isoformat()
-    }
-
-
-@app.get("/stats", tags=["System"])
-async def get_statistics():
-    """
-    Get detailed statistics
-    
-    Returns comprehensive statistics about the system
-    """
-    sources = memory.get_all_sources() if memory else []
-    
-    return {
-        "system": {
-            "status": "healthy",
-            "uptime": (datetime.now() - startup_time).total_seconds() if startup_time else 0,
-            "version": API_VERSION
-        },
-        "documents": {
-            "total_sources": len(sources),
-            "total_chunks": memory.count_documents() if memory else 0,
-            "sources": sources
+        "api": {"version": API_VERSION, "title": API_TITLE},
+        "paths": {
+            "chroma_db": str(CHROMA_DB_PATH),
+            "lightrag_db": str(LIGHTRAG_DB_PATH),
+            "uploads": str(UPLOAD_DIR)
         },
         "rag": {
             "available_types": list(rag_systems.keys()),
-            "total_types": len(rag_systems),
-            "lightrag_available": "lightrag" in rag_systems
+            "lightrag_enabled": lightrag_system is not None
         },
-        "model": {
-            "name": llm.get_model_name() if llm else None,
-            "provider": "Ollama"
-        },
-        "timestamp": datetime.now().isoformat()
+        "documents": {"count": memory.count_documents() if memory else 0}
     }
 
 
@@ -733,15 +544,15 @@ if __name__ == "__main__":
     print("=" * 60)
     print(f"🚀 Starting {API_TITLE}")
     print("=" * 60)
-    print(f"📖 API Docs: http://localhost:8000/docs")
-    print(f"📊 Health Check: http://localhost:8000/health")
-    print(f"🔐 Authentication: {'Enabled' if ENABLE_AUTH else 'Disabled'}")
+    print(f"📖 Docs: http://localhost:8000/docs")
+    print(f"🔍 Health: http://localhost:8000/health")
+    print(f"🧠 LightRAG: {'Enabled' if HAS_LIGHTRAG else 'Disabled'}")
     print("=" * 60)
     
     uvicorn.run(
         "api:app",
         host="0.0.0.0",
         port=8000,
-        reload=True,
+        reload=False,
         log_level="info"
     )

@@ -1,0 +1,1118 @@
+{
+  "แกงมัสมั่นเนื้อ<SEP>แกงเขียวหวานไก่": {
+    "chunk_ids": [
+      "chunk-cf04d1f0c1ada8a9457e8fd00484849b"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "แกงมัสมั่นเนื้อ<SEP>แกงเขียวหวานไก่"
+  },
+  "Choices<SEP>ผัดผักรวมมิตร": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Choices<SEP>ผัดผักรวมมิตร"
+  },
+  "Grab Food<SEP>Krua Baan Thai": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Grab Food<SEP>Krua Baan Thai"
+  },
+  "Kruabaanthai.com<SEP>PromptPay": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Kruabaanthai.com<SEP>PromptPay"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว<SEP>แกงเขียวหวานไก่": {
+    "chunk_ids": [
+      "chunk-cf04d1f0c1ada8a9457e8fd00484849b"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว<SEP>แกงเขียวหวานไก่"
+  },
+  "Kruabaanthai.com<SEP>Thai QR Payment": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Kruabaanthai.com<SEP>Thai QR Payment"
+  },
+  "Choices (เพื่อสุขภาพ)<SEP>ผัดผักรวมมิตร": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Choices (เพื่อสุขภาพ)<SEP>ผัดผักรวมมิตร"
+  },
+  "Food Panda<SEP>Krua Baan Thai": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Food Panda<SEP>Krua Baan Thai"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว<SEP>แกงมัสมั่นเนื้อ": {
+    "chunk_ids": [
+      "chunk-cf04d1f0c1ada8a9457e8fd00484849b"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว<SEP>แกงมัสมั่นเนื้อ"
+  },
+  "Krua Baan Thai<SEP>Line Man": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Krua Baan Thai<SEP>Line Man"
+  },
+  "ส้มตำปู<SEP>ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ส้มตำปู<SEP>ส้มตำไทย"
+  },
+  "Choices (เพื่อสุขภาพ)<SEP>Grab Food": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Choices (เพื่อสุขภาพ)<SEP>Grab Food"
+  },
+  "Krua Baan Thai<SEP>Robinhood": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Krua Baan Thai<SEP>Robinhood"
+  },
+  "มะม่วงข้าวเหนียว<SEP>ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "มะม่วงข้าวเหนียว<SEP>ส้มตำไทย"
+  },
+  "ส้มตำปู<SEP>ไข่เค็ม": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ส้มตำปู<SEP>ไข่เค็ม"
+  },
+  "Choices (เพื่อสุขภาพ)<SEP>Food Panda": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Choices (เพื่อสุขภาพ)<SEP>Food Panda"
+  },
+  "มะละกอดิบ<SEP>ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "มะละกอดิบ<SEP>ส้มตำไทย"
+  },
+  "Choices (เพื่อสุขภาพ)<SEP>Line Man": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Choices (เพื่อสุขภาพ)<SEP>Line Man"
+  },
+  "มะเขือเทศ<SEP>ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "มะเขือเทศ<SEP>ส้มตำไทย"
+  },
+  "ผัดกะเพรา<SEP>ผัดกะเพราหมูสับไข่ดาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพรา<SEP>ผัดกะเพราหมูสับไข่ดาว"
+  },
+  "ผัดซีอิ๊วเนื้อ<SEP>หมูสับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดซีอิ๊วเนื้อ<SEP>หมูสับ"
+  },
+  "พริกขี้หนู<SEP>ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "พริกขี้หนู<SEP>ส้มตำไทย"
+  },
+  "Choices (เพื่อสุขภาพ)<SEP>Robinhood": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Choices (เพื่อสุขภาพ)<SEP>Robinhood"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว<SEP>หมู่สับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว<SEP>หมู่สับ"
+  },
+  "ผัดซีอิ๊วเนื้อ<SEP>ไก่สับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดซีอิ๊วเนื้อ<SEP>ไก่สับ"
+  },
+  "กระเทียม<SEP>ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "กระเทียม<SEP>ส้มตำไทย"
+  },
+  "ผัดกะเพรา<SEP>พริกขี้หนู": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพรา<SEP>พริกขี้หนู"
+  },
+  "ผัดซีอิ๊วเนื้อ<SEP>เนื้อสับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดซีอิ๊วเนื้อ<SEP>เนื้อสับ"
+  },
+  "น้ำมะขามเปียก<SEP>ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "น้ำมะขามเปียก<SEP>ส้มตำไทย"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว<SEP>พริกชี้ฟ้า": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว<SEP>พริกชี้ฟ้า"
+  },
+  "ผัดซีอิ๊วเนื้อ<SEP>พริกชี้ฟ้า": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดซีอิ๊วเนื้อ<SEP>พริกชี้ฟ้า"
+  },
+  "ถั่วฝักยาว<SEP>ผัดกะเพราหมูสับไข่ดาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ถั่วฝักยาว<SEP>ผัดกะเพราหมูสับไข่ดาว"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว<SEP>ไข่ดาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว<SEP>ไข่ดาว"
+  },
+  "ผัดซีอิ๊วเนื้อ<SEP>ไข่ดาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดซีอิ๊วเนื้อ<SEP>ไข่ดาว"
+  },
+  "น้ำปลา<SEP>ผัดกะเพราหมูสับไข่ดาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "น้ำปลา<SEP>ผัดกะเพราหมูสับไข่ดาว"
+  },
+  "ถั่วฝักยาว<SEP>ผัดซีอิ๊วเนื้อ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ถั่วฝักยาว<SEP>ผัดซีอิ๊วเนื้อ"
+  },
+  "ซอสหอยนางรม<SEP>ผัดกะเพราหมูสับไข่ดาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ซอสหอยนางรม<SEP>ผัดกะเพราหมูสับไข่ดาว"
+  },
+  "ผัดกะเพรา<SEP>ผัดซีอิ๊วเนื้อ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพรา<SEP>ผัดซีอิ๊วเนื้อ"
+  },
+  "ผัดซีอิ๊วเนื้อชิ้นใหญ่<SEP>เนื้อวัวสันใน": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดซีอิ๊วเนื้อชิ้นใหญ่<SEP>เนื้อวัวสันใน"
+  },
+  "น้ำปลา<SEP>ผัดซีอิ๊วเนื้อ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "น้ำปลา<SEP>ผัดซีอิ๊วเนื้อ"
+  },
+  "ซีอิ๊วดำ<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ซีอิ๊วดำ<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่"
+  },
+  "ผัดซีอิ๊วเนื้อ<SEP>แคลอรี": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดซีอิ๊วเนื้อ<SEP>แคลอรี"
+  },
+  "บร็อคโคลี่<SEP>ผัดผักรวมมิตร": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "บร็อคโคลี่<SEP>ผัดผักรวมมิตร"
+  },
+  "กระเทียม<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "กระเทียม<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่"
+  },
+  "คะน้า<SEP>ผัดผักรวมมิตร": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "คะน้า<SEP>ผัดผักรวมมิตร"
+  },
+  "ปลาหมึก<SEP>ยำวุ้นเส้น": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ปลาหมึก<SEP>ยำวุ้นเส้น"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว<SEP>ผัดซีอิ๊วเนื้อ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว<SEP>ผัดซีอิ๊วเนื้อ"
+  },
+  "น้ำมันหอย<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "น้ำมันหอย<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่"
+  },
+  "ซอสหอยนางรม<SEP>ผัดซีอิ๊วเนื้อ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ซอสหอยนางรม<SEP>ผัดซีอิ๊วเนื้อ"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว<SEP>ราคา": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว<SEP>ราคา"
+  },
+  "กุ้ง<SEP>ยำวุ้นเส้น": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "กุ้ง<SEP>ยำวุ้นเส้น"
+  },
+  "ครัวบ้านไทย<SEP>พนักงานใจดี": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ครัวบ้านไทย<SEP>พนักงานใจดี"
+  },
+  "บร็อคโคลี่<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "บร็อคโคลี่<SEP>ผัดซีอิ๊วเนื้อชิ้นใหญ่"
+  },
+  "ก่อตั้งปี (2010)<SEP>ครัวบ้านไทย": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ก่อตั้งปี (2010)<SEP>ครัวบ้านไทย"
+  },
+  "ยำวุ้นเส้น<SEP>หมูสับ": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ยำวุ้นเส้น<SEP>หมูสับ"
+  },
+  "ครัวบ้านไทย<SEP>ประสบการณ์เชฟ (15+ ปี)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>ประสบการณ์เชฟ (15+ ปี)"
+  },
+  "กุ้งสด<SEP>ยำวุ้นเส้น": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กุ้งสด<SEP>ยำวุ้นเส้น"
+  },
+  "ครัวบ้านไทย<SEP>ลูกค้าต่อวัน (200+ คน)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>ลูกค้าต่อวัน (200+ คน)"
+  },
+  "วุ้นเส้น<SEP>หมูสับ": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "วุ้นเส้น<SEP>หมูสับ"
+  },
+  "กุ้งสด<SEP>ปลาหมึก": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กุ้งสด<SEP>ปลาหมึก"
+  },
+  "ครัวบ้านไทย<SEP>เมนูขายดี (ต้มยำกุ้ง)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>เมนูขายดี (ต้มยำกุ้ง)"
+  },
+  "ข้าวโพดอ่อน<SEP>มะเขือเทศ": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวโพดอ่อน<SEP>มะเขือเทศ"
+  },
+  "ขึ้นฉ่าย<SEP>หอมใหญ่": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ขึ้นฉ่าย<SEP>หอมใหญ่"
+  },
+  "พริกขี้หนู<SEP>มะนาว": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "พริกขี้หนู<SEP>มะนาว"
+  },
+  "ข้าวเหนียว<SEP>ลาบหมู": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวเหนียว<SEP>ลาบหมู"
+  },
+  "ครัวบ้านไทย<SEP>พนักงาน": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>พนักงาน"
+  },
+  "Krua Baan Thai<SEP>Thailand": {
+    "chunk_ids": [
+      "chunk-0ee78eceae7667c5a830212070498892"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "Krua Baan Thai<SEP>Thailand"
+  },
+  "ก๋วยเตี๋ยวเรือน้ำตก<SEP>ข้าวผัดกุ้ง": {
+    "chunk_ids": [
+      "chunk-ec6821bd54fccb7c25ebdb149238bc99"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ก๋วยเตี๋ยวเรือน้ำตก<SEP>ข้าวผัดกุ้ง"
+  },
+  "Krua Baan Thai<SEP>เอกสารอัพเดทล่าสุด": {
+    "chunk_ids": [
+      "chunk-0ee78eceae7667c5a830212070498892"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "Krua Baan Thai<SEP>เอกสารอัพเดทล่าสุด"
+  },
+  "ครัวบ้านไทย<SEP>ลูกค้า": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>ลูกค้า"
+  },
+  "ข้าวหมกไก่<SEP>เนื้อไก่": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวหมกไก่<SEP>เนื้อไก่"
+  },
+  "กะทิ<SEP>ขนมจีนน้ำยา": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กะทิ<SEP>ขนมจีนน้ำยา"
+  },
+  "กุ้ง<SEP>ข้าวผัด": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กุ้ง<SEP>ข้าวผัด"
+  },
+  "ข้าวผัดกุ้ง<SEP>หอมใหญ่": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวผัดกุ้ง<SEP>หอมใหญ่"
+  },
+  "ขนมจีนน้ำยา<SEP>ปลา": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ขนมจีนน้ำยา<SEP>ปลา"
+  },
+  "บัวลอย<SEP>ภาคใต้": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "บัวลอย<SEP>ภาคใต้"
+  },
+  "ครัวบ้านไทย<SEP>เมนู": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>เมนู"
+  },
+  "ต้มยำกุ้งแท้<SEP>ผัดไทยกุ้งสด": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>ผัดไทยกุ้งสด"
+  },
+  "ข้าวเหนียวทุเรียน<SEP>ภาคใต้": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวเหนียวทุเรียน<SEP>ภาคใต้"
+  },
+  "บัวลอย<SEP>มะม่วง": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "บัวลอย<SEP>มะม่วง"
+  },
+  "ข้าวโพด<SEP>ต้มยำกุ้งแท้": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวโพด<SEP>ต้มยำกุ้งแท้"
+  },
+  "ข้าวเหนียวมัน<SEP>ภาคใต้": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวเหนียวมัน<SEP>ภาคใต้"
+  },
+  "ต้มยำกุ้งแท้<SEP>นมข้นจืด": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>นมข้นจืด"
+  },
+  "ครัวบ้านไทย<SEP>รางวัล": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>รางวัล"
+  },
+  "ขนมจีนน้ำยา<SEP>ภาคใต้": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ขนมจีนน้ำยา<SEP>ภาคใต้"
+  },
+  "ต้มยำกุ้งแท้<SEP>เห็ดฟาง": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>เห็ดฟาง"
+  },
+  "ผัดไทย<SEP>เต้าหู้แข็ง": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ผัดไทย<SEP>เต้าหู้แข็ง"
+  },
+  "ต้มยำกุ้งแท้<SEP>มะเขือเทศ": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>มะเขือเทศ"
+  },
+  "ต้มยำกุ้งแท้<SEP>พริกขี้หนู": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>พริกขี้หนู"
+  },
+  "ผัดไทย<SEP>ไข่ไก่": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ผัดไทย<SEP>ไข่ไก่"
+  },
+  "ข่า<SEP>ต้มยำกุ้งแท้": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข่า<SEP>ต้มยำกุ้งแท้"
+  },
+  "ข้าวเหนียวทุเรียน<SEP>ลอดช่อง": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวเหนียวทุเรียน<SEP>ลอดช่อง"
+  },
+  "ต้มยำกุ้งแท้<SEP>ใบมะกรูด": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>ใบมะกรูด"
+  },
+  "ทับทิมกรอบ<SEP>ลอดช่อง": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ทับทิมกรอบ<SEP>ลอดช่อง"
+  },
+  "ข้าวเหนียวหอมมัน<SEP>ทุเรียนหมอนทอง": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ข้าวเหนียวหอมมัน<SEP>ทุเรียนหมอนทอง"
+  },
+  "กุ้งแม่น้ำ<SEP>ต้มยำกุ้งแท้": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กุ้งแม่น้ำ<SEP>ต้มยำกุ้งแท้"
+  },
+  "แป้งข้าวเหนียว<SEP>ใบเตย": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "แป้งข้าวเหนียว<SEP>ใบเตย"
+  },
+  "ผักบีท<SEP>แห้วกรอบ": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ผักบีท<SEP>แห้วกรอบ"
+  },
+  "ชาเย็น<SEP>ทับทิมกรอบ": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ชาเย็น<SEP>ทับทิมกรอบ"
+  },
+  "ต้มยำกุ้งแท้<SEP>นม": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>นม"
+  },
+  "น้ำมะนาว<SEP>เครื่องดื่ม": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "น้ำมะนาว<SEP>เครื่องดื่ม"
+  },
+  "กาแฟโบราณ<SEP>เครื่องดื่ม": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กาแฟโบราณ<SEP>เครื่องดื่ม"
+  },
+  "ต้มยำกุ้งแท้<SEP>ปรุงน้ำปลา": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>ปรุงน้ำปลา"
+  },
+  "ต้มยำกุ้งแท้<SEP>น้ำมะนาว": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ต้มยำกุ้งแท้<SEP>น้ำมะนาว"
+  },
+  "มะม่วงข้าวเหนียว<SEP>ลาปรุง": {
+    "chunk_ids": [
+      "chunk-dca421a0049196bc0c39b3ea2ffdc01e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "มะม่วงข้าวเหนียว<SEP>ลาปรุง"
+  },
+  "เครื่องดื่ม<SEP>ใบเตยสด": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "เครื่องดื่ม<SEP>ใบเตยสด"
+  },
+  "กาแฟโบราณ<SEP>น้ำมะนาว": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กาแฟโบราณ<SEP>น้ำมะนาว"
+  },
+  "ปอเปี๊ยะทอด<SEP>ลาปรุง": {
+    "chunk_ids": [
+      "chunk-dca421a0049196bc0c39b3ea2ffdc01e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ปอเปี๊ยะทอด<SEP>ลาปรุง"
+  },
+  "น้ำใบเตย<SEP>เตยสด": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "น้ำใบเตย<SEP>เตยสด"
+  },
+  "ชาเย็น<SEP>เครื่องดื่ม": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ชาเย็น<SEP>เครื่องดื่ม"
+  },
+  "กาแฟโบราณ<SEP>น้ำใบเตยสด": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "กาแฟโบราณ<SEP>น้ำใบเตยสด"
+  },
+  "ลาปรุง<SEP>สะเต๊ะหมู": {
+    "chunk_ids": [
+      "chunk-dca421a0049196bc0c39b3ea2ffdc01e"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ลาปรุง<SEP>สะเต๊ะหมู"
+  },
+  "Promotions<SEP>Set คู่สุดคุ้ม": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "Promotions<SEP>Set คู่สุดคุ้ม"
+  },
+  "Set Lunch<SEP>เตยสด": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "Set Lunch<SEP>เตยสด"
+  },
+  "123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110<SEP>Krua Baan Thai": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110<SEP>Krua Baan Thai"
+  },
+  "ชาเย็น<SEP>น้ำมะนาว": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ชาเย็น<SEP>น้ำมะนาว"
+  },
+  "ครัวบ้านไทย<SEP>ถนนสุขุมวิท": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ครัวบ้านไทย<SEP>ถนนสุขุมวิท"
+  },
+  "02-123-4567<SEP>Krua Baan Thai": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "02-123-4567<SEP>Krua Baan Thai"
+  },
+  "น้ำกระเจี๊ยบ<SEP>เตยสด": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "น้ำกระเจี๊ยบ<SEP>เตยสด"
+  },
+  "123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110<SEP>ครัวบ้านไทย": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110<SEP>ครัวบ้านไทย"
+  },
+  "Krua Baan Thai<SEP>ทอดมันปลากราย": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "Krua Baan Thai<SEP>ทอดมันปลากราย"
+  },
+  "02-123-4567<SEP>ครัวบ้านไทย": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "02-123-4567<SEP>ครัวบ้านไทย"
+  },
+  "Krua Baan Thai<SEP>ต้มยำกุ้งน้ำข้น": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "Krua Baan Thai<SEP>ต้มยำกุ้งน้ำข้น"
+  },
+  "Krua Baan Thai<SEP>Thai cuisine": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "Krua Baan Thai<SEP>Thai cuisine"
+  }
+}

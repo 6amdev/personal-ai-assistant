@@ -1,0 +1,2374 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d13" for="edge" attr.name="truncate" attr.type="string"/>
+<key id="d12" for="edge" attr.name="created_at" attr.type="long"/>
+<key id="d11" for="edge" attr.name="file_path" attr.type="string"/>
+<key id="d10" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d9" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d8" for="edge" attr.name="description" attr.type="string"/>
+<key id="d7" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d6" for="node" attr.name="truncate" attr.type="string"/>
+<key id="d5" for="node" attr.name="created_at" attr.type="long"/>
+<key id="d4" for="node" attr.name="file_path" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
+<graph edgedefault="undirected"><node id="แกงเขียวหวานไก่">
+  <data key="d0">แกงเขียวหวานไก่</data>
+  <data key="d1">อาหาร</data>
+  <data key="d2">แกงเขียวหวานไก่เป็นอาหารไทยที่มีรสเผ็ดมาก มีส่วนผสมหลักประกอบด้วยเนื้อไก่ พริกแกงเขียวหวาน กะทิ มะเขือพวง และใบโหระพา</data>
+  <data key="d3">chunk-cf04d1f0c1ada8a9457e8fd00484849b</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="แกงมัสมั่นเนื้อ">
+  <data key="d0">แกงมัสมั่นเนื้อ</data>
+  <data key="d1">อาหาร</data>
+  <data key="d2">แกงมัสมั่นเนื้อเป็นอาหารไทยที่มีรสหวานมัน เนื่อนุ่มและมีส่วนผสมหลักประกอบด้วยเนื้อวัวสันใน พริกแกงมัสมั่น กะทิ มันฝรั่ง และถั่วลิสง</data>
+  <data key="d3">chunk-cf04d1f0c1ada8a9457e8fd00484849b</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="ผัดกะเพราหมูสับไข่ดาว">
+  <data key="d0">ผัดกะเพราหมูสับไข่ดาว</data>
+  <data key="d1">food</data>
+  <data key="d2">ผัดกะเพราหมูสับไข่ดาวเป็นอาหารไทยที่มีรสเผ็ดมาก มีส่วนผสมหลักประกอบด้วยหมูสับพริกชี้ฟ้า ใบมะกรูด และใบโหระพา&lt;SEP&gt;Pat is a popular stir-fry dish made with minced pork, eggs, and various vegetables in a spicy sauce.`</data>
+  <data key="d3">chunk-cf04d1f0c1ada8a9457e8fd00484849b&lt;SEP&gt;chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="Choices">
+  <data key="d0">Choices</data>
+  <data key="d1">category</data>
+  <data key="d2">Choices is a menu of healthy food options.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="ผัดผักรวมมิตร">
+  <data key="d0">ผัดผักรวมมิตร</data>
+  <data key="d1">food</data>
+  <data key="d2">A popular and healthy stir-fry made with mixed vegetables, rice noodles, and a flavorful sauce.`&lt;SEP&gt;ผัดผักรวมมิตรเป็นเมนูที่อร่อยและเหมาะสำหรับผู้ที่ต้องการอาหารเพื่อสุขภาพ</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc&lt;SEP&gt;chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="ยำวุ้นเส้น">
+  <data key="d0">ยำวุ้นเส้น</data>
+  <data key="d1">เมนู</data>
+  <data key="d2">ยำวุ้นเส้นทะเลเป็นอาหารไทยที่ได้รับความนิยม โดยมีส่วนผสมหลักคือ วุ้นเส้น ปลาหมึก กุ้ง และหมูสับ นอกจากนี้ยังมีส่วนผสมอื่นๆ เช่น ข้าวโพดอ่อน มะเขือเทศ หอมใหญ่ ขึ้นฉ่าย พริกขี้หนู และน้ำปลา&lt;SEP&gt;ยำวุ้นเส้นเป็นเมนูที่อร่อยและเหมาะสำหรับผู้ที่ต้องการอาหารเพื่อสุขภาพ</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc&lt;SEP&gt;chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="น้ำมะนาว">
+  <data key="d0">น้ำมะนาว</data>
+  <data key="d1">content</data>
+  <data key="d2">น้ำมะนาวเป็นเครื่องปรุงของต้มยำกุ้งแท้&lt;SEP&gt;น้ำมะนาวสดบีบเป็นเครื่องดื่มที่มีส่วนผสมจากมะนาวสด น้ำตาล น้ำเปล่า เกลือ และน้ำแข็งเป็นเครื่องดื่มที่มีแคลอรี 80 kcal&lt;SEP&gt;น้ำมะนาวเป็นเครื่องดื่มที่มีค่าสำหรับผู้ที่ต้องการอาหารเพื่อสุขภาพ</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc&lt;SEP&gt;chunk-8f55b3d07c4c8b75424a2d5100cd0b51&lt;SEP&gt;chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="น้ำใบเตยสด">
+  <data key="d0">น้ำใบเตยสด</data>
+  <data key="d1">content</data>
+  <data key="d2">น้ำใบเตยปั่นสดเป็นเครื่องดื่มที่มีส่วนผสมจากใบเตยสด น้ำตาล น้ำเปล่า และน้ำแข็งเป็นเครื่องดื่มที่มีแคลอรี 90 kcal&lt;SEP&gt;น้ำใบเตยสดเป็นเครื่องดื่มที่มีค่าสำหรับผู้ที่ต้องการอาหารเพื่อสุขภาพ</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc&lt;SEP&gt;chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="น้ำกระเจี๊ยบ">
+  <data key="d0">น้ำกระเจี๊ยบ</data>
+  <data key="d1">เครื่องดื่ม</data>
+  <data key="d2">น้ำกระเจี๊ยบเป็นเครื่องดื่มที่ช่วยดับกระหายและมีส่วนผสมของใบกระเจี๊ยบแห้งและน้ำตาล&lt;SEP&gt;น้ำกระเจี๊ยบเป็นเครื่องดื่มที่มีค่าสำหรับผู้ที่ต้องการอาหารเพื่อสุขภาพ</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc&lt;SEP&gt;chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="คือ (Krua Baan Thai)">
+  <data key="d0">คือ (Krua Baan Thai)</data>
+  <data key="d1">restaurant</data>
+  <data key="d2">Krua Baan Thai is a restaurant with various menu options.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="Grab Food">
+  <data key="d0">Grab Food</data>
+  <data key="d1">deliveryservice</data>
+  <data key="d2">Grab Food is one of the delivery platforms available for Krua Baan Thai.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="Food Panda">
+  <data key="d0">Food Panda</data>
+  <data key="d1">deliveryservice</data>
+  <data key="d2">Food Panda is another delivery platform for Krua Baan Thai.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="Line Man">
+  <data key="d0">Line Man</data>
+  <data key="d1">deliveryservice</data>
+  <data key="d2">Line Man is a delivery platform used by Krua Baan Thai.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="Robinhood">
+  <data key="d0">Robinhood</data>
+  <data key="d1">deliveryservice</data>
+  <data key="d2">Robinhood is a delivery service partner of Krua Baan Thai.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="PromptPay">
+  <data key="d0">PromptPay</data>
+  <data key="d1">paymentmethod</data>
+  <data key="d2">PromptPay is an online payment option available for customers.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308878</data>
+  <data key="d6"></data>
+</node>
+<node id="Thai QR Payment">
+  <data key="d0">Thai QR Payment</data>
+  <data key="d1">paymentmethod</data>
+  <data key="d2">Thai QR Payment is another payment option accepted by Krua Baan Thai.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="World Health Organization (WHO)">
+  <data key="d0">World Health Organization (WHO)</data>
+  <data key="d1">organization</data>
+  <data key="d2">(Not explicitly mentioned in the text, but implied as a relevant organization)</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="Kruabaanthai.com">
+  <data key="d0">Kruabaanthai.com</data>
+  <data key="d1">website</data>
+  <data key="d2">www.kruabaanthai.com is the official website of Krua Baan Thai.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="Food Review">
+  <data key="d0">Food Review</data>
+  <data key="d1">category</data>
+  <data key="d2">Food reviews are available for Krua Baan Thai on their website.</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ส้มตำไทย">
+  <data key="d0">ส้มตำไทย</data>
+  <data key="d1">concept</data>
+  <data key="d2">ส้มตำไทยเป็นเมนูขึ้นชื่อของไทยที่มีรสเผ็ดและเค็ม</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ส้มตำปู">
+  <data key="d0">ส้มตำปู</data>
+  <data key="d1">concept</data>
+  <data key="d2">ส้มตำปูเป็นส่วนผสมของส้มตำที่ใช้ปูนา</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ส้มตำไข่เค็ม">
+  <data key="d0">ส้มตำไข่เค็ม</data>
+  <data key="d1">concept</data>
+  <data key="d2">ส้มตำไข่เค็มเป็นส่วนผสมของส้มตำที่ใช้ไข่เค็ม</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="มะม่วงข้าวเหนียว">
+  <data key="d0">มะม่วงข้าวเหนียว</data>
+  <data key="d1">food</data>
+  <data key="d2">มะม่วงข้าวเหนียวมีราคา 80 บาทและไม่เผ็ด&lt;SEP&gt;มะม่วงข้าวเหนียวเป็นเมนูอาหารที่นิยมของไทย มีไขมัน 420 แคลอรี</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167&lt;SEP&gt;chunk-dca421a0049196bc0c39b3ea2ffdc01e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="มะละกอดิบ">
+  <data key="d0">มะละกอดิบ</data>
+  <data key="d1">fruit</data>
+  <data key="d2">มะละกอดิบเป็นส่วนผสมของส้มตำ</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="มะเขือเทศ">
+  <data key="d0">มะเขือเทศ</data>
+  <data key="d1">vegetable</data>
+  <data key="d2">มะเขือเทศเป็นส่วนผสมของต้มยำกุ้งแท้&lt;SEP&gt;มะเขือเทศเป็นส่วนผสมของส้มตำ&lt;SEP&gt;มะเขือเทศเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc&lt;SEP&gt;chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="พริกขี้หนู">
+  <data key="d0">พริกขี้หนู</data>
+  <data key="d1">spice</data>
+  <data key="d2">พริกขี้หนูเป็นเครื่องปรุงของต้มยำกุ้งแท้&lt;SEP&gt;พริกขี้หนูเป็นส่วนผสมของส้มตำ&lt;SEP&gt;พริกขี้หนูเป็นส่วนประกอบสำคัญของอาหารไทยที่เผ็ดและหอม&lt;SEP&gt;พริกขี้หนูเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167&lt;SEP&gt;chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc&lt;SEP&gt;chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="กระเทียม">
+  <data key="d0">กระเทียม</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">กระเทียมเป็นส่วนผสมของส้มตำ&lt;SEP&gt;กระเทียมเป็นส่วนประกอบสำคัญของอาหารไทยที่หอมและเผ็ด&lt;SEP&gt;Garlic added for extra flavor in the dish.`</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167&lt;SEP&gt;chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="น้ำมะขามเปียก">
+  <data key="d0">น้ำมะขามเปียก</data>
+  <data key="d1">condiment</data>
+  <data key="d2">น้ำมะขามเปียกเป็นส่วนผสมของส้มตำ</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ผัดกะเพรา">
+  <data key="d0">ผัดกะเพรา</data>
+  <data key="d1">concept</data>
+  <data key="d2">ผัดกะเพราเป็นอาหารไทยที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="หมูสับ">
+  <data key="d0">หมูสับ</data>
+  <data key="d1">product</data>
+  <data key="d2">หมูสับเป็นส่วนประกอบหลักของเมนูผัดกะเพราหมูสับไข่ดาว&lt;SEP&gt;หมูสับเป็นส่วนผสมหลักในยำวุ้นเส้นทะเล นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม&lt;SEP&gt;หมูสับเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-3cafe6342f6ec21cae7610d49084e4b3&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ใบกะเพรา">
+  <data key="d0">ใบกะเพรา</data>
+  <data key="d1">product</data>
+  <data key="d2">ใบกะเพราเป็นส่วนประกอบหลักของเมนูผัดกะเพราหมูสับไข่ดาว</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="พริกชี้ฟ้า">
+  <data key="d0">พริกชี้ฟ้า</data>
+  <data key="d1">product</data>
+  <data key="d2">พริกชี้ฟ้าเป็นส่วนประกอบสำคัญของอาหารไทยที่เผ็ดและหอม</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ถั่วฝักยาว">
+  <data key="d0">ถั่วฝักยาว</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">ถั่วฝักยาวเป็นส่วนประกอบหลักของเมนูผัดกะเพราหมูสับไข่ดาว&lt;SEP&gt;Green beans added to provide a crunchy texture and slightly sweet flavor.`</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ไข่ดาว">
+  <data key="d0">ไข่ดาว</data>
+  <data key="d1">product</data>
+  <data key="d2">ไข่ดาวเป็นส่วนประกอบสำคัญของเมนูผัดกะเพราหมูสับไข่ดาว</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="น้ำปลา">
+  <data key="d0">น้ำปลา</data>
+  <data key="d1">product</data>
+  <data key="d2">น้ำปลาเป็นส่วนประกอบหลักของอาหารไทยที่เผ็ดและหอม&lt;SEP&gt;น้ำปลาเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ซอสหอยนางรม">
+  <data key="d0">ซอสหอยนางรม</data>
+  <data key="d1">product</data>
+  <data key="d2">ซอสหอยนางรมเป็นส่วนประกอบสำคัญของเมนูผัดกะเพราหมูสับไข่ดาว</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เนื้อสัตว์">
+  <data key="d0">เนื้อสัตว์</data>
+  <data key="d1">product</data>
+  <data key="d2">เนื้อสัตว์เป็นส่วนประกอบหลักของเมนูผัดซีอิ๊วเนื้อ</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ไก่สับ">
+  <data key="d0">ไก่สับ</data>
+  <data key="d1">product</data>
+  <data key="d2">ไก่สับเป็นส่วนประกอบสำคัญของอาหารไทยที่เผ็ดและหอม</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เนื้อสับ">
+  <data key="d0">เนื้อสับ</data>
+  <data key="d1">product</data>
+  <data key="d2">เนื้อสับเป็นส่วนประกอบหลักของเมนูผัดซีอิ๊วเนื้อ</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="กุ้ง">
+  <data key="d0">กุ้ง</data>
+  <data key="d1">product</data>
+  <data key="d2">กุ้งเป็นส่วนประกอบสำคัญของอาหารไทยที่เผ็ดและหอม&lt;SEP&gt;Prawns added to provide a protein-rich element to the dish.`&lt;SEP&gt;กุ้งเป็นส่วนประกอบหลักของข้าวผัดบางชนิด</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-3cafe6342f6ec21cae7610d49084e4b3&lt;SEP&gt;chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ปลาหมึก">
+  <data key="d0">ปลาหมึก</data>
+  <data key="d1">product</data>
+  <data key="d2">ปลาหมึกเป็นส่วนประกอบหลักของเมนูผัดซีอิ๊วเนื้อ&lt;SEP&gt;ปลาหมึกเป็นส่วนผสมหลักในยำวุ้นเส้นทะเล นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม&lt;SEP&gt;ปลาหมึกเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-3cafe6342f6ec21cae7610d49084e4b3&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ผัดซีอิ๊วเนื้อ">
+  <data key="d0">ผัดซีอิ๊วเนื้อ</data>
+  <data key="d1">dish</data>
+  <data key="d2">Pad Si Ew is a Chinese-inspired stir-fry made with beef strips, bean sprouts, and soy sauce, served with steamed rice.`</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ราคา">
+  <data key="d0">ราคา</data>
+  <data key="d1">concept</data>
+  <data key="d2">ราคา 150 บาทของเมนูนี้&lt;SEP&gt;Price refers to the monetary value of food items on the menu.`</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c&lt;SEP&gt;chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="แคลอรี">
+  <data key="d0">แคลอรี</data>
+  <data key="d1">concept</data>
+  <data key="d2">Calories represent the energy content of a particular dish, usually measured in kilocalories (kcal).`</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ผัดซีอิ๊วเนื้อชิ้นใหญ่">
+  <data key="d0">ผัดซีอิ๊วเนื้อชิ้นใหญ่</data>
+  <data key="d1">recipe</data>
+  <data key="d2">ผัดซีอิ๊วเนื้อชิ้นใหญ่เป็นอาหารไทยที่ได้รับความนิยม โดยมีส่วนผสมหลักคือ เนื้อวัวสันใน ซีอิ๊วดำ และซีอิ๊วขาว นอกจากนี้ยังมีส่วนผสมอื่นๆ เช่น กระเทียม น้ำมันหอย บร็อคโคลี่ แครอท และหอมใหญ่</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เนื้อวัวสันใน">
+  <data key="d0">เนื้อวัวสันใน</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Beef used in the Pad See Ew dish.`</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ซีอิ๊วดำ">
+  <data key="d0">ซีอิ๊วดำ</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Soy sauce used to flavor the beef and vegetables.`</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="น้ำมันหอย">
+  <data key="d0">น้ำมันหอย</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Coconut oil used as a cooking medium in the Pad See Ew recipe.`</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="บร็อคโคลี่">
+  <data key="d0">บร็อคโคลี่</data>
+  <data key="d1">vegetable</data>
+  <data key="d2">บร็อคโคลี่เป็นผลไม้จากต้นถั่วที่มีส่วนผสมหลักของ วิตามินซี นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="แครอท">
+  <data key="d0">แครอท</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Carrots used in the Pad Thai recipe for a pop of color and sweetness.`&lt;SEP&gt;Carrots used in the recipe for a pop of color and sweetness.`</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="หอมใหญ่">
+  <data key="d0">หอมใหญ่</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Leeks added to add depth of flavor in this Thai dish.`&lt;SEP&gt;หอมใหญ่เป็นส่วนผสมที่ใช้ในอาหาร&lt;SEP&gt;Horm Yai (Large lemongrass) is often used to add flavor and aroma to Thai dishes like Khao Pad Goong.`</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc&lt;SEP&gt;chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="คะน้า">
+  <data key="d0">คะน้า</data>
+  <data key="d1">vegetable</data>
+  <data key="d2">คะน้าเป็นผลไม้จากต้นถั่วที่มีส่วนผสมหลักของ วิตามินซี นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวโพดอ่อน">
+  <data key="d0">ข้าวโพดอ่อน</data>
+  <data key="d1">vegetable</data>
+  <data key="d2">ข้าวโพดอ่อนเป็นผลไม้จากพืชที่มีส่วนผสมหลักของ วิตามินซี นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม&lt;SEP&gt;ข้าวโพดอ่อนเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เห็ดหอม">
+  <data key="d0">เห็ดหอม</data>
+  <data key="d1">vegetable</data>
+  <data key="d2">เห็ดหอมเป็นผลไม้จากพืชที่มีส่วนผสมหลักของ วิตามินซี นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="กะหล่ำดอก">
+  <data key="d0">กะหล่ำดอก</data>
+  <data key="d1">vegetable</data>
+  <data key="d2">กะหล่ำดอกเป็นผลไม้จากพืชที่มีส่วนผสมหลักของ วิตามินซี นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="วุ้นเส้น">
+  <data key="d0">วุ้นเส้น</data>
+  <data key="d1">food</data>
+  <data key="d2">ชื่อของอาหารที่มีรสชาติหวาน&lt;SEP&gt;วุ้นเส้นเป็นผลิตภัณฑ์ที่ทำจากพืชที่มีส่วนผสมหลักของ วิตามินซี นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม&lt;SEP&gt;วุ้นเส้นเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc&lt;SEP&gt;chunk-19fa3ae3b0064a559d1752d8d0a31f57</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="กุ้งสด">
+  <data key="d0">กุ้งสด</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">กุ้งสดเป็นส่วนผสมหลักในยำวุ้นเส้นทะเล นอกจากนี้ยังมีสารอาหารอื่นๆ เช่น โปรตีน ไฟเบอร์ และแคลเซียม&lt;SEP&gt;กุ้งสดเป็นส่วนผสมที่ใช้ในอาหาร&lt;SEP&gt;Goong Sod (Thai prawns) is a common ingredient in many Thai dishes, including Khao Pad Goong.`</data>
+  <data key="d3">chunk-3cafe6342f6ec21cae7610d49084e4b3&lt;SEP&gt;chunk-202b121e289fecfe1dfd118b23bdcfbc&lt;SEP&gt;chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="พนักงานใจดี">
+  <data key="d0">พนักงานใจดี</data>
+  <data key="d1">organization</data>
+  <data key="d2">พนักงานใจดีคือร้านอาหารที่มีชื่อเสียงและได้รับการยอมรับจากลูกค้า</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ครัวบ้านไทย (Krua Baan Thai)">
+  <data key="d0">ครัวบ้านไทย (Krua Baan Thai)</data>
+  <data key="d1">organization</data>
+  <data key="d2">ครัวบ้านไทยเป็นร้านอาหารไทยต้นตำรับที่มีรสชาติอร่อยและได้รับการยอมรับจากลูกค้า</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ก่อตั้งปี (2010)">
+  <data key="d0">ก่อตั้งปี (2010)</data>
+  <data key="d1">event</data>
+  <data key="d2">ก่อตั้งในปี 2010 เป็นประวัติศาสตร์ของครัวบ้านไทย</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ประสบการณ์เชฟ (15+ ปี)">
+  <data key="d0">ประสบการณ์เชฟ (15+ ปี)</data>
+  <data key="d1">concept</data>
+  <data key="d2">มีประสบการณ์เชฟมากกว่า 15 ปีที่มีความเชี่ยวชาญและสามารถปรุงอาหารได้อย่างดี</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ลูกค้าต่อวัน (200+ คน)">
+  <data key="d0">ลูกค้าต่อวัน (200+ คน)</data>
+  <data key="d1">category</data>
+  <data key="d2">มีลูกค้ามากกว่า 200 คนต่อวันที่มาเยี่ยมร้าน</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เมนูขายดี (ต้มยำกุ้ง)">
+  <data key="d0">เมนูขายดี (ต้มยำกุ้ง)</data>
+  <data key="d1">product</data>
+  <data key="d2">ต้มยำกุ้งเป็นเมนูที่ขายดีที่สุดของร้าน</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ครัวบ้านไทย">
+  <data key="d0">ครัวบ้านไทย</data>
+  <data key="d1">organization</data>
+  <data key="d2">ครัวบ้านไทยเป็นร้านอาหารไทยต้นตำรับ&lt;SEP&gt;ร้านอาหารไทยต้นตำรับ รสชาติที่คุณไว้ใจ</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010&lt;SEP&gt;chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ขึ้นฉ่าย">
+  <data key="d0">ขึ้นฉ่าย</data>
+  <data key="d1">vegetable</data>
+  <data key="d2">ขึ้นฉ่ายเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="มะนาว">
+  <data key="d0">มะนาว</data>
+  <data key="d1">fruit</data>
+  <data key="d2">มะนาวเป็นส่วนผสมที่ใช้ในอาหาร</data>
+  <data key="d3">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวเหนียว">
+  <data key="d0">ข้าวเหนียว</data>
+  <data key="d1">food</data>
+  <data key="d2">ข้าวเหนียวมันเป็นอาหารที่ทานคู่กับลาบหมู</data>
+  <data key="d3">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="Krua Baan Thai">
+  <data key="d0">Krua Baan Thai</data>
+  <data key="d1">organization</data>
+  <data key="d2">Krua Baan Thai is a Thai restaurant chain serving authentic Thai cuisine with a cozy atmosphere.`&lt;SEP&gt;Krua Baan Thai is a renowned restaurant serving traditional Thai cuisine.</data>
+  <data key="d3">chunk-0ee78eceae7667c5a830212070498892&lt;SEP&gt;chunk-cde97fb3d7406b8b29d6de5909f5e8bc&lt;SEP&gt;chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="Thailand">
+  <data key="d0">Thailand</data>
+  <data key="d1">location</data>
+  <data key="d2">Thailand is the country where Krua Baan Thai is located.</data>
+  <data key="d3">chunk-0ee78eceae7667c5a830212070498892</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เอกสารอัพเดทล่าสุด">
+  <data key="d0">เอกสารอัพเดทล่าสุด</data>
+  <data key="d1">content</data>
+  <data key="d2">เอกสารอัพเดทล่าสุด refers to the latest document update`&lt;SEP&gt;เอกสารอัพเดทล่าสุด refers to the latest document update</data>
+  <data key="d3">chunk-0ee78eceae7667c5a830212070498892</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ก๋วยเตี๋ยวเรือน้ำตก">
+  <data key="d0">ก๋วยเตี๋ยวเรือน้ำตก</data>
+  <data key="d1">category</data>
+  <data key="d2">ไม่สามารถระบุได้ว่าเป็นชื่อหนังสือหรืออะไร</data>
+  <data key="d3">chunk-ec6821bd54fccb7c25ebdb149238bc99</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวผัดกุ้ง">
+  <data key="d0">ข้าวผัดกุ้ง</data>
+  <data key="d1">food</data>
+  <data key="d2">Khao Pad Goong is a popular Thai dish made with stir-fried rice, prawns, and vegetables.`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908&lt;SEP&gt;chunk-ec6821bd54fccb7c25ebdb149238bc99</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวร่วน">
+  <data key="d0">ข้าวร่วน</data>
+  <data key="d1">food</data>
+  <data key="d2">Khao Rueng is a type of Thai-style fried rice.`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ไข่ไก่">
+  <data key="d0">ไข่ไก่</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">ไข่ไก่เป็นเครื่องปรุงของผัดไทย&lt;SEP&gt;Kai Kai (Chicken egg) is used as an ingredient in some recipes for Khao Pad.`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908&lt;SEP&gt;chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวหมกไก่">
+  <data key="d0">ข้าวหมกไก่</data>
+  <data key="d1">food</data>
+  <data key="d2">Khao Mok Gai is a popular Thai dish made with chicken cooked in coconut milk and spices.`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เนื้อไก่">
+  <data key="d0">เนื้อไก่</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Neu Kai (Chicken meat) is used as an ingredient in Khao Mok Gai.`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="กะทิ">
+  <data key="d0">กะทิ</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Kati (Coconut milk) is a key component of Khao Mok Gai, providing creaminess and richness to the dish.`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ขนมจีนน้ำยา">
+  <data key="d0">ขนมจีนน้ำยา</data>
+  <data key="d1">food</data>
+  <data key="d2">Khao Jin Nam Ya is a popular Thai dessert made with steamed rice flour cooked in coconut milk.`&lt;SEP&gt;ขนมจีนน้ำยาเป็นอาหารไทยที่มีส่วนผสมหลักจากแป้งข้าวเหนียว น้ำกะทิ หอมหวาน และเครื่องเคียงที่หลากหลาย`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908&lt;SEP&gt;chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ปลา">
+  <data key="d0">ปลา</data>
+  <data key="d1">ingredient</data>
+  <data key="d2">Pla (Fish) is used as an ingredient in some recipes for Khao Jin Nam Ya.`</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวผัด">
+  <data key="d0">ข้าวผัด</data>
+  <data key="d1">category</data>
+  <data key="d2">ข้าวผัดเป็นอาหารประเภทหนึ่งที่ทำจากข้าว และมีส่วนผสมหลักต่างๆ</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ไก่">
+  <data key="d0">ไก่</data>
+  <data key="d1">product</data>
+  <data key="d2">เนื้อไก่เป็นส่วนประกอบหลักของข้าวหมกไก่</data>
+  <data key="d3">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="บัวลอย">
+  <data key="d0">บัวลอย</data>
+  <data key="d1">concept</data>
+  <data key="d2">บัวลอยเป็นของหวานชนิดหนึ่งที่ทำจากแป้งข้าวเหนียวและเผือก มะม่วง งาดำ ฟักทอง น้ำกะทิหวานมัน และไข่ต้ม</data>
+  <data key="d3">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวเหนียวทุเรียน">
+  <data key="d0">ข้าวเหนียวทุเรียน</data>
+  <data key="d1">concept</data>
+  <data key="d2">ข้าวเหนียวมีทุเรียนหมอนทอง หอมนุ่ม ชวนหลงใหล และมีส่วนผสมประกอบด้วยข้าวเหนียว ทุเรียนหมอนทอง กะทิสด น้ำตาล เกลือ&lt;SEP&gt;ข้าวเหนียวทุเรียนเป็นอาหารไทยที่นิยม มีส่วนผสมหลัก คือ ข้าวเหนียว, ทุเรียนหมอนทอง และกะทิสด</data>
+  <data key="d3">chunk-24829b1ff128997906bd015dd8b924d0&lt;SEP&gt;chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ภาคใต้">
+  <data key="d0">ภาคใต้</data>
+  <data key="d1">location</data>
+  <data key="d2">ภาคใต้เป็นภูมิภาคหนึ่งของประเทศไทย มีแหล่งท่องเที่ยวและอาหารเช่นนี้มากมาย</data>
+  <data key="d3">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวเหนียวมัน">
+  <data key="d0">ข้าวเหนียวมัน</data>
+  <data key="d1">food</data>
+  <data key="d2">ข้าวเหนียวมันเป็นอาหารไทยที่ทำจากข้าวเหนียว และมีส่วนผสมหลักของมะม่วง ทุเรียน หรือผลไม้อื่นๆ`</data>
+  <data key="d3">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ต้มยำกุ้งแท้">
+  <data key="d0">ต้มยำกุ้งแท้</data>
+  <data key="d1">concept</data>
+  <data key="d2">ต้มยำกุ้งแท้ รสจัดจ้าน เปร้ยว เผ็ด เค็ม หวาน ครบรส พร้อมกุ้งแม่น้ำตัวโต</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="กุ้งแม่น้ำ">
+  <data key="d0">กุ้งแม่น้ำ</data>
+  <data key="d1">food</data>
+  <data key="d2">กุ้งแม่น้ำเป็นส่วนผสมของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข่า">
+  <data key="d0">ข่า</data>
+  <data key="d1">food</data>
+  <data key="d2">ข่าเป็นส่วนผสมของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เห็ดฟาง">
+  <data key="d0">เห็ดฟาง</data>
+  <data key="d1">food</data>
+  <data key="d2">เห็ดฟางเป็นส่วนผสมของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ต้นตำรับ">
+  <data key="d0">ต้นตำรับ</data>
+  <data key="d1">concept</data>
+  <data key="d2">เมนูยอดนิยมอันดับ 1 ของร้าน รสชาติต้นตำรับ</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ผัดไทยกุ้งสด">
+  <data key="d0">ผัดไทยกุ้งสด</data>
+  <data key="d1">concept</data>
+  <data key="d2">ผัดไทยต้นตำรับ รสชาติกลมกล่อม เปรี้ยว หวาน เค็ม ครบรส พร้อมกุ้งสดตัวใหญ่</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เส้นจันทร์">
+  <data key="d0">เส้นจันทร์</data>
+  <data key="d1">food</data>
+  <data key="d2">เส้นจันทร์แช่น้ำ</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="คำอธิบาย">
+  <data key="d0">คำอธิบาย</data>
+  <data key="d1">description</data>
+  <data key="d2">คำอธิบายนี้แสดงถึงรสชาติและคุณสมบัติของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวโพด">
+  <data key="d0">ข้าวโพด</data>
+  <data key="d1">food</data>
+  <data key="d2">ข้าวโพดเป็นส่วนผสมของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="นมข้นจืด">
+  <data key="d0">นมข้นจืด</data>
+  <data key="d1">food</data>
+  <data key="d2">นมข้นจืดเป็นเครื่องปรุงของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="ใบมะกรูด">
+  <data key="d0">ใบมะกรูด</data>
+  <data key="d1">food</data>
+  <data key="d2">ใบมะกรูดเป็นเครื่องปรุงของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308879</data>
+  <data key="d6"></data>
+</node>
+<node id="เต้าหู้แข็ง">
+  <data key="d0">เต้าหู้แข็ง</data>
+  <data key="d1">food</data>
+  <data key="d2">เต้าหู้แข็งเป็นเครื่องปรุงของผัดไทย</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="นม">
+  <data key="d0">นม</data>
+  <data key="d1">food</data>
+  <data key="d2">นมนมเป็นส่วนผสมของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ปรุงน้ำปลา">
+  <data key="d0">ปรุงน้ำปลา</data>
+  <data key="d1">food</data>
+  <data key="d2">ปรุงน้ำปลาเป็นเครื่องปรุงของต้มยำกุ้งแท้</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ลอดช่อง">
+  <data key="d0">ลอดช่อง</data>
+  <data key="d1">fooditem</data>
+  <data key="d2">ลอดช่องเป็นอาหารไทยชนิดหนึ่ง ที่มีส่วนผสมหลัก คือ แป้งข้าวเหนียว, ใบเตย, กะทิสด และน้ำแข็ง</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ทับทิมกรอบ">
+  <data key="d0">ทับทิมกรอบ</data>
+  <data key="d1">fooditem</data>
+  <data key="d2">ทับทิมกรอบเป็นอาหารไทยชนิดหนึ่ง ที่มีส่วนผสมหลัก คือ แห้วกรอบ, สีแดงจากผักบีท, แป้งมัน, กะทิสด และน้ำเชื่อม</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ชาเย็น">
+  <data key="d0">ชาเย็น</data>
+  <data key="d1">content</data>
+  <data key="d2">ชาเย็นเป็นเครื่องดื่มไทยชนิดหนึ่ง ที่มีส่วนผสมหลัก คือ ชาไทยต้นตำรับ, น้ำ และหวาน&lt;SEP&gt;ชาเย็นที่มีส่วนผสมจากชาไทย น้ำตาล นมข้นหวาน นมจืด และน้ำแข็งเป็นเครื่องดื่มที่มีแคลอรี 280 kcal</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e&lt;SEP&gt;chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ทุเรียนหมอนทอง">
+  <data key="d0">ทุเรียนหมอนทอง</data>
+  <data key="d1">ผลไม้</data>
+  <data key="d2">ทุเรียนหมอนทอง เป็นส่วนผสมของข้าวเหนียวหอมมัน</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ข้าวเหนียวหอมมัน">
+  <data key="d0">ข้าวเหนียวหอมมัน</data>
+  <data key="d1">อาหาร</data>
+  <data key="d2">ข้าวเหนียวหอมมัน เป็นอาหารไทยที่นิยม</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ใบเตย">
+  <data key="d0">ใบเตย</data>
+  <data key="d1">ผัก</data>
+  <data key="d2">ใบเตยใช้เป็นส่วนผสมของลอดช่อง</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="แป้งข้าวเหนียว">
+  <data key="d0">แป้งข้าวเหนียว</data>
+  <data key="d1">อาหาร</data>
+  <data key="d2">แป้งข้าวเหนียวเป็นส่วนผสมของลอดช่อง</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="แห้วกรอบ">
+  <data key="d0">แห้วกรอบ</data>
+  <data key="d1">ของหวาน</data>
+  <data key="d2">แห้วกรอบใช้เป็นส่วนผสมของทับทิมกรอบ</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ผักบีท">
+  <data key="d0">ผักบีท</data>
+  <data key="d1">ผัก</data>
+  <data key="d2">ผักบีทใช้เป็นส่วนผสมของทันทิมกรอบ</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ชาไทยต้นตำรับ">
+  <data key="d0">ชาไทยต้นตำรับ</data>
+  <data key="d1">เครื่องดื่ม</data>
+  <data key="d2">ชาไทยต้นตำรับมีชื่อเสียงในระดับโลก</data>
+  <data key="d3">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="เครื่องดื่ม">
+  <data key="d0">เครื่องดื่ม</data>
+  <data key="d1">concept</data>
+  <data key="d2">เครื่องดื่มเป็นเครื่องมือที่ช่วยให้บุคคลได้รับสารอาหารและความสดชื่น</data>
+  <data key="d3">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="กาแฟโบราณ">
+  <data key="d0">กาแฟโบราณ</data>
+  <data key="d1">content</data>
+  <data key="d2">กาแฟถุงผ้าต้มแบบโบราณเป็นเครื่องดื่มที่มีส่วนผสมจากเมล็ดกาแฟคั่ว น้ำตาลทราย นมข้นหวาน และน้ำแข็งเป็นเครื่องดื่มที่มีแคลอรี 250 kcal</data>
+  <data key="d3">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ใบเตยสด">
+  <data key="d0">ใบเตยสด</data>
+  <data key="d1">product</data>
+  <data key="d2">ใบเตยสดเป็นเครื่องดื่มที่ทำจากใบเตยสด หอมใบเตย สดชื่น มีประโยชน์ มีแคลอรี 90 kcal และไม่มีการแพ้</data>
+  <data key="d3">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="มังสวิรัติ">
+  <data key="d0">มังสวิรัติ</data>
+  <data key="d1">concept</data>
+  <data key="d2">มังสวิรัติคือแนวทางในการกินอาหารที่ไม่มีสัตว์ปีก</data>
+  <data key="d3">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ลาปรุง">
+  <data key="d0">ลาปรุง</data>
+  <data key="d1">person</data>
+  <data key="d2">ลาปรุงเป็นชื่อของคนที่ได้รับเครดิตในการทำอาหาร</data>
+  <data key="d3">chunk-dca421a0049196bc0c39b3ea2ffdc01e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ปอเปี๊ยะทอด">
+  <data key="d0">ปอเปี๊ยะทอด</data>
+  <data key="d1">food</data>
+  <data key="d2">ปอเปี๊ยะทอดเป็นอุปสรรคในการทำอาหารที่กรอบและไส้หมูผสมผักเครื่องเทศ</data>
+  <data key="d3">chunk-dca421a0049196bc0c39b3ea2ffdc01e</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="สะเต๊ะหมู">
+  <data key="d0">สะเต๊ะหมู</data>
+  <data key="d1">food</data>
+  <data key="d2">สะเต๊ะหมูเป็นอาหารว่างของไทย&lt;SEP&gt;เป็นชื่อของอาหารประเภทหนึ่งที่มีรสชาติเผ็ด</data>
+  <data key="d3">chunk-dca421a0049196bc0c39b3ea2ffdc01e&lt;SEP&gt;chunk-19fa3ae3b0064a559d1752d8d0a31f57</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="เตยสด">
+  <data key="d0">เตยสด</data>
+  <data key="d1">concept</data>
+  <data key="d2">เตยสดเป็นน้ำใบเตยกินได้ มีประโยชน์สำหรับสุขภาพ&lt;SEP&gt;เตยสดนั้นมีประโยชน์สำหรับสุขภาพ</data>
+  <data key="d3">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="น้ำใบเตย">
+  <data key="d0">น้ำใบเตย</data>
+  <data key="d1">concept</data>
+  <data key="d2">น้ำใบเตยนำเสนอในหลายรูปแบบ เช่น น้ำใบเตยงานหรือน้ำใบเตยปั่นสด</data>
+  <data key="d3">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="Set Lunch">
+  <data key="d0">Set Lunch</data>
+  <data key="d1">event</data>
+  <data key="d2">Set Lunch เป็นโปรโมชั่นที่อาหารจานหลัก + น้ำดื่ม ราคาเพียง 99 บาท</data>
+  <data key="d3">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="Set คู่สุดคุ้ม">
+  <data key="d0">Set คู่สุดคุ้ม</data>
+  <data key="d1">event</data>
+  <data key="d2">Set คู่สุดคุ้มเป็นโปรโมชันราคาพิเศษ 399 บาท สำหรับทั้งหมด: - ต้มยำกุ้ง (ขนาดกลาง) - ผัดไทยกุ้งสด - ข้าวเหนียวมะม่วง - เครื่องดื่ม 2 แก้ว (เลือกได้)</data>
+  <data key="d3">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="Promotions">
+  <data key="d0">Promotions</data>
+  <data key="d1">event</data>
+  <data key="d2">Promotions เป็นโปรโมชันสำหรับลูกค้า</data>
+  <data key="d3">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ออก">
+  <data key="d0">ออก</data>
+  <data key="d1">creature</data>
+  <data key="d2">เป็นชื่อของอาหารที่มีรสชาติเผ็ด</data>
+  <data key="d3">chunk-19fa3ae3b0064a559d1752d8d0a31f57</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110">
+  <data key="d0">123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110</data>
+  <data key="d1">location</data>
+  <data key="d2">This location is the address of Krua Baan Thai in Bangkok, Thailand.`</data>
+  <data key="d3">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="02-123-4567">
+  <data key="d0">02-123-4567</data>
+  <data key="d1">organization</data>
+  <data key="d2">Krua Baan Thai's phone number is 02-123-4567.`</data>
+  <data key="d3">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ทอดมันปลากราย">
+  <data key="d0">ทอดมันปลากราย</data>
+  <data key="d1">food</data>
+  <data key="d2">Tod Mun Goong is a popular Thai dish served at Krua Baan Thai, consisting of deep-fried fish cake with a spicy dipping sauce.`</data>
+  <data key="d3">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ต้มยำกุ้งน้ำข้น">
+  <data key="d0">ต้มยำกุ้งน้ำข้น</data>
+  <data key="d1">food</data>
+  <data key="d2">Tom Yum Goong is another famous Thai dish offered by Krua Baan Thai, featuring a flavorful and spicy soup made with prawns, lemongrass, and galangal.`</data>
+  <data key="d3">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="Thai cuisine">
+  <data key="d0">Thai cuisine</data>
+  <data key="d1">concept</data>
+  <data key="d2">Krua Baan Thai specializes in serving authentic Thai dishes from four regions of Thailand, offering a variety of flavors and experiences.`</data>
+  <data key="d3">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ถนนสุขุมวิท">
+  <data key="d0">ถนนสุขุมวิท</data>
+  <data key="d1">location</data>
+  <data key="d2">ถนนสุขุมวิทธำเรือนอยู่ในกรุงเทพฯ</data>
+  <data key="d3">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="Choices (เพื่อสุขภาพ)">
+  <data key="d0">Choices (เพื่อสุขภาพ)</data>
+  <data key="d3">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d2">Choices (เพื่อสุขภาพ) มีเมนูอร่อยหลายอย่าง เช่น ผัดผักรวมมิตร</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ไข่เค็ม">
+  <data key="d0">ไข่เค็ม</data>
+  <data key="d3">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d2">ส้มตำปูมีส่วนผสมของไข่เค็ม</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="หมู่สับ">
+  <data key="d0">หมู่สับ</data>
+  <data key="d3">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d2">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308880</data>
+  <data key="d6"></data>
+</node>
+<node id="ลาบหมู">
+  <data key="d0">ลาบหมู</data>
+  <data key="d3">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d2">ข้าวเหนียวมันเป็นอาหารที่ทานคู่กับลาบหมู</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308881</data>
+  <data key="d6"></data>
+</node>
+<node id="พนักงาน">
+  <data key="d0">พนักงาน</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d2">พนักงานมีความดีและให้บริการอย่างดี</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308881</data>
+  <data key="d6"></data>
+</node>
+<node id="ลูกค้า">
+  <data key="d0">ลูกค้า</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d2">ลูกค้ารู้สึกพึงพอใจกับคุณภาพของอาหาร</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308881</data>
+  <data key="d6"></data>
+</node>
+<node id="เมนู">
+  <data key="d0">เมนู</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d2">เมนูที่ขายดีที่สุดคือ ต้มยำกุ้ง</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308881</data>
+  <data key="d6"></data>
+</node>
+<node id="มะม่วง">
+  <data key="d0">มะม่วง</data>
+  <data key="d3">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d2">บัวลอย 4 สีมีส่วนผสมของมะม่วง นำเสนอในรูปแบบที่สวยงามและหลากหลาย`</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308881</data>
+  <data key="d6"></data>
+</node>
+<node id="รางวัล">
+  <data key="d0">รางวัล</data>
+  <data key="d3">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d2">ครัวบ้านไทยได้รับรางวัล Top 10 ร้านอาหารไทยยอดนิยม และ Best Thai Restaurant กรุงเทพฯ</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308881</data>
+  <data key="d6"></data>
+</node>
+<node id="ผัดไทย">
+  <data key="d0">ผัดไทย</data>
+  <data key="d3">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d2">เต้าหู้แข็งถูกใช้เป็นเครื่องปรุงในผัดไทย</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">unknown_source</data>
+  <data key="d5">1762308881</data>
+  <data key="d6"></data>
+</node>
+<edge source="แกงเขียวหวานไก่" target="แกงมัสมั่นเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">แกงเขียวหวานไก่มีรสเผ็ดมาก ในขณะที่แกงมัสมั่นเนื้อมีรสหวานมัน</data>
+  <data key="d9">ความแตกต่างในรสชาติและวัตถุดิบ</data>
+  <data key="d10">chunk-cf04d1f0c1ada8a9457e8fd00484849b</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="แกงเขียวหวานไก่" target="ผัดกะเพราหมูสับไข่ดาว">
+  <data key="d7">1.0</data>
+  <data key="d8">แกงเขียวหวานไก่มีรสเผ็ดมาก ในขณะที่ผัดกะเพราหมูสับไข่ดาวมีรสเผ็ดน้อยกว่า</data>
+  <data key="d9">ความแตกต่างในรสชาติและวัตถุดิบ</data>
+  <data key="d10">chunk-cf04d1f0c1ada8a9457e8fd00484849b</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="แกงมัสมั่นเนื้อ" target="ผัดกะเพราหมูสับไข่ดาว">
+  <data key="d7">1.0</data>
+  <data key="d8">แกงมัสมั่นเนื้อมีรสหวานมัน ในขณะที่ผัดกะเพราหมูสับไข่ดาวมีรสเผ็ดมาก</data>
+  <data key="d9">ความแตกต่างในรสชาติและวัตถุดิบ</data>
+  <data key="d10">chunk-cf04d1f0c1ada8a9457e8fd00484849b</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="ผัดกะเพรา">
+  <data key="d7">2.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">อาหารไทย,เมนูยอดนิยม</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="หมู่สับ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">ส่วนประกอบหลัก,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="พริกชี้ฟ้า">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="ถั่วฝักยาว">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">ส่วนประกอบหลัก,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="ไข่ดาว">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="น้ำปลา">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">ส่วนประกอบหลัก,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="ซอสหอยนางรม">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราหมูสับไข่ดาวเป็นเมนูที่เผ็ดมากและมีราคาตั้งแต่ 70-130 บาท</data>
+  <data key="d9">อาหารไทย,เมนูยอดนิยม</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพราหมูสับไข่ดาว" target="ราคา">
+  <data key="d7">4.0</data>
+  <data key="d8">The price range for Pat is between 70-130 THB.`&lt;SEP&gt;Pat is priced between 70-130 THB.`</data>
+  <data key="d9">Food Price,Price Food</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Choices" target="ผัดผักรวมมิตร">
+  <data key="d7">1.0</data>
+  <data key="d8">Choices include dishes like Pad Kra Pao.</data>
+  <data key="d9">food menu,healthy options</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดผักรวมมิตร" target="Choices (เพื่อสุขภาพ)">
+  <data key="d7">1.0</data>
+  <data key="d8">Choices (เพื่อสุขภาพ) มีเมนูอร่อยหลายอย่าง เช่น ผัดผักรวมมิตร</data>
+  <data key="d9">เมนูอร่อย</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดผักรวมมิตร" target="บร็อคโคลี่">
+  <data key="d7">2.0</data>
+  <data key="d8">Broccoli is added for extra nutrients and flavor in this stir-fry.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดผักรวมมิตร" target="คะน้า">
+  <data key="d7">2.0</data>
+  <data key="d8">Bamboo shoots are used to add texture and a bit of sweetness.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ยำวุ้นเส้น" target="ปลาหมึก">
+  <data key="d7">3.0</data>
+  <data key="d8">Squid is added for its tender and slightly sweet flavor in Yum Woon Sen.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ยำวุ้นเส้น" target="กุ้ง">
+  <data key="d7">3.0</data>
+  <data key="d8">Prawns provide a protein-rich element to the dish.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ยำวุ้นเส้น" target="หมูสับ">
+  <data key="d7">3.0</data>
+  <data key="d8">Belly pork minced is used in Yum Woon Sen recipe for its rich and savory flavor.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ยำวุ้นเส้น" target="กุ้งสด">
+  <data key="d7">1.0</data>
+  <data key="d8">ยำวุ้นเส้นทะเลมีส่วนผสมหลักคือ กุ้งสด</data>
+  <data key="d9">recipe-ingredient</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="น้ำมะนาว" target="เครื่องดื่ม">
+  <data key="d7">1.0</data>
+  <data key="d8">น้ำมะนาวเป็นประเภทของเครื่องดื่ม</data>
+  <data key="d9">Beverage,Product category</data>
+  <data key="d10">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="น้ำมะนาว" target="ต้มยำกุ้งแท้">
+  <data key="d7">1.0</data>
+  <data key="d8">น้ำมะนาวถูกใช้เป็นเครื่องปรุงในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="น้ำมะนาว" target="กาแฟโบราณ">
+  <data key="d7">2.0</data>
+  <data key="d8">แต่ทั้งสองมีส่วนผสมจากผลไม้</data>
+  <data key="d9">ต่างกัน,เครื่องดื่ม</data>
+  <data key="d10">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="น้ำมะนาว" target="ชาเย็น">
+  <data key="d7">2.0</data>
+  <data key="d8">ทั้งสองเป็นเครื่องดื่มที่มีประโยชน์ต่อสุขภาพ</data>
+  <data key="d9">เครื่องดื่ม,เหมือนกัน</data>
+  <data key="d10">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="น้ำใบเตยสด" target="กาแฟโบราณ">
+  <data key="d7">2.0</data>
+  <data key="d8">ทั้งสองเป็นเครื่องดื่มที่มีประโยชน์ต่อสุขภาพ</data>
+  <data key="d9">เครื่องดื่ม,เหมือนกัน</data>
+  <data key="d10">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="น้ำกระเจี๊ยบ" target="เตยสด">
+  <data key="d7">1.0</data>
+  <data key="d8">น้ำกระเจี๊ยบนั้นมีส่วนผสมของใบกระเจี๊ยบแห้งและน้ำตาล ซึ่งเป็นส่วนประกอบที่คล้ายกับ เตยสดนั้น</data>
+  <data key="d9">Concept relationship,comparison</data>
+  <data key="d10">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Grab Food" target="Krua Baan Thai">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai partners with Grab Food for delivery services.</data>
+  <data key="d9">delivery service partnership</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Grab Food" target="Choices (เพื่อสุขภาพ)">
+  <data key="d7">1.0</data>
+  <data key="d8">Grab Food ใช้บริการสั่งอาหารผ่านแพลตฟอร์มสำหรับ Choices (เพื่อสุขภาพ)</data>
+  <data key="d9">บริการสั่งอาหาร</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Food Panda" target="Krua Baan Thai">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai also partners with Food Panda for delivery services.</data>
+  <data key="d9">delivery service partnership</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Food Panda" target="Choices (เพื่อสุขภาพ)">
+  <data key="d7">1.0</data>
+  <data key="d8">Food Panda ใช้บริการสั่งอาหารผ่านแพลตฟอร์มสำหรับ Choices (เพื่อสุขภาพ)</data>
+  <data key="d9">บริการสั่งอาหาร</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Line Man" target="Krua Baan Thai">
+  <data key="d7">1.0</data>
+  <data key="d8">Additionally, Krua Baan Thai works with Line Man for delivery purposes.</data>
+  <data key="d9">delivery service partnership</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Line Man" target="Choices (เพื่อสุขภาพ)">
+  <data key="d7">1.0</data>
+  <data key="d8">Line Man ใช้บริการสั่งอาหารผ่านแพลตฟอร์มสำหรับ Choices (เพื่อสุขภาพ)</data>
+  <data key="d9">บริการสั่งอาหาร</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Robinhood" target="Krua Baan Thai">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai also collaborates with Robinhood for delivering their menu items.</data>
+  <data key="d9">delivery service partnership</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Robinhood" target="Choices (เพื่อสุขภาพ)">
+  <data key="d7">1.0</data>
+  <data key="d8">Robinhood ใช้บริการสั่งอาหารผ่านแพลตฟอร์มสำหรับ Choices (เพื่อสุขภาพ)</data>
+  <data key="d9">บริการสั่งอาหาร</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="PromptPay" target="Kruabaanthai.com">
+  <data key="d7">1.0</data>
+  <data key="d8">Customers can use PromptPay to pay online through Krua Baan Thai's website.</data>
+  <data key="d9">online payment method</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Thai QR Payment" target="Kruabaanthai.com">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai accepts Thai QR Payment as another payment option.</data>
+  <data key="d9">payment method</data>
+  <data key="d10">chunk-1175bc0c49512cb6a9945ff3ea5a17bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำไทย" target="ส้มตำปู">
+  <data key="d7">1.0</data>
+  <data key="d8">ส้มตำไทยมีส่วนผสมของส้มตำปู</data>
+  <data key="d9">ปรุงรส,ส่วนผสม</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำไทย" target="มะม่วงข้าวเหนียว">
+  <data key="d7">2.0</data>
+  <data key="d8">ส้มตำไทยเป็นเมนูขึ้นชื่อของไทยที่คล้ายกับ มะม่วงข้าวเหนียว&lt;SEP&gt;มะม่วงข้าวเหนียวมีลักษณะคล้ายกับ ส้มตำไทย</data>
+  <data key="d9">อาหารไทย,เมนูขึ้นชื่อ</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำไทย" target="มะละกอดิบ">
+  <data key="d7">1.0</data>
+  <data key="d8">ส้มตำไทยมีส่วนผสมจากมะละกอดิบ</data>
+  <data key="d9">dish ingredient,traditional dish</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำไทย" target="มะเขือเทศ">
+  <data key="d7">1.0</data>
+  <data key="d8">ส้มตำไทยมีส่วนผสมจากมะเขือเทศ</data>
+  <data key="d9">dish ingredient,traditional dish</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำไทย" target="พริกขี้หนู">
+  <data key="d7">1.0</data>
+  <data key="d8">ส้มตำไทยมีส่วนผสมจากพริกขี้หนู</data>
+  <data key="d9">dish ingredient,spicy</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำไทย" target="กระเทียม">
+  <data key="d7">1.0</data>
+  <data key="d8">ส้มตำไทยมีส่วนผสมจากกระเทียม</data>
+  <data key="d9">dish ingredient,savory</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำไทย" target="น้ำมะขามเปียก">
+  <data key="d7">1.0</data>
+  <data key="d8">ส้มตำไทยใช้น้ำมะขามเปียกเป็นส่วนผสมเพิ่มเติม</data>
+  <data key="d9">dish condiment,sour</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ส้มตำปู" target="ไข่เค็ม">
+  <data key="d7">1.0</data>
+  <data key="d8">ส้มตำปูมีส่วนผสมของไข่เค็ม</data>
+  <data key="d9">ปรุงรส,ส่วนผสม</data>
+  <data key="d10">chunk-c93fba6625366416288539d167b85167</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="มะม่วงข้าวเหนียว" target="ลาปรุง">
+  <data key="d7">1.0</data>
+  <data key="d8">มะม่วงข้าวเหนียวมีคนรับเครดิตคือ ลาปรุง</data>
+  <data key="d9">ผู้ทำ,ผู้สร้าง</data>
+  <data key="d10">chunk-dca421a0049196bc0c39b3ea2ffdc01e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="มะเขือเทศ" target="ข้าวโพดอ่อน">
+  <data key="d7">1.0</data>
+  <data key="d8">ข้าวโพดอ่อนและมะเขือเทศเป็นส่วนผสมที่ใช้ในอาหารไทย</data>
+  <data key="d9">ส่วนผสมอาหาร,อาหารไทย</data>
+  <data key="d10">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="มะเขือเทศ" target="ต้มยำกุ้งแท้">
+  <data key="d7">1.0</data>
+  <data key="d8">มะเขือเทศถูกใช้เป็นส่วนผสมในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="พริกขี้หนู" target="ผัดกะเพรา">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดกะเพราเป็นอาหารไทยที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="พริกขี้หนู" target="มะนาว">
+  <data key="d7">1.0</data>
+  <data key="d8">พริกขี้หนูและมะนาวเป็นส่วนผสมที่ใช้ในอาหารไทย</data>
+  <data key="d9">ส่วนผสมอาหาร,อาหารไทย</data>
+  <data key="d10">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="พริกขี้หนู" target="ต้มยำกุ้งแท้">
+  <data key="d7">1.0</data>
+  <data key="d8">พริกขี้หนูถูกใช้เป็นเครื่องปรุงในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="กระเทียม" target="ผัดซีอิ๊วเนื้อชิ้นใหญ่">
+  <data key="d7">2.0</data>
+  <data key="d8">Garlic adds extra flavor to this dish.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดกะเพรา" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">อาหารไทย,เมนูยอดนิยม</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="หมูสับ" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">อาหารไทย,เมนูยอดนิยม</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="หมูสับ" target="วุ้นเส้น">
+  <data key="d7">1.0</data>
+  <data key="d8">หมูสับและวุ้นเส้นเป็นส่วนผสมที่ใช้ในอาหารไทย</data>
+  <data key="d9">ส่วนผสมอาหาร,อาหารไทย</data>
+  <data key="d10">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="พริกชี้ฟ้า" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ถั่วฝักยาว" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบหลัก,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ไข่ดาว" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="น้ำปลา" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบหลัก,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ซอสหอยนางรม" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ไก่สับ" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบสำคัญ,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="เนื้อสับ" target="ผัดซีอิ๊วเนื้อ">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อเป็นเมนูที่เผ็ดและหอมกระเทียม โหระพาราดข้าวสวยร้อนๆ</data>
+  <data key="d9">ส่วนประกอบหลัก,อาหารไทย</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="กุ้ง" target="ข้าวผัด">
+  <data key="d7">2.0</data>
+  <data key="d8">ส่วนผสมของข้าวผัดบางชนิด เช่น ข้าวผัดกุ้ง</data>
+  <data key="d9">food item</data>
+  <data key="d10">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ปลาหมึก" target="กุ้งสด">
+  <data key="d7">1.0</data>
+  <data key="d8">กุ้งและปลาหมึกเป็นส่วนผสมที่ใช้ในอาหารทะเล</data>
+  <data key="d9">ส่วนผสมอาหาร,อาหารทะเล</data>
+  <data key="d10">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดซีอิ๊วเนื้อ" target="แคลอรี">
+  <data key="d7">2.0</data>
+  <data key="d8">Pad Si Ew contains approximately 420 kcal per serving.`</data>
+  <data key="d9">Dish Calorie</data>
+  <data key="d10">chunk-4a1f44f50f7fdb55d85f96b54d2f568c</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดซีอิ๊วเนื้อชิ้นใหญ่" target="เนื้อวัวสันใน">
+  <data key="d7">3.0</data>
+  <data key="d8">Beef is a key ingredient in Pad See Ew Thai dish.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดซีอิ๊วเนื้อชิ้นใหญ่" target="ซีอิ๊วดำ">
+  <data key="d7">3.0</data>
+  <data key="d8">Soy sauce is used to flavor the beef and vegetables in Pad See Ew.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดซีอิ๊วเนื้อชิ้นใหญ่" target="น้ำมันหอย">
+  <data key="d7">2.0</data>
+  <data key="d8">Coconut oil is used as a cooking medium in Pad See Ew recipe.`</data>
+  <data key="d9">Food Ingredient Relationship</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ผัดซีอิ๊วเนื้อชิ้นใหญ่" target="บร็อคโคลี่">
+  <data key="d7">1.0</data>
+  <data key="d8">ผัดซีอิ๊วเนื้อชิ้นใหญ่มีส่วนผสมหลักคือ บร็อคโคลี่</data>
+  <data key="d9">recipe-ingredient</data>
+  <data key="d10">chunk-3cafe6342f6ec21cae7610d49084e4b3</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="หอมใหญ่" target="ขึ้นฉ่าย">
+  <data key="d7">1.0</data>
+  <data key="d8">หอมใหญ่และขึ้นฉ่ายเป็นส่วนผสมที่ใช้ในอาหารไทย</data>
+  <data key="d9">ส่วนผสมอาหาร,อาหารไทย</data>
+  <data key="d10">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="หอมใหญ่" target="ข้าวผัดกุ้ง">
+  <data key="d7">1.0</data>
+  <data key="d8">Khao Pad Goong often includes Horm Yai (Large lemongrass) as an ingredient to add flavor and aroma.`</data>
+  <data key="d9">food-ingredient</data>
+  <data key="d10">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="พนักงานใจดี" target="ครัวบ้านไทย">
+  <data key="d7">1.0</data>
+  <data key="d8">พนักงานใจดีคือร้านอาหารที่มีชื่อเสียงและมีประสบการณ์เชฟที่มีความเชี่ยวชาญ</data>
+  <data key="d9">Organization,Partnership</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ก่อตั้งปี (2010)" target="ครัวบ้านไทย">
+  <data key="d7">1.0</data>
+  <data key="d8">ร้านก่อตั้งขึ้นในปี 2010 และมีมรดกและประวัติศาสตร์ที่ยาวนาน</data>
+  <data key="d9">Event,History</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ประสบการณ์เชฟ (15+ ปี)" target="ครัวบ้านไทย">
+  <data key="d7">1.0</data>
+  <data key="d8">ร้านมีประสบการณ์เชฟที่มีความเชี่ยวชาญและสามารถปรุงอาหารได้อย่างดี</data>
+  <data key="d9">Concept,Expertise</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ลูกค้าต่อวัน (200+ คน)" target="ครัวบ้านไทย">
+  <data key="d7">1.0</data>
+  <data key="d8">รังมีลูกค้ามากกว่า 200 คนต่อวันที่มาเยี่ยมร้าน</data>
+  <data key="d9">Category,Customer Base</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="เมนูขายดี (ต้มยำกุ้ง)" target="ครัวบ้านไทย">
+  <data key="d7">1.0</data>
+  <data key="d8">ต้มยำกุ้งเป็นเมนูที่ขายดีที่สุดของร้าน</data>
+  <data key="d9">Best Seller,Product</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ครัวบ้านไทย" target="พนักงาน">
+  <data key="d7">1.0</data>
+  <data key="d8">พนักงานมีความดีและให้บริการอย่างดี</data>
+  <data key="d9">customer service,job description</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ครัวบ้านไทย" target="ลูกค้า">
+  <data key="d7">1.0</data>
+  <data key="d8">ลูกค้ารู้สึกพึงพอใจกับคุณภาพของอาหาร</data>
+  <data key="d9">customer satisfaction,food quality</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ครัวบ้านไทย" target="เมนู">
+  <data key="d7">1.0</data>
+  <data key="d8">เมนูที่ขายดีที่สุดคือ ต้มยำกุ้ง</data>
+  <data key="d9">menu items,popular dishes</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ครัวบ้านไทย" target="รางวัล">
+  <data key="d7">1.0</data>
+  <data key="d8">ครัวบ้านไทยได้รับรางวัล Top 10 ร้านอาหารไทยยอดนิยม และ Best Thai Restaurant กรุงเทพฯ</data>
+  <data key="d9">awards and recognition,restaurant reputation</data>
+  <data key="d10">chunk-368a739c794ebb14e39020b44c371010</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ครัวบ้านไทย" target="ถนนสุขุมวิท">
+  <data key="d7">1.0</data>
+  <data key="d8">ครัวบ้านไทยตั้งอยู่บนถนนสุขุมวิท</data>
+  <data key="d9">location,organization</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ครัวบ้านไทย" target="123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110">
+  <data key="d7">1.0</data>
+  <data key="d8">ที่อยู่ของครัวบ้านไทยคือ 123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110</data>
+  <data key="d9">location,organization</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ครัวบ้านไทย" target="02-123-4567">
+  <data key="d7">1.0</data>
+  <data key="d8">เบอร์โทรศัพท์ของครัวบ้านไทยคือ 02-123-4567</data>
+  <data key="d9">organization,phone number</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ข้าวเหนียว" target="ลาบหมู">
+  <data key="d7">1.0</data>
+  <data key="d8">ข้าวเหนียวมันเป็นอาหารที่ทานคู่กับลาบหมู</data>
+  <data key="d9">การทานคู่กับอาหาร,อาหารไทย</data>
+  <data key="d10">chunk-202b121e289fecfe1dfd118b23bdcfbc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Krua Baan Thai" target="Thailand">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai is a restaurant located in Thailand.</data>
+  <data key="d9">location,restaurant</data>
+  <data key="d10">chunk-0ee78eceae7667c5a830212070498892</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Krua Baan Thai" target="เอกสารอัพเดทล่าสุด">
+  <data key="d7">2.0</data>
+  <data key="d8">The restaurant Krua Baan Thai is referenced in the latest document update`</data>
+  <data key="d9">reference,update</data>
+  <data key="d10">chunk-0ee78eceae7667c5a830212070498892</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Krua Baan Thai" target="123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai is located at this address in Bangkok, Thailand.`</data>
+  <data key="d9">business operation,restaurant location</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Krua Baan Thai" target="02-123-4567">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai's phone number is 02-123-4567 for customers to reach them.`</data>
+  <data key="d9">business contact information,customer service</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Krua Baan Thai" target="ทอดมันปลากราย">
+  <data key="d7">1.0</data>
+  <data key="d8">Tod Mun Goong is a popular dish served at Krua Baan Thai, featuring deep-fried fish cake with spicy dipping sauce.`</data>
+  <data key="d9">menu item,restaurant offering</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Krua Baan Thai" target="ต้มยำกุ้งน้ำข้น">
+  <data key="d7">1.0</data>
+  <data key="d8">Tom Yum Goong is a famous dish offered by Krua Baan Thai, featuring flavorful and spicy soup made with prawns, lemongrass, and galangal.`</data>
+  <data key="d9">menu item,restaurant offering</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Krua Baan Thai" target="Thai cuisine">
+  <data key="d7">1.0</data>
+  <data key="d8">Krua Baan Thai specializes in serving authentic Thai dishes from four regions of Thailand.`</data>
+  <data key="d9">business focus,specialty</data>
+  <data key="d10">chunk-cde97fb3d7406b8b29d6de5909f5e8bc</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ก๋วยเตี๋ยวเรือน้ำตก" target="ข้าวผัดกุ้ง">
+  <data key="d7">1.0</data>
+  <data key="d8">ไม่มีข้อมูลเพียงพอในการระบุความสัมพันธ์ระหว่างสองเมนูนี้</data>
+  <data key="d9">อาหารไทย,เมนูอาหาร</data>
+  <data key="d10">chunk-ec6821bd54fccb7c25ebdb149238bc99</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ไข่ไก่" target="ผัดไทย">
+  <data key="d7">1.0</data>
+  <data key="d8">ไข่ไก่ถูกใช้เป็นเครื่องปรุงในผัดไทย</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ข้าวหมกไก่" target="เนื้อไก่">
+  <data key="d7">1.0</data>
+  <data key="d8">Khao Mok Gai typically contains Neu Kai (Chicken meat) as a main ingredient.`</data>
+  <data key="d9">food-ingredient</data>
+  <data key="d10">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="กะทิ" target="ขนมจีนน้ำยา">
+  <data key="d7">1.0</data>
+  <data key="d8">Khao Jin Nam Ya is cooked in Kati (Coconut milk), which provides creaminess and richness to the dish.`</data>
+  <data key="d9">food-ingredient</data>
+  <data key="d10">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ขนมจีนน้ำยา" target="ปลา">
+  <data key="d7">2.0</data>
+  <data key="d8">ส่วนประกอบหลักของขนมจีนน้ำยา</data>
+  <data key="d9">food item</data>
+  <data key="d10">chunk-bfdf2cfe3706bb01e788ae5cf4424908</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ขนมจีนน้ำยา" target="ภาคใต้">
+  <data key="d7">1.0</data>
+  <data key="d8">ขนมจีนน้ำยามีเสน่ห์อย่างมากในภาคใต้ของประเทศไทย`</data>
+  <data key="d9">ภูมิภาค,อาหารไทย</data>
+  <data key="d10">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="บัวลอย" target="ภาคใต้">
+  <data key="d7">1.0</data>
+  <data key="d8">บัวลอยเป็นของหวานที่มีชื่อเสียงในภาคใต้</data>
+  <data key="d9">ของหวาน,อาหาร</data>
+  <data key="d10">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="บัวลอย" target="มะม่วง">
+  <data key="d7">1.0</data>
+  <data key="d8">บัวลอย 4 สีมีส่วนผสมของมะม่วง นำเสนอในรูปแบบที่สวยงามและหลากหลาย`</data>
+  <data key="d9">ของหวาน,ผลไม้</data>
+  <data key="d10">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ข้าวเหนียวทุเรียน" target="ภาคใต้">
+  <data key="d7">1.0</data>
+  <data key="d8">ข้าวเหนียวมีทุเรียนหมอนทอง หอมนุ่ม ชวนหลงใหล</data>
+  <data key="d9">ของว่าง,อาหาร</data>
+  <data key="d10">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ข้าวเหนียวทุเรียน" target="ลอดช่อง">
+  <data key="d7">1.0</data>
+  <data key="d8">ข้าวเหนียวทุเรียนและลอดช่องเป็นอาหารไทยที่นิยมในประเทศไทย</data>
+  <data key="d9">ความนิยม,อาหารไทย</data>
+  <data key="d10">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ภาคใต้" target="ข้าวเหนียวมัน">
+  <data key="d7">1.0</data>
+  <data key="d8">ข้าวเหนียวทุเรียนเป็นอาหารไทยที่มีความนิยมในภาคใต้ของประเทศไทย`</data>
+  <data key="d9">ภูมิภาค,อาหารไทย</data>
+  <data key="d10">chunk-24829b1ff128997906bd015dd8b924d0</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="ผัดไทยกุ้งสด">
+  <data key="d7">1.0</data>
+  <data key="d8">ทั้งสองรายการเป็นอาหารไทยที่มีรสชาติและคุณสมบัติที่แตกต่างกัน</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="ข้าวโพด">
+  <data key="d7">1.0</data>
+  <data key="d8">ข้าวโพดถูกใช้เป็นส่วนผสมในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="นมข้นจืด">
+  <data key="d7">1.0</data>
+  <data key="d8">นมข้นจืดถูกใช้เป็นเครื่องปรุงในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="เห็ดฟาง">
+  <data key="d7">1.0</data>
+  <data key="d8">เห็ดฟางถูกใช้เป็นส่วนผสมในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="ข่า">
+  <data key="d7">1.0</data>
+  <data key="d8">ข่าถูกใช้เป็นส่วนผสมในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="ใบมะกรูด">
+  <data key="d7">1.0</data>
+  <data key="d8">ใบมะกรูดถูกใช้เป็นเครื่องปรุงในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="กุ้งแม่น้ำ">
+  <data key="d7">1.0</data>
+  <data key="d8">กุ้งแม่น้ำถูกใช้เป็นส่วนผสมในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="นม">
+  <data key="d7">1.0</data>
+  <data key="d8">นมถูกใช้เป็นส่วนผสมในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ต้มยำกุ้งแท้" target="ปรุงน้ำปลา">
+  <data key="d7">1.0</data>
+  <data key="d8">ปรุงน้ำปลาถูกใช้เป็นเครื่องปรุงในต้มยำกุ้งแท้</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="เต้าหู้แข็ง" target="ผัดไทย">
+  <data key="d7">1.0</data>
+  <data key="d8">เต้าหู้แข็งถูกใช้เป็นเครื่องปรุงในผัดไทย</data>
+  <data key="d9">อาหารไทย</data>
+  <data key="d10">chunk-8f55b3d07c4c8b75424a2d5100cd0b51</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ลอดช่อง" target="ทับทิมกรอบ">
+  <data key="d7">1.0</data>
+  <data key="d8">ลอดช่องและทับทิมกรอบมีส่วนผสมคล้ายกัน เช่น แป้งข้าวเหนียว และกะทิสด</data>
+  <data key="d9">ส่วนผสม,อาหารไทย</data>
+  <data key="d10">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ทับทิมกรอบ" target="ชาเย็น">
+  <data key="d7">1.0</data>
+  <data key="d8">ทับทิมกรอบและชาเย็นเป็นอาหารไทยที่นิยมในประเทศไทย</data>
+  <data key="d9">ความนิยม,เครื่องดื่ม</data>
+  <data key="d10">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ชาเย็น" target="เครื่องดื่ม">
+  <data key="d7">1.0</data>
+  <data key="d8">ชาเย็นเป็นประเภทของเครื่องดื่ม</data>
+  <data key="d9">Beverage,Product category</data>
+  <data key="d10">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ทุเรียนหมอนทอง" target="ข้าวเหนียวหอมมัน">
+  <data key="d7">2.0</data>
+  <data key="d8">ทุเรียนหมอนทองและข้าวเหนียวหอมมันเป็นอาหารไทยที่นิยม</data>
+  <data key="d9">อาหาร</data>
+  <data key="d10">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ใบเตย" target="แป้งข้าวเหนียว">
+  <data key="d7">2.0</data>
+  <data key="d8">ใบเตยและแป้งข้าวเหนียวเป็นส่วนผสมของลอดช่อง</data>
+  <data key="d9">อาหาร</data>
+  <data key="d10">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="แห้วกรอบ" target="ผักบีท">
+  <data key="d7">2.0</data>
+  <data key="d8">แห้วกรอบและผักบีทเป็นของหวานที่นิยม</data>
+  <data key="d9">ของหวาน</data>
+  <data key="d10">chunk-51d2515fae5c84ae084c36991ad04c9e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="เครื่องดื่ม" target="กาแฟโบราณ">
+  <data key="d7">1.0</data>
+  <data key="d8">กาแฟโบราณเป็นประเภทของเครื่องดื่ม</data>
+  <data key="d9">Beverage,Product category</data>
+  <data key="d10">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="เครื่องดื่ม" target="ใบเตยสด">
+  <data key="d7">1.0</data>
+  <data key="d8">ใบเตยสดเป็นประเภทของเครื่องดื่ม</data>
+  <data key="d9">Beverage,Product category</data>
+  <data key="d10">chunk-73f8f030dfda01acf8ceedda15ee53d8</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ลาปรุง" target="ปอเปี๊ยะทอด">
+  <data key="d7">1.0</data>
+  <data key="d8">ปอเปียทอดมีคนรับเครดิตคือ ลาปรุง</data>
+  <data key="d9">ผู้ทำ,ผู้สร้าง</data>
+  <data key="d10">chunk-dca421a0049196bc0c39b3ea2ffdc01e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ลาปรุง" target="สะเต๊ะหมู">
+  <data key="d7">1.0</data>
+  <data key="d8">สะเต๊ะหมูมีคนรับเครดิตคือ ลาปรุง</data>
+  <data key="d9">ผู้ทำ,ผู้สร้าง</data>
+  <data key="d10">chunk-dca421a0049196bc0c39b3ea2ffdc01e</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="เตยสด" target="น้ำใบเตย">
+  <data key="d7">1.0</data>
+  <data key="d8">เตยสดนั้นนำเสนอในหลายรูปแบบ เช่น น้ำใบเตยงานหรือน้ำใบเตยปั่นสด</data>
+  <data key="d9">Concept relationship,type</data>
+  <data key="d10">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="เตยสด" target="Set Lunch">
+  <data key="d7">1.0</data>
+  <data key="d8">โปรโมชัน Set Lunch สำหรับเตยสดนั้นราคาสามารถลดได้ถึง 99 บาท</data>
+  <data key="d9">Event promotion,discount</data>
+  <data key="d10">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Set คู่สุดคุ้ม" target="Promotions">
+  <data key="d7">1.0</data>
+  <data key="d8">โปรโมชัน Set คู่สุดคุ้ม สำหรับทั้งหมด: - ต้มยำกุ้ง (ขนาดกลาง) - ผัดไทยกุ้งสด - ข้าวเหนียวมะม่วง - เครื่องดื่ม 2 แก้ว (เลือกได้)</data>
+  <data key="d9">Event promotion,discount</data>
+  <data key="d10">chunk-6bcb34f565c30e392028489c776461c6</data>
+  <data key="d11">unknown_source</data>
+  <data key="d12">1762308881</data>
+  <data key="d13"></data>
+</edge>
+</graph></graphml>

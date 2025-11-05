@@ -1,0 +1,1282 @@
+{
+  "แกงเขียวหวานไก่": {
+    "chunk_ids": [
+      "chunk-cf04d1f0c1ada8a9457e8fd00484849b"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "แกงเขียวหวานไก่"
+  },
+  "แกงมัสมั่นเนื้อ": {
+    "chunk_ids": [
+      "chunk-cf04d1f0c1ada8a9457e8fd00484849b"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "แกงมัสมั่นเนื้อ"
+  },
+  "ผัดกะเพราหมูสับไข่ดาว": {
+    "chunk_ids": [
+      "chunk-cf04d1f0c1ada8a9457e8fd00484849b",
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 2,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "ผัดกะเพราหมูสับไข่ดาว"
+  },
+  "Choices": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "Choices"
+  },
+  "ผัดผักรวมมิตร": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc",
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 2,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "ผัดผักรวมมิตร"
+  },
+  "ยำวุ้นเส้น": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc",
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 2,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "ยำวุ้นเส้น"
+  },
+  "น้ำมะนาว": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc",
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51",
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 3,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "น้ำมะนาว"
+  },
+  "น้ำใบเตยสด": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc",
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 2,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "น้ำใบเตยสด"
+  },
+  "น้ำกระเจี๊ยบ": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc",
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 2,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "น้ำกระเจี๊ยบ"
+  },
+  "คือ (Krua Baan Thai)": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "คือ (Krua Baan Thai)"
+  },
+  "Grab Food": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "Grab Food"
+  },
+  "Food Panda": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "Food Panda"
+  },
+  "Line Man": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "Line Man"
+  },
+  "Robinhood": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "Robinhood"
+  },
+  "PromptPay": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308878,
+    "update_time": 1762308878,
+    "_id": "PromptPay"
+  },
+  "Thai QR Payment": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "Thai QR Payment"
+  },
+  "World Health Organization (WHO)": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "World Health Organization (WHO)"
+  },
+  "Kruabaanthai.com": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "Kruabaanthai.com"
+  },
+  "Food Review": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "Food Review"
+  },
+  "ส้มตำไทย": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ส้มตำไทย"
+  },
+  "ส้มตำปู": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ส้มตำปู"
+  },
+  "ส้มตำไข่เค็ม": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ส้มตำไข่เค็ม"
+  },
+  "มะม่วงข้าวเหนียว": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167",
+      "chunk-dca421a0049196bc0c39b3ea2ffdc01e"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "มะม่วงข้าวเหนียว"
+  },
+  "มะละกอดิบ": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "มะละกอดิบ"
+  },
+  "มะเขือเทศ": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc",
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "มะเขือเทศ"
+  },
+  "พริกขี้หนู": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167",
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc",
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 4,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "พริกขี้หนู"
+  },
+  "กระเทียม": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167",
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "กระเทียม"
+  },
+  "น้ำมะขามเปียก": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "น้ำมะขามเปียก"
+  },
+  "ผัดกะเพรา": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ผัดกะเพรา"
+  },
+  "หมูสับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "หมูสับ"
+  },
+  "ใบกะเพรา": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ใบกะเพรา"
+  },
+  "พริกชี้ฟ้า": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "พริกชี้ฟ้า"
+  },
+  "ถั่วฝักยาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ถั่วฝักยาว"
+  },
+  "ไข่ดาว": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ไข่ดาว"
+  },
+  "น้ำปลา": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "น้ำปลา"
+  },
+  "ซอสหอยนางรม": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ซอสหอยนางรม"
+  },
+  "เนื้อสัตว์": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เนื้อสัตว์"
+  },
+  "ไก่สับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ไก่สับ"
+  },
+  "เนื้อสับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เนื้อสับ"
+  },
+  "กุ้ง": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3",
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "กุ้ง"
+  },
+  "ปลาหมึก": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ปลาหมึก"
+  },
+  "ผัดซีอิ๊วเนื้อ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ผัดซีอิ๊วเนื้อ"
+  },
+  "ราคา": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c",
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ราคา"
+  },
+  "แคลอรี": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "แคลอรี"
+  },
+  "ผัดซีอิ๊วเนื้อชิ้นใหญ่": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ผัดซีอิ๊วเนื้อชิ้นใหญ่"
+  },
+  "เนื้อวัวสันใน": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เนื้อวัวสันใน"
+  },
+  "ซีอิ๊วดำ": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ซีอิ๊วดำ"
+  },
+  "น้ำมันหอย": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "น้ำมันหอย"
+  },
+  "บร็อคโคลี่": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "บร็อคโคลี่"
+  },
+  "แครอท": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "แครอท"
+  },
+  "หอมใหญ่": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc",
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "หอมใหญ่"
+  },
+  "คะน้า": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "คะน้า"
+  },
+  "ข้าวโพดอ่อน": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวโพดอ่อน"
+  },
+  "เห็ดหอม": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เห็ดหอม"
+  },
+  "กะหล่ำดอก": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "กะหล่ำดอก"
+  },
+  "วุ้นเส้น": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc",
+      "chunk-19fa3ae3b0064a559d1752d8d0a31f57"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "วุ้นเส้น"
+  },
+  "กุ้งสด": {
+    "chunk_ids": [
+      "chunk-3cafe6342f6ec21cae7610d49084e4b3",
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc",
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 3,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "กุ้งสด"
+  },
+  "พนักงานใจดี": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "พนักงานใจดี"
+  },
+  "ครัวบ้านไทย (Krua Baan Thai)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ครัวบ้านไทย (Krua Baan Thai)"
+  },
+  "ก่อตั้งปี (2010)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ก่อตั้งปี (2010)"
+  },
+  "ประสบการณ์เชฟ (15+ ปี)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ประสบการณ์เชฟ (15+ ปี)"
+  },
+  "ลูกค้าต่อวัน (200+ คน)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ลูกค้าต่อวัน (200+ คน)"
+  },
+  "เมนูขายดี (ต้มยำกุ้ง)": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เมนูขายดี (ต้มยำกุ้ง)"
+  },
+  "ครัวบ้านไทย": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010",
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ครัวบ้านไทย"
+  },
+  "ขึ้นฉ่าย": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ขึ้นฉ่าย"
+  },
+  "มะนาว": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "มะนาว"
+  },
+  "ข้าวเหนียว": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวเหนียว"
+  },
+  "Krua Baan Thai": {
+    "chunk_ids": [
+      "chunk-0ee78eceae7667c5a830212070498892",
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc",
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 3,
+    "update_time": 1762308880,
+    "_id": "Krua Baan Thai"
+  },
+  "Thailand": {
+    "chunk_ids": [
+      "chunk-0ee78eceae7667c5a830212070498892"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "Thailand"
+  },
+  "เอกสารอัพเดทล่าสุด": {
+    "chunk_ids": [
+      "chunk-0ee78eceae7667c5a830212070498892"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เอกสารอัพเดทล่าสุด"
+  },
+  "ก๋วยเตี๋ยวเรือน้ำตก": {
+    "chunk_ids": [
+      "chunk-ec6821bd54fccb7c25ebdb149238bc99"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ก๋วยเตี๋ยวเรือน้ำตก"
+  },
+  "ข้าวผัดกุ้ง": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908",
+      "chunk-ec6821bd54fccb7c25ebdb149238bc99"
+    ],
+    "count": 2,
+    "update_time": 1762308881,
+    "_id": "ข้าวผัดกุ้ง"
+  },
+  "ข้าวร่วน": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวร่วน"
+  },
+  "ไข่ไก่": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908",
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ไข่ไก่"
+  },
+  "ข้าวหมกไก่": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวหมกไก่"
+  },
+  "เนื้อไก่": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เนื้อไก่"
+  },
+  "กะทิ": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "กะทิ"
+  },
+  "ขนมจีนน้ำยา": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908",
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ขนมจีนน้ำยา"
+  },
+  "ปลา": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ปลา"
+  },
+  "ข้าวผัด": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวผัด"
+  },
+  "ไก่": {
+    "chunk_ids": [
+      "chunk-bfdf2cfe3706bb01e788ae5cf4424908"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ไก่"
+  },
+  "บัวลอย": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "บัวลอย"
+  },
+  "ข้าวเหนียวทุเรียน": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0",
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 2,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวเหนียวทุเรียน"
+  },
+  "ภาคใต้": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ภาคใต้"
+  },
+  "ข้าวเหนียวมัน": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวเหนียวมัน"
+  },
+  "ต้มยำกุ้งแท้": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ต้มยำกุ้งแท้"
+  },
+  "กุ้งแม่น้ำ": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "กุ้งแม่น้ำ"
+  },
+  "ข่า": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข่า"
+  },
+  "เห็ดฟาง": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เห็ดฟาง"
+  },
+  "ต้นตำรับ": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ต้นตำรับ"
+  },
+  "ผัดไทยกุ้งสด": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ผัดไทยกุ้งสด"
+  },
+  "เส้นจันทร์": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "เส้นจันทร์"
+  },
+  "คำอธิบาย": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "คำอธิบาย"
+  },
+  "ข้าวโพด": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ข้าวโพด"
+  },
+  "นมข้นจืด": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "นมข้นจืด"
+  },
+  "ใบมะกรูด": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308879,
+    "update_time": 1762308879,
+    "_id": "ใบมะกรูด"
+  },
+  "เต้าหู้แข็ง": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "เต้าหู้แข็ง"
+  },
+  "นม": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "นม"
+  },
+  "ปรุงน้ำปลา": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ปรุงน้ำปลา"
+  },
+  "ลอดช่อง": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ลอดช่อง"
+  },
+  "ทับทิมกรอบ": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ทับทิมกรอบ"
+  },
+  "ชาเย็น": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e",
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 2,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ชาเย็น"
+  },
+  "ทุเรียนหมอนทอง": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ทุเรียนหมอนทอง"
+  },
+  "ข้าวเหนียวหอมมัน": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ข้าวเหนียวหอมมัน"
+  },
+  "ใบเตย": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ใบเตย"
+  },
+  "แป้งข้าวเหนียว": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "แป้งข้าวเหนียว"
+  },
+  "แห้วกรอบ": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "แห้วกรอบ"
+  },
+  "ผักบีท": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ผักบีท"
+  },
+  "ชาไทยต้นตำรับ": {
+    "chunk_ids": [
+      "chunk-51d2515fae5c84ae084c36991ad04c9e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ชาไทยต้นตำรับ"
+  },
+  "เครื่องดื่ม": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "เครื่องดื่ม"
+  },
+  "กาแฟโบราณ": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "กาแฟโบราณ"
+  },
+  "ใบเตยสด": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ใบเตยสด"
+  },
+  "มังสวิรัติ": {
+    "chunk_ids": [
+      "chunk-73f8f030dfda01acf8ceedda15ee53d8"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "มังสวิรัติ"
+  },
+  "ลาปรุง": {
+    "chunk_ids": [
+      "chunk-dca421a0049196bc0c39b3ea2ffdc01e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ลาปรุง"
+  },
+  "ปอเปี๊ยะทอด": {
+    "chunk_ids": [
+      "chunk-dca421a0049196bc0c39b3ea2ffdc01e"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ปอเปี๊ยะทอด"
+  },
+  "สะเต๊ะหมู": {
+    "chunk_ids": [
+      "chunk-dca421a0049196bc0c39b3ea2ffdc01e",
+      "chunk-19fa3ae3b0064a559d1752d8d0a31f57"
+    ],
+    "count": 2,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "สะเต๊ะหมู"
+  },
+  "เตยสด": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "เตยสด"
+  },
+  "น้ำใบเตย": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "น้ำใบเตย"
+  },
+  "Set Lunch": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Set Lunch"
+  },
+  "Set คู่สุดคุ้ม": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Set คู่สุดคุ้ม"
+  },
+  "Promotions": {
+    "chunk_ids": [
+      "chunk-6bcb34f565c30e392028489c776461c6"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Promotions"
+  },
+  "ออก": {
+    "chunk_ids": [
+      "chunk-19fa3ae3b0064a559d1752d8d0a31f57"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ออก"
+  },
+  "123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "123 ถนนสุขุมวิท แขวงคลองเตย กรุงเทพฯ 10110"
+  },
+  "02-123-4567": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "02-123-4567"
+  },
+  "ทอดมันปลากราย": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ทอดมันปลากราย"
+  },
+  "ต้มยำกุ้งน้ำข้น": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ต้มยำกุ้งน้ำข้น"
+  },
+  "Thai cuisine": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Thai cuisine"
+  },
+  "ถนนสุขุมวิท": {
+    "chunk_ids": [
+      "chunk-cde97fb3d7406b8b29d6de5909f5e8bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ถนนสุขุมวิท"
+  },
+  "Choices (เพื่อสุขภาพ)": {
+    "chunk_ids": [
+      "chunk-1175bc0c49512cb6a9945ff3ea5a17bc"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "Choices (เพื่อสุขภาพ)"
+  },
+  "ไข่เค็ม": {
+    "chunk_ids": [
+      "chunk-c93fba6625366416288539d167b85167"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "ไข่เค็ม"
+  },
+  "หมู่สับ": {
+    "chunk_ids": [
+      "chunk-4a1f44f50f7fdb55d85f96b54d2f568c"
+    ],
+    "count": 1,
+    "create_time": 1762308880,
+    "update_time": 1762308880,
+    "_id": "หมู่สับ"
+  },
+  "ลาบหมู": {
+    "chunk_ids": [
+      "chunk-202b121e289fecfe1dfd118b23bdcfbc"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ลาบหมู"
+  },
+  "พนักงาน": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "พนักงาน"
+  },
+  "ลูกค้า": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ลูกค้า"
+  },
+  "เมนู": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "เมนู"
+  },
+  "มะม่วง": {
+    "chunk_ids": [
+      "chunk-24829b1ff128997906bd015dd8b924d0"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "มะม่วง"
+  },
+  "รางวัล": {
+    "chunk_ids": [
+      "chunk-368a739c794ebb14e39020b44c371010"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "รางวัล"
+  },
+  "ผัดไทย": {
+    "chunk_ids": [
+      "chunk-8f55b3d07c4c8b75424a2d5100cd0b51"
+    ],
+    "count": 1,
+    "create_time": 1762308881,
+    "update_time": 1762308881,
+    "_id": "ผัดไทย"
+  }
+}
