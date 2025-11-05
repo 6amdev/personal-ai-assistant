@@ -1,14 +1,6 @@
 """
-✅ COMPLETE: FastAPI with LightRAG + Multi-Provider Support (Ollama + OpenAI)
-Version 2.3.0 - Production Ready
-
-Features:
-- Multiple LLM providers (Ollama, OpenAI)
-- Multi-model selection per request
-- API Key authentication
-- Auto provider detection
-- Model caching
-- Cost tracking (for OpenAI)
+✅ COMPLETE: FastAPI with LightRAG - Production Ready with API Key Security + Multi-Model Support
+Fixed all import paths and initialization issues + API Key authentication + Dynamic Model Selection
 """
 
 from fastapi import FastAPI, File, UploadFile, HTTPException, Header, Depends, BackgroundTasks, Security
@@ -67,58 +59,42 @@ try:
     from config import LLM_MODEL
 except ImportError:
     logger.warning("⚠️ config.py not found, using defaults")
-    LLM_MODEL = "llama3.1:8b"
+    LLM_MODEL = "llama3.2:3b"
 
-# Get configuration from environment
+# Get default model from environment or config
 DEFAULT_MODEL = os.getenv("LLM_MODEL", LLM_MODEL)
-DEFAULT_PROVIDER = os.getenv("LLM_PROVIDER", "ollama")
 
-# Available models
-OLLAMA_MODELS = os.getenv(
-    "AVAILABLE_MODELS", 
-    "llama3.2:3b,llama3.1:8b,llama3:8b,mistral:7b,gemma2:9b,phi3:14b"
-).split(",")
-
-OPENAI_MODELS = os.getenv(
-    "OPENAI_MODELS",
-    "gpt-3.5-turbo,gpt-4,gpt-4o,gpt-4-turbo"
-).split(",")
-
-ALL_AVAILABLE_MODELS = OLLAMA_MODELS + OPENAI_MODELS
+# Available models (customize this list based on your Ollama installation)
+AVAILABLE_MODELS = os.getenv("AVAILABLE_MODELS", "llama3.2:3b,llama3.1:8b,llama3:8b,mistral:7b,gemma2:9b,phi3:14b").split(",")
 
 # API Configuration
-API_VERSION = "2.3.0"
-API_TITLE = "Personal AI Assistant API - Multi-Provider (Ollama + OpenAI)"
-API_DESCRIPTION = f"""
-🤖 Advanced AI Chat API with Multiple LLM Providers
-
-🎯 **Multi-Provider Support:**
-- **Ollama** (Local, Free): {", ".join(OLLAMA_MODELS[:3])}...
-- **OpenAI** (Cloud, Paid): {", ".join(OPENAI_MODELS)}
+API_VERSION = "2.2.0"
+API_TITLE = "Personal AI Assistant API with LightRAG (Secured + Multi-Model)"
+API_DESCRIPTION = """
+🤖 Advanced AI Chat API with Knowledge Graph RAG - **Secured with API Key + Multi-Model Support**
 
 🔒 **Security:**
-- API Key authentication
-- Environment-based configuration
+- API Key authentication required
+- Configure via environment variables
 
-✨ **Features:**
-- 7 RAG types (Naive, Contextual, Rerank, Hybrid, Query Rewrite, Multi-step, LightRAG)
-- Knowledge Graph reasoning (LightRAG)
-- Multi-model selection per request
-- Auto provider detection
-- Model caching
+🎯 **Multi-Model Support:**
+- Choose from multiple LLM models
+- Dynamic model switching per request
+- Available models: """ + ", ".join(AVAILABLE_MODELS) + """
+
+✨ Features:
+- 7 RAG types (Naive, Contextual, Rerank, Hybrid, Query Rewrite, Multi-step, **LightRAG**)
+- **Knowledge Graph** reasoning (LightRAG)
 - Document upload & management
 - Multi-format support (TXT, PDF, DOCX, JSON, MD)
 - Persistent memory (ChromaDB + Graph)
+- 100% Local & Private
 
 🔑 **Authentication:**
 Add header: `X-API-Key: your-api-key-here`
 
 🤖 **Model Selection:**
-Add to request: `"model": "gpt-3.5-turbo"` or `"model": "llama3.1:8b"`
-
-📚 **Providers:**
-- Ollama: Free, local, private
-- OpenAI: Best quality, cloud-based
+Add to request body: `"model": "llama3.1:8b"`
 """
 
 # Paths Configuration
@@ -135,7 +111,6 @@ for path in [BASE_DATA_DIR, CHROMA_DB_PATH, LIGHTRAG_DB_PATH, UPLOAD_DIR]:
 # ===== Security Configuration =====
 API_KEY = os.getenv("API_KEY", "")
 ENABLE_AUTH = os.getenv("ENABLE_AUTH", "false").lower() == "true"
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
 if not API_KEY:
     logger.warning("⚠️ API_KEY not set in environment! Using insecure default.")
@@ -145,11 +120,6 @@ if ENABLE_AUTH:
     logger.info(f"🔒 Authentication ENABLED (Key: {API_KEY[:8]}...)")
 else:
     logger.warning("⚠️ Authentication DISABLED - API is publicly accessible!")
-
-if OPENAI_API_KEY:
-    logger.info(f"🔑 OpenAI API Key found: {OPENAI_API_KEY[:8]}...")
-else:
-    logger.warning("⚠️ No OPENAI_API_KEY - OpenAI models will not work")
 
 # API Key Header Security
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
@@ -189,22 +159,14 @@ class ChatRequest(BaseModel):
     rag_type: str = Field(default="hybrid")
     k: int = Field(default=3, ge=1, le=10)
     include_context: bool = Field(default=False)
-    model: Optional[str] = Field(
-        default=None, 
-        description="Model name (e.g., 'llama3.1:8b', 'gpt-3.5-turbo')"
-    )
-    provider: Optional[str] = Field(
-        default=None,
-        description="Provider: 'ollama' or 'openai' (auto-detected if not specified)"
-    )
+    model: Optional[str] = Field(default=None, description="LLM model to use (e.g., 'llama3.1:8b')")
 
 
 class LightRAGQueryRequest(BaseModel):
     query: str = Field(...)
     mode: str = Field(default="hybrid")
     include_context: bool = Field(default=False)
-    model: Optional[str] = Field(default=None)
-    provider: Optional[str] = Field(default=None)
+    model: Optional[str] = Field(default=None, description="LLM model to use")
 
 
 class LightRAGUploadRequest(BaseModel):
@@ -218,7 +180,6 @@ class ChatResponse(BaseModel):
     context: Optional[str] = None
     metadata: Dict[str, Any] = {}
     model_used: str = ""
-    provider: str = ""
 
 
 class DocumentUploadResponse(BaseModel):
@@ -232,47 +193,27 @@ class DocumentUploadResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     status: str
-    default_model: str
-    default_provider: str
-    available_models: Dict[str, List[str]]
+    model: str
+    available_models: List[str]
     rag_types: List[str]
     documents_count: int
     uptime: Optional[str] = None
     lightrag_available: bool
     lightrag_stats: Optional[Dict] = None
     auth_enabled: bool
-    openai_available: bool
 
 
 class ModelListResponse(BaseModel):
     default_model: str
-    default_provider: str
-    ollama_models: List[str]
-    openai_models: List[str]
-    all_models: List[str]
+    available_models: List[str]
     cached_models: List[str]
-    openai_available: bool
 
 
 # ===== Helper Functions =====
 
-def detect_provider(model_name: str) -> str:
-    """Auto-detect provider from model name"""
-    if model_name.startswith("gpt") or model_name in OPENAI_MODELS:
-        return "openai"
-    elif ":" in model_name or model_name in OLLAMA_MODELS:
-        return "ollama"
-    else:
-        # Default to ollama
-        return "ollama"
-
-
-def get_llm_instance(
-    model_name: Optional[str] = None,
-    provider: Optional[str] = None
-) -> LLMHandler:
+def get_llm_instance(model_name: Optional[str] = None) -> LLMHandler:
     """
-    Get or create LLM instance
+    Get or create LLM instance for specified model
     Uses caching to avoid re-initialization
     """
     global llm, llm_cache
@@ -281,63 +222,30 @@ def get_llm_instance(
     if not model_name:
         return llm
     
-    # Auto-detect provider if not specified
-    if not provider:
-        provider = detect_provider(model_name)
-    
     # Check if model is available
-    if provider == "ollama" and model_name not in OLLAMA_MODELS:
+    if model_name not in AVAILABLE_MODELS:
         raise HTTPException(
             status_code=400,
-            detail=f"Ollama model '{model_name}' not available. Available: {', '.join(OLLAMA_MODELS)}"
+            detail=f"Model '{model_name}' not available. Available models: {', '.join(AVAILABLE_MODELS)}"
         )
-    elif provider == "openai" and model_name not in OPENAI_MODELS:
-        raise HTTPException(
-            status_code=400,
-            detail=f"OpenAI model '{model_name}' not available. Available: {', '.join(OPENAI_MODELS)}"
-        )
-    
-    # Check OpenAI API key
-    if provider == "openai" and not OPENAI_API_KEY:
-        raise HTTPException(
-            status_code=400,
-            detail="OpenAI API key not configured. Set OPENAI_API_KEY in .env"
-        )
-    
-    # Create cache key
-    cache_key = f"{provider}:{model_name}"
     
     # Return cached instance if exists
-    if cache_key in llm_cache:
-        logger.info(f"♻️ Using cached LLM: {cache_key}")
-        return llm_cache[cache_key]
+    if model_name in llm_cache:
+        logger.info(f"♻️ Using cached LLM: {model_name}")
+        return llm_cache[model_name]
     
     # Create new instance
     try:
-        logger.info(f"🔧 Creating new LLM instance: {cache_key}")
-        
-        if provider == "openai":
-            new_llm = LLMHandler(
-                model_name=model_name,
-                provider="openai",
-                api_key=OPENAI_API_KEY
-            )
-        else:
-            new_llm = LLMHandler(
-                model_name=model_name,
-                provider="ollama",
-                device="GPU"
-            )
-        
-        llm_cache[cache_key] = new_llm
-        logger.info(f"✅ LLM instance created: {cache_key}")
+        logger.info(f"🔧 Creating new LLM instance: {model_name}")
+        new_llm = LLMHandler(model_name=model_name, device="GPU")
+        llm_cache[model_name] = new_llm
+        logger.info(f"✅ LLM instance created: {model_name}")
         return new_llm
-        
     except Exception as e:
-        logger.error(f"❌ Failed to create LLM instance for {cache_key}: {e}")
+        logger.error(f"❌ Failed to create LLM instance for {model_name}: {e}")
         raise HTTPException(
             status_code=500,
-            detail=f"Failed to initialize {provider} model '{model_name}': {str(e)}"
+            detail=f"Failed to initialize model '{model_name}': {str(e)}"
         )
 
 
@@ -364,7 +272,11 @@ def create_rag_with_model(llm_instance: LLMHandler, rag_type: str):
 # ===== Authentication Functions =====
 
 async def verify_api_key(api_key: str = Security(api_key_header)):
-    """Verify API Key from header"""
+    """
+    Verify API Key from header
+    Returns True if valid or authentication is disabled
+    Raises HTTPException if invalid
+    """
     if not ENABLE_AUTH:
         return True
     
@@ -397,29 +309,15 @@ async def startup_event():
     startup_time = datetime.now()
     
     logger.info("=" * 60)
-    logger.info(f"🚀 Starting {API_TITLE}")
-    logger.info(f"   Version: {API_VERSION}")
+    logger.info(f"🚀 Starting {API_TITLE} v{API_VERSION}")
     logger.info("=" * 60)
     
     try:
         # Initialize default LLM
-        logger.info(f"🔧 Initializing default LLM: {DEFAULT_MODEL} ({DEFAULT_PROVIDER})...")
-        
-        if DEFAULT_PROVIDER == "openai":
-            llm = LLMHandler(
-                model_name=DEFAULT_MODEL,
-                provider="openai",
-                api_key=OPENAI_API_KEY
-            )
-        else:
-            llm = LLMHandler(
-                model_name=DEFAULT_MODEL,
-                provider="ollama",
-                device="GPU"
-            )
-        
-        llm_cache[f"{DEFAULT_PROVIDER}:{DEFAULT_MODEL}"] = llm
-        logger.info(f"✅ Default LLM Ready: {llm.get_model_name()} ({llm.get_provider()})")
+        logger.info(f"🔧 Initializing default LLM: {DEFAULT_MODEL}...")
+        llm = LLMHandler(model_name=DEFAULT_MODEL, device="GPU")
+        llm_cache[DEFAULT_MODEL] = llm
+        logger.info(f"✅ Default LLM Ready: {llm.get_model_name()}")
         
         # Initialize Memory
         logger.info("🔧 Initializing Memory Handler...")
@@ -456,10 +354,8 @@ async def startup_event():
         logger.info("=" * 60)
         logger.info("✅ All systems ready!")
         logger.info(f"🤖 Default Model: {DEFAULT_MODEL}")
-        logger.info(f"🏢 Default Provider: {DEFAULT_PROVIDER}")
-        logger.info(f"🎯 Ollama Models: {len(OLLAMA_MODELS)}")
-        logger.info(f"🎯 OpenAI Models: {len(OPENAI_MODELS)} {'(Available)' if OPENAI_API_KEY else '(No API Key)'}")
-        logger.info(f"📚 RAG Types: {len(rag_systems)}")
+        logger.info(f"🎯 Available Models: {', '.join(AVAILABLE_MODELS)}")
+        logger.info(f"📚 Total RAG types: {len(rag_systems)}")
         logger.info(f"🧠 LightRAG: {'Enabled' if lightrag_system else 'Disabled'}")
         logger.info(f"🔒 Auth: {'Enabled' if ENABLE_AUTH else 'Disabled'}")
         logger.info("=" * 60)
@@ -494,15 +390,11 @@ async def shutdown_event():
 async def root():
     """API root endpoint"""
     return {
-        "message": "Personal AI Assistant API - Multi-Provider",
+        "message": "Personal AI Assistant API with LightRAG",
         "version": API_VERSION,
         "docs": "/docs",
         "health": "/health",
         "models": "/models",
-        "providers": {
-            "ollama": f"{len(OLLAMA_MODELS)} models",
-            "openai": f"{len(OPENAI_MODELS)} models" + ("" if OPENAI_API_KEY else " (no API key)")
-        },
         "auth_required": ENABLE_AUTH
     }
 
@@ -527,19 +419,14 @@ async def health_check():
         
         return HealthResponse(
             status="healthy",
-            default_model=DEFAULT_MODEL,
-            default_provider=DEFAULT_PROVIDER,
-            available_models={
-                "ollama": OLLAMA_MODELS,
-                "openai": OPENAI_MODELS
-            },
+            model=llm.get_model_name() if llm else "unknown",
+            available_models=AVAILABLE_MODELS,
             rag_types=list(rag_systems.keys()),
             documents_count=memory.count_documents() if memory else 0,
             uptime=uptime,
             lightrag_available=lightrag_system is not None,
             lightrag_stats=lightrag_stats,
-            auth_enabled=ENABLE_AUTH,
-            openai_available=bool(OPENAI_API_KEY)
+            auth_enabled=ENABLE_AUTH
         )
     except Exception as e:
         logger.error(f"Health check error: {e}")
@@ -551,12 +438,8 @@ async def list_models():
     """List available models - No authentication required"""
     return ModelListResponse(
         default_model=DEFAULT_MODEL,
-        default_provider=DEFAULT_PROVIDER,
-        ollama_models=OLLAMA_MODELS,
-        openai_models=OPENAI_MODELS,
-        all_models=ALL_AVAILABLE_MODELS,
-        cached_models=list(llm_cache.keys()),
-        openai_available=bool(OPENAI_API_KEY)
+        available_models=AVAILABLE_MODELS,
+        cached_models=list(llm_cache.keys())
     )
 
 
@@ -565,23 +448,19 @@ async def list_models():
 @app.post("/chat", response_model=ChatResponse, tags=["Chat"], dependencies=[Depends(verify_api_key)])
 async def chat(request: ChatRequest):
     """
-    Chat with AI using specified RAG system and model
+    Chat with AI using specified RAG system and optional model
     🔒 Requires API Key
-    🤖 Supports: Ollama (local) + OpenAI (cloud)
+    🤖 Supports custom model selection
     """
     try:
-        provider = request.provider or (detect_provider(request.model) if request.model else DEFAULT_PROVIDER)
-        model = request.model or DEFAULT_MODEL
-        
-        logger.info(f"📨 Query: '{request.query[:50]}...' (RAG: {request.rag_type}, Model: {model}, Provider: {provider})")
+        logger.info(f"📨 Query: '{request.query}' (RAG: {request.rag_type}, Model: {request.model or 'default'})")
         
         # Get appropriate LLM instance
-        llm_instance = get_llm_instance(request.model, request.provider)
+        llm_instance = get_llm_instance(request.model)
         model_used = llm_instance.get_model_name()
-        provider_used = llm_instance.get_provider()
         
         # Create or get RAG system
-        if request.model or request.provider:
+        if request.model:
             # Create temporary RAG with custom model
             rag = create_rag_with_model(llm_instance, request.rag_type)
         else:
@@ -618,11 +497,10 @@ async def chat(request: ChatRequest):
                 'processing_time': processing_time,
                 'k': request.k
             },
-            model_used=model_used,
-            provider=provider_used
+            model_used=model_used
         )
         
-        logger.info(f"✅ Response in {processing_time:.2f}s using {provider_used}:{model_used}")
+        logger.info(f"✅ Response in {processing_time:.2f}s using {model_used}")
         return response
         
     except HTTPException:
@@ -639,26 +517,22 @@ async def chat(request: ChatRequest):
 @app.post("/lightrag/query", response_model=ChatResponse, tags=["LightRAG"], dependencies=[Depends(verify_api_key)])
 async def lightrag_query(request: LightRAGQueryRequest):
     """
-    Query LightRAG Knowledge Graph
+    Query LightRAG Knowledge Graph with optional custom model
     🔒 Requires API Key
-    🤖 Supports custom model/provider
+    🤖 Supports custom model selection
     """
     if not lightrag_system:
         raise HTTPException(status_code=503, detail="LightRAG not available")
     
     try:
-        provider = request.provider or (detect_provider(request.model) if request.model else DEFAULT_PROVIDER)
-        model = request.model or DEFAULT_MODEL
-        
-        logger.info(f"🧠 LightRAG: '{request.query[:50]}...' (mode: {request.mode}, model: {model}, provider: {provider})")
+        logger.info(f"🧠 LightRAG: '{request.query}' (mode: {request.mode}, model: {request.model or 'default'})")
         
         # Get LLM instance
-        llm_instance = get_llm_instance(request.model, request.provider)
+        llm_instance = get_llm_instance(request.model)
         model_used = llm_instance.get_model_name()
-        provider_used = llm_instance.get_provider()
         
         # If custom model, create temporary LightRAG
-        if request.model or request.provider:
+        if request.model:
             temp_lightrag = LightRAGWrapper(llm_instance, memory, query_mode=request.mode)
             temp_lightrag.working_dir = str(LIGHTRAG_DB_PATH)
             rag_instance = temp_lightrag
@@ -672,7 +546,7 @@ async def lightrag_query(request: LightRAGQueryRequest):
         processing_time = (datetime.now() - start_time).total_seconds()
         
         # Restore original mode if using default
-        if not (request.model or request.provider):
+        if not request.model:
             rag_instance.set_query_mode(original_mode)
         
         context_text = ""
@@ -688,8 +562,7 @@ async def lightrag_query(request: LightRAGQueryRequest):
                 'processing_time': processing_time,
                 'mode': request.mode
             },
-            model_used=model_used,
-            provider=provider_used
+            model_used=model_used
         )
         
     except Exception as e:
@@ -702,7 +575,10 @@ async def lightrag_insert(
     request: LightRAGUploadRequest,
     background_tasks: BackgroundTasks
 ):
-    """Insert text into LightRAG Knowledge Graph"""
+    """
+    Insert text into LightRAG Knowledge Graph
+    🔒 Requires API Key
+    """
     if not lightrag_system:
         raise HTTPException(status_code=503, detail="LightRAG not available")
     
@@ -732,7 +608,10 @@ async def lightrag_upload(
     file: UploadFile = File(...),
     background_tasks: BackgroundTasks = None
 ):
-    """Upload document to LightRAG"""
+    """
+    Upload document to LightRAG
+    🔒 Requires API Key
+    """
     if not lightrag_system:
         raise HTTPException(status_code=503, detail="LightRAG not available")
     
@@ -775,7 +654,7 @@ async def lightrag_upload(
 
 @app.get("/lightrag/stats", tags=["LightRAG"])
 async def lightrag_stats():
-    """Get LightRAG statistics"""
+    """Get LightRAG statistics - No authentication required for stats"""
     if not lightrag_system:
         raise HTTPException(status_code=503, detail="LightRAG not available")
     
@@ -788,7 +667,10 @@ async def lightrag_stats():
 
 @app.post("/lightrag/mode", tags=["LightRAG"], dependencies=[Depends(verify_api_key)])
 async def set_lightrag_mode(mode: str):
-    """Change LightRAG query mode"""
+    """
+    Change LightRAG query mode
+    🔒 Requires API Key
+    """
     if not lightrag_system:
         raise HTTPException(status_code=503, detail="LightRAG not available")
     
@@ -807,7 +689,10 @@ async def upload_document(
     add_to_lightrag: bool = False,
     background_tasks: BackgroundTasks = None
 ):
-    """Upload document to standard RAG"""
+    """
+    Upload document to standard RAG
+    🔒 Requires API Key
+    """
     try:
         temp_path = UPLOAD_DIR / file.filename
         with open(temp_path, "wb") as f:
@@ -856,7 +741,7 @@ async def upload_document(
 
 @app.get("/info", tags=["System"])
 async def system_info():
-    """Get system information"""
+    """Get system information - No authentication required"""
     return {
         "api": {
             "version": API_VERSION,
@@ -867,9 +752,8 @@ async def system_info():
             "auth_method": "API Key (X-API-Key header)"
         },
         "models": {
-            "default": {"model": DEFAULT_MODEL, "provider": DEFAULT_PROVIDER},
-            "ollama": OLLAMA_MODELS,
-            "openai": OPENAI_MODELS + ([] if OPENAI_API_KEY else [" (no API key)"]),
+            "default": DEFAULT_MODEL,
+            "available": AVAILABLE_MODELS,
             "cached": list(llm_cache.keys())
         },
         "paths": {
@@ -883,10 +767,6 @@ async def system_info():
         },
         "documents": {
             "count": memory.count_documents() if memory else 0
-        },
-        "providers": {
-            "ollama": {"available": True, "models": len(OLLAMA_MODELS)},
-            "openai": {"available": bool(OPENAI_API_KEY), "models": len(OPENAI_MODELS)}
         }
     }
 
@@ -902,16 +782,12 @@ if __name__ == "__main__":
     print(f"📖 Docs: http://localhost:8000/docs")
     print(f"🔍 Health: http://localhost:8000/health")
     print(f"🤖 Models: http://localhost:8000/models")
-    print()
-    print(f"🎯 Default: {DEFAULT_MODEL} ({DEFAULT_PROVIDER})")
-    print(f"🏢 Providers:")
-    print(f"   - Ollama: {len(OLLAMA_MODELS)} models")
-    print(f"   - OpenAI: {len(OPENAI_MODELS)} models {'' if OPENAI_API_KEY else '(no API key)'}")
-    print()
     print(f"🧠 LightRAG: {'Enabled' if HAS_LIGHTRAG else 'Disabled'}")
     print(f"🔒 Auth: {'Enabled' if ENABLE_AUTH else 'Disabled'}")
     if ENABLE_AUTH:
         print(f"🔑 API Key: {API_KEY[:8]}...")
+    print(f"🎯 Default Model: {DEFAULT_MODEL}")
+    print(f"🎯 Available Models: {', '.join(AVAILABLE_MODELS)}")
     print("=" * 60)
     
     uvicorn.run(

@@ -1,4 +1,4 @@
-"""Memory Handler - Compatible with langchain 0.3+"""
+"""Memory Handler - Fix Meta Tensor (Final)"""
 import sys
 from pathlib import Path
 from typing import List, Dict
@@ -13,8 +13,7 @@ root_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(root_dir))
 
 from langchain_community.vectorstores import Chroma
-# ✅ FIX: ลบ import ที่ไม่ได้ใช้
-# from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory
 
 try:
     from config import CHROMA_DB_DIR, COLLECTION_NAME
@@ -126,15 +125,11 @@ class MemoryHandler:
             print(f"💡 Try deleting: {CHROMA_DB_DIR}")
             raise
         
-        # ✅ FIX: ลบ ConversationBufferMemory ที่ไม่ได้ใช้
         # Conversation memory
-        # self.conversation_memory = ConversationBufferMemory(
-        #     memory_key="chat_history",
-        #     return_messages=True
-        # )
-        
-        # ใช้ dict ธรรมดาแทน
-        self.conversation_history = []
+        self.conversation_memory = ConversationBufferMemory(
+            memory_key="chat_history",
+            return_messages=True
+        )
         
         print("✅ Memory ready!")
     
@@ -215,19 +210,8 @@ class MemoryHandler:
     
     def clear_conversation(self):
         """Clear conversation memory"""
-        self.conversation_history = []
+        self.conversation_memory.clear()
         print("🗑️ Cleared conversation")
-    
-    def add_to_conversation(self, role: str, content: str):
-        """Add message to conversation history"""
-        self.conversation_history.append({
-            "role": role,
-            "content": content
-        })
-    
-    def get_conversation_history(self, limit: int = 10) -> List[Dict]:
-        """Get recent conversation history"""
-        return self.conversation_history[-limit:]
     
     def count_documents(self) -> int:
         """Count total documents"""
